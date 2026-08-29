@@ -58,10 +58,11 @@ API_BASE="https://www.runninghub.cn/openapi/v2"
 UPLOAD_URL="${API_BASE}/media/upload/binary"
 RUN_URL="${API_BASE}/run/ai-app/${APP_ID}"
 
-# 未使用节点的占位值（必须保留，不能删改）
+# 未使用节点的占位值（必须保留节点不能删）
+# 图片用 example.png，音频复用 audio1 避免占位文件报错
 PICTURE3_PLACEHOLDER="example.png"
 PICTURE4_PLACEHOLDER="example.png"
-AUDIO2_PLACEHOLDER="ffc133718aa6119fa7538413581a64da5754e3405d1d4ef1ba3edbbe09c06ccd.flac"
+# AUDIO2_PLACEHOLDER 直接用上传后的 AUDIO1_FILE 变量（见下方构建请求体处）
 
 # ==================== 检查 API Key ====================
 if [ -z "$RUNNINGHUB_API_KEY" ]; then
@@ -200,8 +201,8 @@ REQUEST_BODY=$(cat <<EOF
     {
       "nodeId": "169",
       "fieldName": "audio",
-      "fieldValue": "${AUDIO2_PLACEHOLDER}",
-      "description": "audio2"
+      "fieldValue": "${AUDIO1_FILE}",
+      "description": "audio2（未使用则复用audio1）"
     }
   ],
   "instanceType": "default",

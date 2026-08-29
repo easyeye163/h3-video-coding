@@ -72,8 +72,8 @@ curl --location --request POST 'https://www.runninghub.cn/openapi/v2/run/ai-app/
     {
       "nodeId": "169",
       "fieldName": "audio",
-      "fieldValue": "ffc133718aa6119fa7538413581a64da5754e3405d1d4ef1ba3edbbe09c06ccd.flac",
-      "description": "audio2（占位，不要改）"
+      "fieldValue": "AUDIO1_UPLOADED_FILENAME.flac",
+      "description": "audio2（未使用则复用audio1文件，避免占位文件报错）"
     }
   ],
   "instanceType": "default",
@@ -147,19 +147,21 @@ curl --location --request POST 'https://www.runninghub.cn/openapi/v2/media/uploa
 | 提示词 | 138 | value | 6段式 Full-Reference 提示词 | 多行文本（\n 换行） |
 | Picture 2 | 166 | image | 场景/副参考图 | 上传后的文件名.png |
 | Audio 1 | 165 | audio | 音色参考1 | 上传后的文件名.flac |
-| Picture 3 | 167 | image | 占位（不要改） | "example.png" |
-| Picture 4 | 168 | image | 占位（不要改） | "example.png" |
-| Audio 2 | 169 | audio | 占位（不要改） | "ffc133718...flac" |
+| Picture 3 | 167 | image | 占位（保持example.png） | "example.png" |
+| Picture 4 | 168 | image | 占位（保持example.png） | "example.png" |
+| Audio 2 | 169 | audio | 未使用时复用audio1文件 | 同audio1的文件名 |
 
 ---
 
 ## 五、重要注意事项
 
-1. **未使用的节点必须保留**：picture3 / picture4 / audio2 即使不用，也必须原样保留占位值，不能删除或修改。
-2. **COS 链接 24 小时失效**：生成成功后必须及时下载到本地 `videos/songkou_drama/` 目录。
-3. **并发限制**：同时只能有有限个任务运行，超限返回 `errorCode: 421`，关键任务串行处理，每次调用间隔 `sleep(10)`。
-4. **提示词换行**：JSON 中换行用 `\n` 转义。
-5. **GET 查询接口已知问题**：部分情况下可能返回 `PARAMS_INVALID`，需从控制台手动取回结果。
+1. **未使用的节点必须保留**：picture3 / picture4 / audio2 即使不用，也不能删除节点。
+2. **图片占位保持 example.png**：picture3 / picture4 未使用时保持 `"example.png"`。
+3. **音频占位复用 audio1**：audio2 未使用时直接填 audio1 的文件名（避免默认占位文件导致 errorCode 805）。
+4. **COS 链接 24 小时失效**：生成成功后必须及时下载到本地 `videos/songkou_drama/` 目录。
+5. **并发限制**：同时只能有有限个任务运行，超限返回 `errorCode: 421`，关键任务串行处理，每次调用间隔 `sleep(10)`。
+6. **提示词换行**：JSON 中换行用 `\n` 转义。
+7. **GET 查询接口已知问题**：部分情况下可能返回 `PARAMS_INVALID`，需从控制台手动取回结果。
 
 ---
 
