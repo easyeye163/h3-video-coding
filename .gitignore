@@ -18,3 +18,5 @@ venv/
 # IDE
 .vscode/
 .idea/
+videos/
+download/
