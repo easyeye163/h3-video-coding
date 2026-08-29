@@ -1,0 +1,33 @@
+# 大文件（视频/音频/图片，不适合 Git 存储，用外部存储或 Git LFS）
+*.mp4
+*.flac
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.ogg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.webp
+
+# 工作记忆（含敏感信息：API 状态、taskId、token 记录）
+.workbuddy/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/

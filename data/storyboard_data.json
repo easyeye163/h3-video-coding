@@ -1,0 +1,59 @@
+{
+  "create_records": [
+    {
+      "集数": 1,
+      "分镜序号": 1,
+      "镜头时长": "0-5秒",
+      "镜头类型": "远景/ Establishing Shot",
+      "画面描述": "幽暗的海底世界全景，青绿色光束从水面穿透而下形成丁达尔光效，漂浮的发光粒子如星辰般闪烁，地面散落着通透的水晶球，折射出梦幻的光泽。整体氛围神秘而静谧。",
+      "角色状态": "无",
+      " Camera 运动": "缓慢推进，从宏观到微观",
+      "音效/配乐": "空灵电子合成器铺底，低频嗡鸣，偶尔有气泡上升的声音",
+      "提示词": "Cinematic wide shot of an underwater world, dark and mysterious atmosphere, cyan-green god rays penetrating from above, floating luminous particles like stars, translucent crystal spheres scattered on the ground creating dreamy refractions, ethereal lighting, 8K ultra detailed, realistic fantasy style"
+    },
+    {
+      "集数": 1,
+      "分镜序号": 2,
+      "镜头时长": "5-12秒",
+      "镜头类型": "中景/ Medium Shot",
+      "画面描述": "东方少女从画面右侧缓缓游入，黑色长卷发在水中轻柔飘动，冰蓝色的眼眸好奇地打量着四周。她身穿半透薄荷绿色薄纱长裙，裙摆如海藻般在水中优雅摆动。",
+      "角色状态": "少女，好奇、警惕",
+      " Camera 运动": "跟随少女移动，保持中景构图",
+      "音效/配乐": "水流声，轻柔的生物发光脉冲音",
+      "提示词": "Medium shot of a young Oriental woman with long dark teal-black hair floating in water, translucent ice-blue eyes full of curiosity, wearing a semi-sheer mint green gauze dress that flows like seaweed, graceful swimming motion, underwater environment with cyan lighting, cinematic composition, 8K detailed"
+    },
+    {
+      "集数": 1,
+      "分镜序号": 3,
+      "镜头时长": "12-18秒",
+      "镜头类型": "特写/ Close-up",
+      "画面描述": "少女的冰蓝色眼眸特写，瞳孔中倒映着远处的光点。她的表情从好奇逐渐转为警觉，眉头微蹙，嘴唇轻抿。",
+      "角色状态": "少女，警觉、疑惑",
+      " Camera 运动": "固定特写，轻微呼吸感",
+      "音效/配乐": "心跳声渐强，合成器音效变得紧张",
+      "提示词": "Extreme close-up of a young woman's ice-blue eyes, reflecting distant light points, expression shifting from curiosity to alertness, slight frown, lips slightly pursed, underwater lighting with cyan highlights, cinematic portrait, highly detailed eyes, 8K"
+    },
+    {
+      "集数": 1,
+      "分镜序号": 4,
+      "镜头时长": "18-25秒",
+      "镜头类型": "中近景/ Medium Close-up",
+      "画面描述": "神秘使者从光晕中现身，银色长发在水中飘动，金色眼眸与少女对视。两人保持一定距离，空气中弥漫着紧张与好奇交织的氛围。",
+      "角色状态": "少女（警惕），使者（沉稳、神秘）",
+      " Camera 运动": "缓慢环绕，展现两人关系",
+      "音效/配乐": "水晶共鸣声，低频紧张音效",
+      "提示词": "Medium close-up two-shot, a young Oriental woman with ice-blue eyes facing a mysterious silver-haired man with golden eyes, both standing in underwater light rays, tension between them, cinematic composition, ethereal lighting, fantasy style, 8K detailed"
+    },
+    {
+      "集数": 1,
+      "分镜序号": 5,
+      "镜头时长": "25-30秒",
+      "镜头类型": "远景/ Wide Shot",
+      "画面描述": "两人对峙的远景，背景是巨大的海底水晶宫殿轮廓。使者缓缓伸出手，少女犹豫片刻后也伸出双手，预示着一段关系的开始。画面定格在这个充满希望的瞬间。",
+      "角色状态": "双方，从对立到试探性接触",
+      " Camera 运动": "缓慢拉远，展现宏大场景",
+      "音效/配乐": "音乐达到一个小高潮后渐弱，留下悬念",
+      "提示词": "Wide shot of two figures facing each other in a vast underwater crystal palace, the man extending his hand toward the woman, cinematic composition, epic fantasy atmosphere, cyan-green god rays, floating luminous particles, hopeful yet mysterious ending, 8K ultra detailed"
+    }
+  ]
+}

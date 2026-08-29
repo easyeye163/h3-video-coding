@@ -1,0 +1,40 @@
+{
+  "shots": [
+    {
+      "shot_number": 4,
+      "title": "触摸倒影",
+      "duration": 10,
+      "prompt": "An ancient Chinese woman in elegant hanfu stands before a modern glass building window at night. She reaches out and touches the glass surface, her fingers tracing the reflection of herself - but the reflection shows her wearing modern clothes. She looks confused and turns around to see a young modern woman with warm smile standing behind her. The modern woman says gently: 'This is 21st century Shanghai.' The ancient woman looks shocked: '21st century... am I dreaming?' Cinematic lighting, emotional close-up, shallow depth of field.",
+      "audio_nodes": {
+        "node_137_scene": "ancient palace crystal interior night",
+        "node_166_character": "ancient Chinese woman hanfu silver jewelry, confused expression",
+        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_138_prompt": "She touches glass window, sees modern reflection, turns to see modern woman"
+      }
+    },
+    {
+      "shot_number": 5,
+      "title": "咖啡厅相遇",
+      "duration": 10,
+      "prompt": "Inside a modern chic cafe at night. The ancient woman stands before an espresso machine, looking at it with curiosity and wonder. A young female barista with warm smile approaches and offers her a cup of coffee. The ancient woman asks: 'What is this machine?' The barista replies: 'This is a coffee machine, would you like to try?' The ancient woman smells the coffee and asks: 'What does coffee taste like?' Warm cafe lighting, cinematic composition, close-up shots.",
+      "audio_nodes": {
+        "node_137_scene": "modern cafe interior warm lighting",
+        "node_166_character": "ancient woman curious expression + modern barista friendly",
+        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_138_prompt": "She examines coffee machine, barista offers coffee, she smells it curiously"
+      }
+    },
+    {
+      "shot_number": 6,
+      "title": "时空交汇",
+      "duration": 10,
+      "prompt": "Epic fantasy scene. The ancient woman and modern woman stand facing each other in a cafe, holding hands. Magical golden light swirls around them as temporal energy manifests. The ancient woman says with tears in her eyes: 'I want to go back to my era.' The modern woman replies warmly: 'It's okay, we will meet again.' They smile at each other as the light grows brighter, preparing for the departure. Cinematic epic lighting, emotional farewell, magical atmosphere.",
+      "audio_nodes": {
+        "node_137_scene": "cafe with magical golden temporal portal",
+        "node_166_character": "ancient woman tearful + modern woman comforting",
+        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_138_prompt": "They hold hands, temporal light swirls, emotional farewell scene"
+      }
+    }
+  ]
+}
