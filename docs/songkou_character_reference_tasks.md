@@ -96,7 +96,7 @@ curl -s --location --request GET "https://www.runninghub.cn/openapi/v2/task/2092
 
 ### 创建目录
 ```bash
-mkdir -p /Users/damiao/Downloads/agent/images/songkou_characters
+mkdir -p ./images/songkou_characters
 ```
 
 ### 建议文件名

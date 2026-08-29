@@ -1,8 +1,8 @@
 #!/bin/bash
 # 提取对话音频片段
 
-AUDIO_DIR="/Users/damiao/Downloads/agent/audio"
-OUTPUT_DIR="/Users/damiao/Downloads/agent/audio/dialogue"
+AUDIO_DIR="./audio"
+OUTPUT_DIR="./audio/dialogue"
 
 # Audio1 - 神秘女子（清冷）
 AUDIO1="$AUDIO_DIR/20岁女生_清冷.flac"

@@ -8,7 +8,7 @@
       "audio_nodes": {
         "node_137_scene": "ancient palace crystal interior night",
         "node_166_character": "ancient Chinese woman hanfu silver jewelry, confused expression",
-        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_165_audio": "./audio/20岁女生_清冷.flac",
         "node_138_prompt": "She touches glass window, sees modern reflection, turns to see modern woman"
       }
     },
@@ -20,7 +20,7 @@
       "audio_nodes": {
         "node_137_scene": "modern cafe interior warm lighting",
         "node_166_character": "ancient woman curious expression + modern barista friendly",
-        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_165_audio": "./audio/20岁女生_清冷.flac",
         "node_138_prompt": "She examines coffee machine, barista offers coffee, she smells it curiously"
       }
     },
@@ -32,7 +32,7 @@
       "audio_nodes": {
         "node_137_scene": "cafe with magical golden temporal portal",
         "node_166_character": "ancient woman tearful + modern woman comforting",
-        "node_165_audio": "/Users/damiao/Downloads/agent/audio/20岁女生_清冷.flac",
+        "node_165_audio": "./audio/20岁女生_清冷.flac",
         "node_138_prompt": "They hold hands, temporal light swirls, emotional farewell scene"
       }
     }

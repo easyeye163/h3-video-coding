@@ -3,7 +3,7 @@
 import subprocess
 import os
 
-AUDIO_DIR = "/Users/damiao/Downloads/agent/audio"
+AUDIO_DIR = "./audio"
 DIALOGUE_DIR = f"{AUDIO_DIR}/dialogue"
 os.makedirs(DIALOGUE_DIR, exist_ok=True)
 

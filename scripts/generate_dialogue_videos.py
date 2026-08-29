@@ -13,7 +13,7 @@ API_KEY = os.environ.get("RUNNINGHUB_API_KEY")
 if not API_KEY:
     raise SystemExit("未设置环境变量 RUNNINGHUB_API_KEY")
 BASE_URL = "https://www.runninghub.cn/openapi/v2/run/ai-app/2090774740146413570"
-PROJECT_DIR = "/Users/damiao/Downloads/agent"
+PROJECT_DIR = "."
 AUDIO_DIR = f"{PROJECT_DIR}/audio"
 VIDEO_DIR = f"{PROJECT_DIR}/videos"
 IMAGE_DIR = f"{PROJECT_DIR}/images"

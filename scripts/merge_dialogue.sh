@@ -1,8 +1,8 @@
 #!/bin/bash
 # 合并对话轨道
 
-AUDIO_DIR="/Users/damiao/Downloads/agent/audio"
-OUTPUT_DIR="/Users/damiao/Downloads/agent/audio/dialogue"
+AUDIO_DIR="./audio"
+OUTPUT_DIR="./audio/dialogue"
 
 # 合并Shot 4对话
 ffmpeg -y -i "$OUTPUT_DIR/s4_a1_1.flac" -i "$OUTPUT_DIR/s4_a2_1.flac" \

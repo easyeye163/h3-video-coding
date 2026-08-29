@@ -548,7 +548,7 @@ if __name__ == "__main__":
 ## 附录：完整的项目文件清单
 
 ```
-/Users/damiao/Downloads/agent/
+./
 ├── 📄 songkou_characters_tasks.md          # 任务跟踪文档
 ├── 📄 人物定妆照同步操作指南.md            # 操作指南
 ├── 📄 永泰嵩口古镇短剧制作全流程_AI助手实战.md  # 本文档

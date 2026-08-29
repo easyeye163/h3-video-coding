@@ -12,7 +12,7 @@ echo ""
 # 配置
 BASE_TOKEN="MsfRbVPZ4aicuRsotmwcwgb9npc"
 TABLE_ID="tbl9hKFVTAGrCzlA"
-LOCAL_DIR="/Users/damiao/Downloads/agent/images/songkou_characters"
+LOCAL_DIR="./images/songkou_characters"
 
 # 创建本地目录
 mkdir -p "$LOCAL_DIR"
