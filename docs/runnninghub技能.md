@@ -140,81 +140,9 @@ curl --location --request POST 'https://www.runninghub.cn/openapi/v2/query' \
 | └ `taskCostTime` | String | 运行耗时（ComfyUI 工作流运行时长） |
 ### 文件上传
 
-资源文件（如 imageUrls）参数支持传入文件 URL 或 Base64 Data URI。
+资源文件（如 imageUrls）参数支持传入文件 URL  
 
-#### 公共 URL
-
-直接传递可公开访问的 URL：
-
-```json
-{
-  "imageUrls": [
-    "https://example.com/image.png"
-  ]
-}
-```
-
-#### Base64 data URI
-
-以 Base64 格式嵌入图片：
-
-```json
-{
-  "images": [
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
-  ]
-}
-```
-
-#### RH 上传接口
-
-上传本地文件以获取一个 URL。
-
-**Endpoint:** `https://www.runninghub.cn/openapi/v2/media/upload/binary`
-
-**请求**
-
-```curl
-curl --location --request POST 'https://www.runninghub.cn/openapi/v2/media/upload/binary' \
---header 'Authorization: Bearer [Your API KEY]' \
---form 'file=@/path/to/image.png'
-```
-
-**响应**
-
-```json
-{
-  "code": 0,
-  "message": "success",
-  "data": {
-    "type": "image",
-    "download_url": "xxxx.png",
-    "fileName": "openapi/xxxx.png",
-    "size": "3490"
-  }
-}
-```
-
-**备注:** 上传后获得的链接有效期为 1 天，超期将无法通过 URL 直接访问。
-
----
-
-## 2. 多图像视频生成工作流（短剧制作主力工作流）
-
-### 工作流信息
-- **appId**: `2088878767828717570`
-- **用途**: 多参考图视频生成（角色图 + 场景图 + 音色 → 视频）
-- **instanceType**: `plus`（48G显存，视频生成必须用plus）
-- **消耗**: ~78币/次
-
-### 节点配置
-
-| nodeId | fieldName | 用途 | 示例值 |
-|---|---|---|---|
-| `137` | `image` | 首帧图片URL（场景图） | GitHub raw URL |
-| `156` | `image` | 角色参考URL（定妆图） | GitHub raw URL |
-| `157` | `audio` | 音色参考URL | GitHub raw URL |
-| `138` | `value` | 完整6段式提示词 | 中文提示词文本 |
+ 
 
 ### 素材传递方式：GitHub raw URL（推荐）
 
