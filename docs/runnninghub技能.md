@@ -197,3 +197,95 @@ curl --location --request POST 'https://www.runninghub.cn/openapi/v2/media/uploa
 
 **备注:** 上传后获得的链接有效期为 1 天，超期将无法通过 URL 直接访问。
 
+---
+
+## 2. 多图像视频生成工作流（短剧制作主力工作流）
+
+### 工作流信息
+- **appId**: `2088878767828717570`
+- **用途**: 多参考图视频生成（角色图 + 场景图 + 音色 → 视频）
+- **instanceType**: `plus`（48G显存，视频生成必须用plus）
+- **消耗**: ~78币/次
+
+### 节点配置
+
+| nodeId | fieldName | 用途 | 示例值 |
+|---|---|---|---|
+| `137` | `image` | 首帧图片URL（场景图） | GitHub raw URL |
+| `156` | `image` | 角色参考URL（定妆图） | GitHub raw URL |
+| `157` | `audio` | 音色参考URL | GitHub raw URL |
+| `138` | `value` | 完整6段式提示词 | 中文提示词文本 |
+
+### 素材传递方式：GitHub raw URL（推荐）
+
+**所有素材均可直接用 GitHub 公开仓库的 raw URL 传递，无需上传到 RunningHub。**
+
+#### 优势
+1. **免上传**：素材已在 GitHub 仓库，直接构造 raw URL 即可
+2. **长期有效**：GitHub raw URL 永久有效（不像 RunningHub COS 链接 24h 失效）
+3. **版本管理**：素材更新后 push 到 GitHub，URL 自动更新
+4. **协作友好**：其他智能体可复用同一套素材 URL
+
+#### GitHub raw URL 格式
+```
+https://raw.githubusercontent.com/{用户名}/{仓库名}/{分支}/{文件路径}
+```
+
+#### 中文路径处理
+GitHub raw URL 支持中文路径，但需 URL 编码：
+- `嵩口真实场景图` → `%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE`
+- `嵩口全景.png` → `%E5%B5%A9%E5%8F%A3%E5%85%A8%E6%99%AF.png`
+
+**建议**：为避免 URL 编码复杂性，文件夹和文件名尽量用英文。
+
+#### 验证 URL 可访问性
+提交任务前先验证所有素材 URL 可公开访问：
+```bash
+curl -sI "https://raw.githubusercontent.com/.../image.png" | head -5
+# 期望: HTTP/2 200, content-type: image/png
+```
+
+### 调用示例（EP1段1）
+
+```bash
+curl --location --request POST "https://www.runninghub.cn/openapi/v2/run/ai-app/2088878767828717570" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer ${RUNNINGHUB_API_KEY}" \
+--data-raw '{
+  "nodeInfoList": [
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/.../scene.png",
+      "description": "首帧图片-场景"
+    },
+    {
+      "nodeId": "156",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/.../character.png",
+      "description": "角色参考-定妆图"
+    },
+    {
+      "nodeId": "157",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/.../voice.flac",
+      "description": "音色参考"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n...\nsummary:\n...\nretention_analysis:\n...\ndetailed_description:\n...\noverall_soundscape:\n...\nnon_diegetic_music:\n...",
+      "description": "完整6段式提示词"
+    }
+  ],
+  "instanceType": "plus",
+  "usePersonalQueue": "false"
+}'
+```
+
+### 提示词格式（6段式）
+详见 [docs/长期记忆_节点配置总结.md](长期记忆_节点配置总结.md) 的"分镜提示词标准模板"。
+
+### 并发限制
+RunningHub 有并发限制（错误码 421），建议串行提交任务，等前一个完成后再提交下一个。
+
