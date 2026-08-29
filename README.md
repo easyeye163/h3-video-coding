@@ -2,6 +2,24 @@
 
 > 基于 **MiniMax H3 六段式提示词 + RunningHub API + 飞书多维表格** 的 AI 文化宣传短剧自动化制作体系。
 
+---
+
+## 短剧必备工作流（自用）
+
+1、 Z-image text-to-image-文生图（完美支持中文字+超自然）【Agent必备】 
+工作流地址： `https://www.runninghub.cn/post/2088917231601278978/?inviteCode=oga1ahgc` 
+
+2、KREA-2-EDIT-One-image-V2 单图编辑工作流【短剧必备】 
+工作流地址： `https://www.runninghub.cn/post/2088923554007048194/?inviteCode=oga1ahgc` 
+
+3、MiniMax H3稳定加速版（全能参考4步加速版本） 
+工作流地址： `https://www.runninghub.cn/post/2088836712364601345/?inviteCode=oga1ahgc` 
+
+4、声音设计（用于短剧多角色声音一致性） 
+工作流地址： `https://www.runninghub.cn/post/2090434415913689090/?inviteCode=oga1ahgc`
+
+---
+
 ## 项目简介
 
 本项目是"永泰嵩口古镇 20 集 AI 文化宣传短剧"的制作工程，通过 AI 工作流完成从剧本、分镜、角色定妆、视频生成到成片的全链路自动化。
