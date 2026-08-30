@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>嵩口宣传项目 · 素材与进度看板</title>
+<style>
+  :root{
+    --bg:#f4f5f7;--card:#fff;--ink:#1c2333;--sub:#6b7280;--line:#eceef2;
+    --accent:#b8551f;--green:#0e7a5f;--gold:#c9962e;--blue:#2f6fed;--red:#e11d48;
+    --radius:14px;--shadow:0 2px 10px rgba(20,30,60,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;line-height:1.6}
+  body{padding:18px 14px 40px}
+  .wrap{max-width:760px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 2px 14px}
+  header h1{font-size:20px;font-weight:800}
+  header h1 small{display:block;font-size:12px;font-weight:500;color:var(--sub);margin-top:2px}
+  .badge{background:linear-gradient(135deg,var(--accent),#e07b3f);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+  section{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 14px;margin-bottom:16px}
+  .s-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:12px}
+  .s-title .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .d-orange{background:var(--accent)}.d-green{background:var(--green)}.d-gold{background:var(--gold)}.d-blue{background:var(--blue)}.d-red{background:var(--red)}
+  .hint{font-size:12px;color:var(--sub);margin-top:8px}
+
+  /* 进度总览 */
+  .overview{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .ov{background:#f8f9fb;border-radius:10px;padding:12px}
+  .ov .k{font-size:12px;color:var(--sub)}
+  .ov .v{font-size:20px;font-weight:800;margin:2px 0 6px}
+  .bar{height:6px;background:#e6e8ee;border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),#e07b3f)}
+  .bar.green i{background:linear-gradient(90deg,var(--green),#22a580)}
+  .bar.blue i{background:linear-gradient(90deg,var(--blue),#5b8def)}
+  .bar.gold i{background:linear-gradient(90deg,var(--gold),#e0b555)}
+  .bar.red i{background:linear-gradient(90deg,var(--red),#f25c7e)}
+
+  /* 分集矩阵 */
+  .eps{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .ep{display:flex;align-items:center;gap:8px;background:#f8f9fb;border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12.5px}
+  .ep .no{font-weight:800;color:var(--sub);flex:none}
+  .ep .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ep .st{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;flex:none}
+  .st.done{background:#e3f5ee;color:var(--green)}
+  .st.ready{background:#fff3e0;color:var(--gold)}
+  .st.wait{background:#eef0f4;color:#9aa1ad}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--sub)}
+
+  /* 图片网格 */
+  .imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .img{position:relative;border-radius:10px;overflow:hidden;background:#f1f2f5;aspect-ratio:1/1.1}
+  .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .img .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:10.5px;padding:14px 6px 5px;line-height:1.3}
+  @media(min-width:560px){.imgs{grid-template-columns:repeat(4,1fr)}}
+
+  /* 视频 */
+  .videos{display:flex;flex-direction:column;gap:10px}
+  .video{background:#f8f9fb;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .video .tt{font-size:13px;font-weight:600;padding:8px 10px 0}
+  .video video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+
+  /* 音频 */
+  .audios{display:flex;flex-direction:column;gap:8px}
+  .audio{background:#f8f9fb;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .audio .tt{font-size:12.5px;font-weight:600;margin-bottom:4px}
+  .audio audio{width:100%;height:34px}
+
+  /* 里程碑 / 缺口 */
+  .list2{display:flex;flex-direction:column;gap:8px}
+  .mil{display:flex;gap:10px;font-size:13px;background:#f8f9fb;border-radius:10px;padding:10px}
+  .mil .tag{flex:none;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;height:fit-content;margin-top:2px}
+  .tag.rec{background:#e3f5ee;color:var(--green)}
+  .tag.ing{background:#fff3e0;color:var(--gold)}
+  .tag.warn{background:#ffecef;color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--sub);font-weight:600;font-size:11.5px;white-space:nowrap}
+  td.pri{font-weight:700;white-space:nowrap}
+  footer{text-align:center;font-size:11px;color:#aab0bc;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>嵩口宣传项目
+      <small>永泰嵩口古镇 20 集 AI 文化宣传短剧 · 素材与进度看板</small>
+    </h1>
+    <div class="badge">数据截至 2026-08-29</div>
+  </header>
+
+  <!-- 进度总览 -->
+  <section>
+    <div class="s-title"><span class="dot d-orange"></span>项目整体完成度</div>
+    <div class="overview">
+      <div class="ov"><div class="k">剧集完成</div><div class="v">1 / 20</div><div class="bar"><i style="width:5%"></i></div></div>
+      <div class="ov"><div class="k">镜头段完成</div><div class="v">4 / 80</div><div class="bar blue"><i style="width:5%"></i></div></div>
+      <div class="ov"><div class="k">角色定妆图</div><div class="v">1 / 5</div><div class="bar red"><i style="width:20%"></i></div></div>
+      <div class="ov"><div class="k">角色音色</div><div class="v">3 / 5</div><div class="bar green"><i style="width:60%"></i></div></div>
+      <div class="ov"><div class="k">场景图</div><div class="v">1 / 8</div><div class="bar gold"><i style="width:12.5%"></i></div></div>
+      <div class="ov"><div class="k">剧本 + 提示词</div><div class="v">100%</div><div class="bar green"><i style="width:100%"></i></div></div>
+    </div>
+    <div class="hint">剧本与提示词层已 100% 就绪；成片层 5%（4/80 段，EP1 完成）。</div>
+  </section>
+
+  <!-- 分集矩阵 -->
+  <section>
+    <div class="s-title"><span class="dot d-blue"></span>分集实施矩阵（20 集）</div>
+    <div class="eps">
+      <div class="ep"><span class="no">EP1</span><span class="nm">初见嵩口</span><span class="st done">成片完成</span></div>
+      <div class="ep"><span class="no">EP2</span><span class="nm">阿公的故事</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP3</span><span class="nm">鹤形之谜</span><span class="st ready">已备制作单</span></div>
+      <div class="ep"><span class="no">EP4</span><span class="nm">用坦厝的秘密</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP5</span><span class="nm">导演来了</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP6</span><span class="nm">小糯米的疑问</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP7</span><span class="nm">龙口祖厝的传说</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP8</span><span class="nm">宁远庄往事</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP9</span><span class="nm">万安堡探秘</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP10</span><span class="nm">巷弄时光</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP11</span><span class="nm">木雕匠心</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP12</span><span class="nm">四水归堂</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP13</span><span class="nm">神秘旅人</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP14</span><span class="nm">节日准备</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP15</span><span class="nm">月光下的古镇</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP16</span><span class="nm">新旧碰撞</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP17</span><span class="nm">传承之路</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP18</span><span class="nm">镜头背后</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP19</span><span class="nm">告别与承诺</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP20</span><span class="nm">千年回响</span><span class="st wait">未开始</span></div>
+    </div>
+    <div class="legend"><span>🟢 成片完成</span><span>🟡 已备制作单</span><span>⚪ 仅剧本+提示词就绪</span></div>
+  </section>
+
+  <!-- 角色定妆图 -->
+  <section>
+    <div class="s-title"><span class="dot d-green"></span>角色定妆图（三视图）</div>
+    <div class="imgs">
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/lin_xiaoxi_three_view.png" alt="林小溪" loading="lazy"><div class="cap">林小溪 · 主角 24 岁返乡青年</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/chen_agong_three_view.png" alt="陈阿公" loading="lazy"><div class="cap">陈阿公 · 72 岁智慧长者</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/zhang_director_three_view.png" alt="张导演" loading="lazy"><div class="cap">张导演 · 35 岁纪录片导演</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/mysterious_traveler_three_view.png" alt="神秘旅人" loading="lazy"><div class="cap">神秘旅人 · 哲学思考者</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/xiao_nuomi_three_view.png" alt="小糯米" loading="lazy"><div class="cap">小糯米 · 8 岁天真孩童</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/songkou_panorama_firstframe.png" alt="嵩口全景首帧" loading="lazy"><div class="cap">嵩口全景 · 成片首帧</div></div>
+    </div>
+    <div class="hint">5 个角色三视图 + 嵩口全景首帧（真人写实 + 电影滤镜）。</div>
+  </section>
+
+  <!-- 嵩口真实场景图 -->
+  <section>
+    <div class="s-title"><span class="dot d-gold"></span>嵩口真实场景图</div>
+    <div class="imgs">
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%B5%A9%E5%8F%A3%E5%85%A8%E6%99%AF.png" alt="嵩口全景" loading="lazy"><div class="cap">嵩口全景 · 大樟溪穿镇而过</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%BE%B7%E6%98%9F%E6%A5%BC.jpeg" alt="德星楼" loading="lazy"><div class="cap">德星楼 · 三层木阁楼</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%8F%A4%E7%A0%81%E5%A4%B4.png" alt="古码头" loading="lazy"><div class="cap">古码头 · 千年古榕渡口</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E9%BE%99%E5%8F%A3%E7%A5%96%E5%8E%9D.png" alt="龙口祖厝" loading="lazy"><div class="cap">龙口祖厝 · 183 间大厝群</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E9%B9%A4%E5%BD%A2%E8%B7%AF.png" alt="鹤形路" loading="lazy"><div class="cap">鹤形路 · 150 米仙鹤巷道</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%AE%81%E8%BF%9C%E5%BA%84.png" alt="宁远庄" loading="lazy"><div class="cap">宁远庄 · 四井拱梁大寨堡</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E4%B8%87%E5%AE%89%E5%A0%A1.png" alt="万安堡" loading="lazy"><div class="cap">万安堡 · 三层防御寨堡</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%8F%A4%E5%9F%8E%E5%A2%99.webp" alt="古城墙" loading="lazy"><div class="cap">古城墙 · 防御体系遗存</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%A4%AF%E5%9C%9F%E5%A2%99.jpeg" alt="夯土墙" loading="lazy"><div class="cap">夯土墙 · 闽式生土夯筑</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E7%8E%B0%E4%BB%A3%E6%94%B9%E9%80%A0%E6%96%B0%E5%BB%BA%E7%AD%91.png" alt="现代改造新建筑" loading="lazy"><div class="cap">现代改造 · 嵩口模式活化</div></div>
+    </div>
+  </section>
+
+  <!-- 视频成片 -->
+  <section>
+    <div class="s-title"><span class="dot d-red"></span>视频成片与素材</div>
+    <div class="videos">
+      <div class="video"><div class="tt">🎬 嵩口短剧 EP1 段1 · 清晨嵩口（成片）</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/songkou_drama/EP1%E6%AE%B51_%E6%B8%85%E6%99%A8%E5%B5%A9%E5%8F%A3.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 01 海边黄昏的秘密</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/01_%E6%B5%B7%E8%BE%B9%E9%BB%84%E6%98%8F%E7%9A%84%E7%A7%98%E5%AF%86.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 02 篝火旁的星空约定</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/02_%E7%AF%9D%E7%81%AB%E6%97%81%E7%9A%84%E6%98%9F%E7%A9%BA%E7%BA%A6%E5%AE%9A.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 03 海边的清晨告别</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/03_%E6%B5%B7%E8%BE%B9%E7%9A%84%E6%B8%85%E6%99%A8%E5%91%8A%E5%88%AB.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 04 归途庭院忆海</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/04_%E5%BD%92%E9%80%94%E5%BA%AD%E9%99%A2%E5%BF%86%E6%B5%B7.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 17 现代女生口播 AnimateDiff</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/17_%E7%8E%B0%E4%BB%A3%E5%A5%B3%E7%94%9F%E5%8F%A3%E6%92%AD_AnimateDiff.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 18 海边度假-现代女生</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/18_%E6%B5%B7%E8%BE%B9%E5%BA%A6%E5%81%87-%E7%8E%B0%E4%BB%A3%E5%A5%B3%E7%94%9F.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 19 海边度假-日落时分</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/19_%E6%B5%B7%E8%BE%B9%E5%BA%A6%E5%81%87-%E6%97%A5%E8%90%BD%E6%97%B6%E5%88%86.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 20 海边度假-星空篝火</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/20_%E6%B5%B7%E8%BE%B9%E5%BA%A6%E5%81%87-%E6%98%9F%E7%A9%BA%E7%AF%9D%E7%81%AB.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 21 时空相遇-水晶宫殿苏醒</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/21_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E6%B0%B4%E6%99%B6%E5%AE%AB%E6%AE%BF%E8%8B%8F%E9%86%92.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 22 时空相遇-现代都市落地</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/22_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E7%8E%B0%E4%BB%A3%E9%83%BD%E5%B8%82%E8%90%BD%E5%9C%B0.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 23 时空相遇-时空交汇</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/23_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E6%97%B6%E7%A9%BA%E4%BA%A4%E6%B1%87.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 24 时空相遇-时空穿越</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/24_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E6%97%B6%E7%A9%BA%E7%A9%BF%E8%B6%8A.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 25 时空相遇-触摸倒影</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/25_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E8%A7%A6%E6%91%B8%E5%80%92%E5%BD%B1.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">素材 · 26 时空相遇-咖啡厅相遇</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/26_%E6%97%B6%E7%A9%BA%E7%9B%B8%E9%81%87-%E5%92%96%E5%95%A1%E5%8E%85%E7%9B%B8%E9%81%87.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+    </div>
+    <div class="hint">点击视频右下角播放按钮即可预览；较大文件建议 WiFi 下播放。</div>
+  </section>
+
+  <!-- 角色音色 -->
+  <section>
+    <div class="s-title"><span class="dot d-blue"></span>角色音色（可试听）</div>
+    <div class="audios">
+      <div class="audio"><div class="tt">🎙 林小溪 · 温柔活泼女声（专属）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/voices/songkou_girl_main.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 陈阿公 · 沧桑长者男声（专属）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/voices/songkou_elder.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 神秘旅人 · 清冷男声（专属）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/voices/songkou_traveler.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 张导演 · 活泼男生（复用）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/01_%E6%B8%A9%E6%9A%96%E6%B2%BB%E6%84%88%E7%94%B7%E7%94%9F.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 小糯米 · 活泼女生（复用）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/03_%E6%B4%BB%E6%B3%BC%E5%A5%B3%E7%94%9F.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 20 岁女生 · 备选音色</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/20%E5%B2%81%E5%A5%B3%E7%94%9F.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 20 岁女生 · 清冷版（备选）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/20%E5%B2%81%E5%A5%B3%E7%94%9F_%E6%B8%85%E5%86%B7.flac" type="audio/flac" controls preload="metadata"></audio></div>
+      <div class="audio"><div class="tt">🎙 温暖治愈男生 v2（备选）</div>
+        <audio src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/audio/02_%E6%B8%A9%E6%9A%96%E6%B2%BB%E6%84%88%E7%94%B7%E7%94%9F_v2.flac" type="audio/flac" controls preload="metadata"></audio></div>
+    </div>
+  </section>
+
+  <!-- 里程碑与下一步 -->
+  <section>
+    <div class="s-title"><span class="dot d-green"></span>关键节点与下一步</div>
+    <div class="list2">
+      <div class="mil"><span class="tag rec">已完成</span><span>剧本规划（20 集）/ 镜头脚本（80 段提示词）/ 林小溪三视图 / 3 个角色音色 / EP1 成片 v2</span></div>
+      <div class="mil"><span class="tag ing">进行中</span><span>陈阿公定妆图 Z-image v2 已提交（taskId 2093694697632657410），待控制台取回</span></div>
+      <div class="mil"><span class="tag warn">待取回</span><span>神秘旅人定妆图已提交（taskId 2093686640550834177），阻塞 EP3 / EP13</span></div>
+      <div class="mil"><span class="tag warn">下一里程碑</span><span>EP3《鹤形之谜》成片试制（制作单已备，飞书台账已建）</span></div>
+    </div>
+  </section>
+
+  <!-- 资产缺口 -->
+  <section>
+    <div class="s-title"><span class="dot d-red"></span>资产缺口清单</div>
+    <table>
+      <tr><th>优先级</th><th>资产</th><th>阻塞集次</th><th>状态</th></tr>
+      <tr><td class="pri">🔴 P0</td><td>陈阿公定妆图</td><td>EP1 重做/EP2/EP3…</td><td>v2 已提交待取回</td></tr>
+      <tr><td class="pri">🔴 P0</td><td>神秘旅人定妆图</td><td>EP3/EP13</td><td>已提交待取回</td></tr>
+      <tr><td class="pri">🟡 P1</td><td>张导演定妆图</td><td>EP5/EP18</td><td>待生成</td></tr>
+      <tr><td class="pri">🟡 P1</td><td>小糯米定妆图</td><td>EP6/EP14/EP20</td><td>待生成</td></tr>
+      <tr><td class="pri">🟡 P1</td><td>小糯米音色（童声）</td><td>EP6/EP14/EP20</td><td>建议外部配音</td></tr>
+      <tr><td class="pri">🟢 P2</td><td>7 个场景图</td><td>全集次场景</td><td>Z-image 批量生成</td></tr>
+    </table>
+  </section>
+
+  <footer>嵩口宣传项目看板 · 由项目主文档自动生成 · 数据截至 2026-08-29</footer>
+</div>
+</body>
+</html>
