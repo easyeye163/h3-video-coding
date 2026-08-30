@@ -64,6 +64,8 @@ ASSET_CATEGORIES = {
             "mysterious_traveler_three_view.png": "神秘旅人 · 哲学思考者",
             "xiao_nuomi_three_view.png": "小糯米 · 8 岁天真孩童",
             "songkou_panorama_firstframe.png": "嵩口全景 · 成片首帧",
+            "张导演_three_view.png": "张导演 · 35 岁纪录片导演（中文名版）",
+            "王婶_three_view.png": "王婶 · 嵩口古镇热心长辈",
         },
     },
     "scenes": {
@@ -83,6 +85,9 @@ ASSET_CATEGORIES = {
             "古城墙.webp": "古城墙 · 防御体系遗存",
             "夯土墙.jpeg": "夯土墙 · 闽式生土夯筑",
             "现代改造新建筑.png": "现代改造 · 嵩口模式活化",
+            "用坦厝.jpeg": "用坦厝 · 原图参考",
+            "用坦厝_krea.png": "用坦厝 · KREA 风格化",
+            "用坦厝_zimage.png": "用坦厝 · Z-image 文生图",
         },
     },
     "videos_drama": {
@@ -112,6 +117,8 @@ ASSET_CATEGORIES = {
             "songkou_girl_main.flac": "🎙 林小溪 · 温柔活泼女声（专属）",
             "songkou_elder.flac": "🎙 陈阿公 · 沧桑长者男声（专属）",
             "songkou_traveler.flac": "🎙 神秘旅人 · 清冷男声（专属）",
+            "张导演_voice.flac": "🎙 张导演 · 纪录片导演男声（专属）",
+            "王婶_voice.flac": "🎙 王婶 · 热心长辈女声（专属）",
         },
     },
     "audio_misc": {
@@ -276,7 +283,7 @@ def generate_html() -> str:
     # 短剧视频
     drama_html = ""
     for item in videos_drama:
-        drama_html += f'      <div class="video"><div class="tt">🎬 {item["name"]}</div>\n        <video src="{item["url"]}" type="video/mp4" controls preload="metadata" playsinline></video></div>\n'
+        drama_html += f'      <div class="video"><div class="tt">{item["name"]}</div>\n        <video src="{item["url"]}" type="video/mp4" controls preload="metadata" playsinline></video></div>\n'
 
     # 其他视频
     misc_videos_html = ""
