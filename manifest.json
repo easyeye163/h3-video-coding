@@ -243,6 +243,26 @@
       "size": 5401645
     },
     {
+      "path": "videos/songkou_drama/EP9段4_阳光镀金城砖收束.mp4",
+      "name": "EP9段4_阳光镀金城砖收束.mp4",
+      "size": 5971874
+    },
+    {
+      "path": "videos/songkou_drama/EP9段3_小糯米比游乐场还大.mp4",
+      "name": "EP9段3_小糯米比游乐场还大.mp4",
+      "size": 6928220
+    },
+    {
+      "path": "videos/songkou_drama/EP9段2_林小溪文化自信觉醒.mp4",
+      "name": "EP9段2_林小溪文化自信觉醒.mp4",
+      "size": 5774172
+    },
+    {
+      "path": "videos/songkou_drama/EP9段1_万安堡城墙众人仰望.mp4",
+      "name": "EP9段1_万安堡城墙众人仰望.mp4",
+      "size": 4946457
+    },
+    {
       "path": "videos/songkou_drama/EP8段4_山风野草儿童嬉笑.mp4",
       "name": "EP8段4_山风野草儿童嬉笑.mp4",
       "size": 5346837
@@ -455,6 +475,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 20:35:38",
-  "total": 90
+  "updated": "2026-08-30 23:06:41",
+  "total": 94
 }
