@@ -147,6 +147,15 @@ def jsdelivr_url(rel_path: str) -> str:
     return f"https://cdn.jsdelivr.net/gh/{GITHUB_USER}/{GITHUB_REPO}@{GITHUB_BRANCH}/{encoded}"
 
 
+def pages_url(rel_path: str) -> str:
+    """GitHub Pages URL — 正确返回 video/mp4 content-type，适合视频文件"""
+    encoded = urllib.parse.quote(rel_path)
+    return f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/{encoded}"
+
+
+VIDEO_EXTENSIONS = {".mp4", ".mov", ".webm", ".avi"}
+
+
 def scan_files(category_key: str, config: dict) -> list:
     """扫描指定目录下的素材文件，返回 [{name, path, url, size}] 列表"""
     base_dir = REPO_ROOT / config["dir"]
@@ -177,7 +186,7 @@ def scan_files(category_key: str, config: dict) -> list:
             "name": display_name,
             "filename": filename,
             "rel_path": rel_path,
-            "url": jsdelivr_url(rel_path),
+            "url": pages_url(rel_path) if Path(rel_path).suffix.lower() in VIDEO_EXTENSIONS else jsdelivr_url(rel_path),
             "size": f.stat().st_size,
         })
 

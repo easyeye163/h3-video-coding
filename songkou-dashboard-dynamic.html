@@ -49,6 +49,7 @@ h1{font-size:1.5em;margin-bottom:10px;color:#58a6ff}
 const REPO='easyeye163/h3-video-coding';
 const BRANCH='main';
 const CDN_BASE='https://cdn.jsdelivr.net/gh/'+REPO+'@'+BRANCH;
+const PAGES_BASE='https://easyeye163.github.io/h3-video-coding';
 const MANIFEST_URL=CDN_BASE+'/manifest.json';
 const API_URL='https://api.github.com/repos/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
 
@@ -131,7 +132,8 @@ function render(){
 
   files.forEach(f=>{
     const type=getFileType(f.path);
-    const url=CDN_BASE+'/'+f.path;
+    // 视频用 GitHub Pages（正确返回 video/mp4），图片/音频用 jsdelivr
+    const url=(type==='videos'?PAGES_BASE:CDN_BASE)+'/'+f.path;
     const card=document.createElement('div');
     card.className='card';
 
@@ -143,7 +145,7 @@ function render(){
     if(type==='images'){
       mediaHtml='<img src="'+url+'" alt="'+f.name+'" loading="lazy" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23888%22 text-anchor=%22middle%22>加载失败</text></svg>\'">';
     }else if(type==='videos'){
-      mediaHtml='<video controls preload="metadata"><source src="'+url+'"></video>';
+      mediaHtml='<video controls preload="metadata" playsinline><source src="'+url+'" type="video/mp4"></video>';
     }else if(type==='audio'){
       mediaHtml='<audio controls preload="metadata"><source src="'+url+'"></audio>';
     }
