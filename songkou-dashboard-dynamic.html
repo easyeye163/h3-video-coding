@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>嵩口项目 · 动态素材看板</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0d1117;color:#c9d1d9;padding:20px}
+h1{font-size:1.5em;margin-bottom:10px;color:#58a6ff}
+.meta{font-size:.85em;color:#8b949e;margin-bottom:20px}
+.tabs{display:flex;gap:10px;margin-bottom:20px}
+.tab{padding:8px 16px;background:#161b22;border:1px solid #30363d;border-radius:6px;cursor:pointer;color:#c9d1d9;transition:.2s}
+.tab:hover,.tab.active{background:#1f6feb;border-color:#1f6feb;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;overflow:hidden;transition:.2s}
+.card:hover{border-color:#58a6ff}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card video{width:100%;max-height:200px;object-fit:cover;display:block;background:#000}
+.card audio{width:100%;padding:8px}
+.card-body{padding:10px}
+.card-title{font-size:.85em;color:#c9d1d9;word-break:break-all;line-height:1.3}
+.card-meta{font-size:.75em;color:#8b949e;margin-top:4px}
+.badge{display:inline-block;padding:2px 6px;border-radius:3px;font-size:.7em;margin-right:4px}
+.badge-img{background:#1f6feb20;color:#58a6ff;border:1px solid #1f6feb40}
+.badge-vid{background:#a371f720;color:#bc8cff;border:1px solid #a371f740}
+.badge-aud{background:#f0883e20;color:#f0883e;border:1px solid #f0883e40}
+.loading{text-align:center;padding:40px;color:#8b949e}
+.error{text-align:center;padding:40px;color:#f85149}
+.refresh{float:right;padding:6px 12px;background:#21262d;border:1px solid #30363d;border-radius:6px;color:#c9d1d9;cursor:pointer;font-size:.85em}
+.refresh:hover{background:#30363d}
+.count{font-size:.85em;color:#8b949e;margin-bottom:10px}
+</style>
+</head>
+<body>
+<h1>嵩口项目 · 动态素材看板</h1>
+<div class="meta">数据源：jsDelivr API · 仓库：easyeye163/h3-video-coding · 每次打开自动读取最新素材</div>
+<button class="refresh" onclick="loadData()">刷新</button>
+<div class="tabs">
+<div class="tab active" data-type="all" onclick="switchTab('all')">全部</div>
+<div class="tab" data-type="images" onclick="switchTab('images')">图片</div>
+<div class="tab" data-type="videos" onclick="switchTab('videos')">视频</div>
+<div class="tab" data-type="audio" onclick="switchTab('audio')">音频</div>
+</div>
+<div class="count" id="count"></div>
+<div class="grid" id="grid"><div class="loading">加载中...</div></div>
+
+<script>
+const REPO='easyeye163/h3-video-coding';
+const BRANCH='main';
+const CDN_BASE='https://cdn.jsdelivr.net/gh/'+REPO+'@'+BRANCH;
+const API_URL='https://data.jsdelivr.com/v1/packages/gh/'+REPO+'@'+BRANCH;
+
+let allFiles=[];
+let currentTab='all';
+
+async function loadData(){
+  const grid=document.getElementById('grid');
+  grid.innerHTML='<div class="loading">加载中...</div>';
+  try{
+    const resp=await fetch(API_URL);
+    if(!resp.ok)throw new Error('API返回 '+resp.status);
+    const data=await resp.json();
+    allFiles=flattenFiles(data);
+    render();
+  }catch(e){
+    grid.innerHTML='<div class="error">加载失败：'+e.message+'<br>可能需要科学上网或稍后重试</div>';
+  }
+}
+
+function flattenFiles(node,prefix=''){
+  let files=[];
+  if(node.files){
+    for(const f of node.files){
+      const path=prefix?f.name:prefix+'/'+f.name;
+      if(f.type==='directory'||f.name && !f.name.includes('.')){
+        // skip dirs, handled by recursion
+      }
+      files.push({path:path,name:f.name,size:f.size});
+    }
+  }
+  if(node.directories){
+    for(const d of node.directories){
+      const subPrefix=prefix?prefix+'/'+d.name:d.name;
+      files=files.concat(flattenFiles(d,subPrefix));
+    }
+  }
+  return files;
+}
+
+function getFileType(path){
+  const ext=path.split('.').pop().toLowerCase();
+  if(['png','jpg','jpeg','gif','webp','svg'].includes(ext))return'images';
+  if(['mp4','webm','mov','avi'].includes(ext))return'videos';
+  if(['flac','mp3','wav','aac','ogg'].includes(ext))return'audio';
+  return null;
+}
+
+function render(){
+  const grid=document.getElementById('grid');
+  const count=document.getElementById('count');
+  let files=allFiles.filter(f=>{
+    const t=getFileType(f.path);
+    return t!==null;
+  }).filter(f=>{
+    if(currentTab==='all')return true;
+    return getFileType(f.path)===currentTab;
+  });
+
+  // sort by name desc (newest first)
+  files.sort((a,b)=>b.path.localeCompare(a.path));
+
+  count.textContent='共 '+files.length+' 个文件';
+  grid.innerHTML='';
+
+  files.forEach(f=>{
+    const type=getFileType(f.path);
+    const url=CDN_BASE+'/'+f.path;
+    const card=document.createElement('div');
+    card.className='card';
+
+    const badgeClass=type==='images'?'badge-img':type==='videos'?'badge-vid':'badge-aud';
+    const badgeText=type==='images'?'IMG':type==='videos'?'VID':'AUD';
+    const sizeText=f.size?formatSize(f.size):'';
+
+    let mediaHtml='';
+    if(type==='images'){
+      mediaHtml='<img src="'+url+'" alt="'+f.name+'" loading="lazy" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23888%22 text-anchor=%22middle%22>加载失败</text></svg>\'">';
+    }else if(type==='videos'){
+      mediaHtml='<video controls preload="metadata"><source src="'+url+'"></video>';
+    }else if(type==='audio'){
+      mediaHtml='<audio controls preload="metadata"><source src="'+url+'"></audio>';
+    }
+
+    card.innerHTML=
+      mediaHtml+
+      '<div class="card-body">'+
+        '<div class="card-title"><span class="badge '+badgeClass+'">'+badgeText+'</span>'+f.name+'</div>'+
+        '<div class="card-meta">'+sizeText+' · '+f.path+'</div>'+
+      '</div>';
+    grid.appendChild(card);
+  });
+
+  if(files.length===0){
+    grid.innerHTML='<div class="loading">无文件</div>';
+  }
+}
+
+function formatSize(bytes){
+  if(bytes<1024)return bytes+'B';
+  if(bytes<1024*1024)return(bytes/1024).toFixed(1)+'KB';
+  return(bytes/1024/1024).toFixed(1)+'MB';
+}
+
+function switchTab(type){
+  currentTab=type;
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.classList.toggle('active',t.dataset.type===type);
+  });
+  render();
+}
+
+loadData();
+</script>
+</body>
+</html>
