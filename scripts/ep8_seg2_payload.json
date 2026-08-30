@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_characters/lin_xiaoxi_three_view.png",
+      "description": "picture1（林小溪角色图）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责女性角色的身份与造型：林小溪，24岁返乡青年，黑长低马尾，空气刘海，浅蓝交领汉服上衣配白边，蓝色牛仔阔腿裤，白色帆布鞋，温柔微笑。面部、发型、服装颜色与版型、体态比例均以图1为准，全片不得漂移。\n<Picture 2> 严格负责男性角色的身份与造型：嵩口长者（村民代表），务实且社区意识强，饱经风霜的慈祥面容，深蓝棉布唐装，黑布鞋，微驼背，手持木杖。面部、发型、服装颜色与版型、体态比例均以图2为准，全片不得漂移。\n<Picture 3> 仅负责场景空间环境与机位参照：宁远庄，月洲村金鸡潭旁小山包上，清雍正七年张谦建造，四梁扛井规制，约200间房，皇帝御批“四井拱梁”大寨堡，高墙弹孔依稀。以图3为准确定寨堡墙垣与纵深，不参与人物造型。\n<Audio 1> 为 <Subject 8>（S8）的音色参考：苍老温和的男声。\n\nsummary:\n15秒嵩口古镇文化宣传质感镜头。老人乙讲述守墙幸存者右腿致瘸仍愿再守的故事，沉痛敬仰。\n\nretention_analysis:\n人物不变量：图1林小溪的面部、长发、服装全程一致；嵩口长者的面部、银发、唐装、木杖全程一致，不出现换装、变形、多余手指或五官扭曲。\n场景不变量：宁远庄高墙、弹孔、寨堡纵深保持稳定。\n风格不变量：电影质感文化宣传风格，柔和暖光，薄雾萦绕的古朴氛围，轻度去饱和SLOG色调。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-7s）中景，另一位嵩口长者（S8）讲述，<d>他活下来了，但右腿永远瘸了。他说，不瘸的话还能再去守一次。</d>\n[Shot 2]（7s-15s）特写，苍老粗糙的双手。\n\noverall_soundscape:\n远处寂静。\n\nnon_diegetic_music:\n缓慢钢琴，哀痛。",
+      "description": "提示词"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_characters/chen_agong_three_view.png",
+      "description": "picture2（陈阿公角色图）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_elder.flac",
+      "description": "audio1（陈阿公音色·苍老温和男声）"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%AE%81%E8%BF%9C%E5%BA%84.png",
+      "description": "picture3（宁远庄场景图）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（未使用）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_elder.flac",
+      "description": "audio2（复用audio1）"
+    }
+  ],
+  "instanceType": "plus",
+  "usePersonalQueue": "false"
+}

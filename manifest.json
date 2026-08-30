@@ -243,6 +243,26 @@
       "size": 5401645
     },
     {
+      "path": "videos/songkou_drama/EP8段4_山风野草儿童嬉笑.mp4",
+      "name": "EP8段4_山风野草儿童嬉笑.mp4",
+      "size": 5346837
+    },
+    {
+      "path": "videos/songkou_drama/EP8段3_触碰弹孔许诺传讲.mp4",
+      "name": "EP8段3_触碰弹孔许诺传讲.mp4",
+      "size": 6030917
+    },
+    {
+      "path": "videos/songkou_drama/EP8段2_幸存者右腿致瘸.mp4",
+      "name": "EP8段2_幸存者右腿致瘸.mp4",
+      "size": 4563779
+    },
+    {
+      "path": "videos/songkou_drama/EP8段1_高墙弹孔御敌往事.mp4",
+      "name": "EP8段1_高墙弹孔御敌往事.mp4",
+      "size": 7699508
+    },
+    {
       "path": "videos/songkou_drama/EP7段4_夕阳镀金门扉.mp4",
       "name": "EP7段4_夕阳镀金门扉.mp4",
       "size": 8011052
@@ -435,6 +455,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 19:16:03",
-  "total": 86
+  "updated": "2026-08-30 20:35:38",
+  "total": 90
 }
