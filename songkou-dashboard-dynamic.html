@@ -34,7 +34,7 @@ h1{font-size:1.5em;margin-bottom:10px;color:#58a6ff}
 </head>
 <body>
 <h1>嵩口项目 · 动态素材看板</h1>
-<div class="meta">数据源：jsDelivr API · 仓库：easyeye163/h3-video-coding · 每次打开自动读取最新素材</div>
+<div class="meta" id="meta">数据源：CDN manifest.json · 仓库：easyeye163/h3-video-coding · 每次打开自动读取最新素材</div>
 <button class="refresh" onclick="loadData()">刷新</button>
 <div class="tabs">
 <div class="tab active" data-type="all" onclick="switchTab('all')">全部</div>
@@ -49,6 +49,7 @@ h1{font-size:1.5em;margin-bottom:10px;color:#58a6ff}
 const REPO='easyeye163/h3-video-coding';
 const BRANCH='main';
 const CDN_BASE='https://cdn.jsdelivr.net/gh/'+REPO+'@'+BRANCH;
+const MANIFEST_URL=CDN_BASE+'/manifest.json';
 const API_URL='https://api.github.com/repos/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
 
 let allFiles=[];
@@ -58,10 +59,25 @@ async function loadData(){
   const grid=document.getElementById('grid');
   grid.innerHTML='<div class="loading">加载中...</div>';
   try{
-    const resp=await fetch(API_URL);
-    if(!resp.ok)throw new Error('API返回 '+resp.status);
-    const data=await resp.json();
-    allFiles=(data.tree||[]).filter(f=>f.type==='blob').map(f=>({path:f.path,name:f.path.split('/').pop(),size:f.size}));
+    // 优先从 CDN 读取 manifest.json（最可靠）
+    let files=null;
+    try{
+      const resp=await fetch(MANIFEST_URL);
+      if(resp.ok){
+        const data=await resp.json();
+        files=[...(data.images||[]),...(data.videos||[]),...(data.audio||[])];
+        document.getElementById('meta').textContent='数据源：CDN manifest.json · 更新于 '+(data.updated||'未知');
+      }
+    }catch(e){}
+    // fallback: GitHub Trees API
+    if(!files){
+      const resp=await fetch(API_URL);
+      if(!resp.ok)throw new Error('API返回 '+resp.status);
+      const data=await resp.json();
+      files=(data.tree||[]).filter(f=>f.type==='blob').map(f=>({path:f.path,name:f.path.split('/').pop(),size:f.size}));
+      document.getElementById('meta').textContent='数据源：GitHub Trees API';
+    }
+    allFiles=files;
     render();
   }catch(e){
     grid.innerHTML='<div class="error">加载失败：'+e.message+'<br>可能需要科学上网或稍后重试</div>';
