@@ -1,119 +1,9 @@
 {
   "images": [
     {
-      "path": "images/01_zimage_马年新宠.png",
-      "name": "01_zimage_马年新宠.png",
-      "size": 496
-    },
-    {
-      "path": "images/02_krea_edit_紫裙.png",
-      "name": "02_krea_edit_紫裙.png",
-      "size": 1989085
-    },
-    {
-      "path": "images/04_zimage_新标题.png",
-      "name": "04_zimage_新标题.png",
-      "size": 1840061
-    },
-    {
-      "path": "images/ancient_woman.png",
-      "name": "ancient_woman.png",
-      "size": 1527476
-    },
-    {
-      "path": "images/beach_vacation.png",
-      "name": "beach_vacation.png",
-      "size": 2806780
-    },
-    {
-      "path": "images/crystal_palace.png",
-      "name": "crystal_palace.png",
-      "size": 2104225
-    },
-    {
-      "path": "images/modern_city_night.png",
-      "name": "modern_city_night.png",
-      "size": 2534260
-    },
-    {
-      "path": "images/night_bonfire.png",
-      "name": "night_bonfire.png",
-      "size": 2069683
-    },
-    {
-      "path": "images/sunset_beach.png",
-      "name": "sunset_beach.png",
-      "size": 2220487
-    },
-    {
-      "path": "images/全局ai主角.jpg",
-      "name": "全局ai主角.jpg",
-      "size": 100229
-    },
-    {
-      "path": "images/出租车.png",
-      "name": "出租车.png",
-      "size": 5220776
-    },
-    {
-      "path": "images/针织女孩三视图.png",
-      "name": "针织女孩三视图.png",
-      "size": 2540805
-    },
-    {
-      "path": "images/嵩口真实场景图/万安堡.png",
-      "name": "万安堡.png",
-      "size": 2885510
-    },
-    {
-      "path": "images/嵩口真实场景图/古城墙.webp",
-      "name": "古城墙.webp",
-      "size": 981196
-    },
-    {
-      "path": "images/嵩口真实场景图/古码头.png",
-      "name": "古码头.png",
-      "size": 2462106
-    },
-    {
-      "path": "images/嵩口真实场景图/夯土墙.jpeg",
-      "name": "夯土墙.jpeg",
-      "size": 1222586
-    },
-    {
-      "path": "images/嵩口真实场景图/宁远庄.png",
-      "name": "宁远庄.png",
-      "size": 2794855
-    },
-    {
-      "path": "images/嵩口真实场景图/嵩口全景.png",
-      "name": "嵩口全景.png",
-      "size": 3039202
-    },
-    {
-      "path": "images/嵩口真实场景图/德星楼.jpeg",
-      "name": "德星楼.jpeg",
-      "size": 1620689
-    },
-    {
-      "path": "images/嵩口真实场景图/现代改造新建筑.png",
-      "name": "现代改造新建筑.png",
-      "size": 3099981
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝.jpeg",
-      "name": "用坦厝.jpeg",
-      "size": 37867
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝_krea.png",
-      "name": "用坦厝_krea.png",
-      "size": 2438856
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
-      "name": "用坦厝_zimage.png",
-      "size": 2376052
+      "path": "images/嵩口真实场景图/龙口祖厝.png",
+      "name": "龙口祖厝.png",
+      "size": 2852379
     },
     {
       "path": "images/嵩口真实场景图/鹤形路.png",
@@ -121,49 +11,84 @@
       "size": 2958360
     },
     {
-      "path": "images/嵩口真实场景图/龙口祖厝.png",
-      "name": "龙口祖厝.png",
-      "size": 2852379
+      "path": "images/针织女孩三视图.png",
+      "name": "针织女孩三视图.png",
+      "size": 2540805
     },
     {
-      "path": "images/songkou_characters/chen_agong_three_view.png",
-      "name": "chen_agong_three_view.png",
-      "size": 1326847
+      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
+      "name": "用坦厝_zimage.png",
+      "size": 2376052
     },
     {
-      "path": "images/songkou_characters/lin_xiaoxi_three_view.png",
-      "name": "lin_xiaoxi_three_view.png",
-      "size": 2017495
+      "path": "images/嵩口真实场景图/用坦厝_krea.png",
+      "name": "用坦厝_krea.png",
+      "size": 2438856
     },
     {
-      "path": "images/songkou_characters/mysterious_traveler_three_view.png",
-      "name": "mysterious_traveler_three_view.png",
-      "size": 1733346
+      "path": "images/嵩口真实场景图/用坦厝.jpeg",
+      "name": "用坦厝.jpeg",
+      "size": 37867
     },
     {
-      "path": "images/songkou_characters/songkou_panorama_firstframe.png",
-      "name": "songkou_panorama_firstframe.png",
-      "size": 2769427
+      "path": "images/嵩口真实场景图/现代改造新建筑.png",
+      "name": "现代改造新建筑.png",
+      "size": 3099981
     },
     {
-      "path": "images/songkou_characters/xiao_nuomi_three_view.png",
-      "name": "xiao_nuomi_three_view.png",
-      "size": 1643225
+      "path": "images/songkou_characters/王婶_three_view.png",
+      "name": "王婶_three_view.png",
+      "size": 2238726
     },
     {
-      "path": "images/songkou_characters/zhang_director_three_view.png",
-      "name": "zhang_director_three_view.png",
-      "size": 1706936
+      "path": "images/嵩口真实场景图/德星楼.jpeg",
+      "name": "德星楼.jpeg",
+      "size": 1620689
     },
     {
-      "path": "images/characters/01_东方少女.png",
-      "name": "01_东方少女.png",
-      "size": 1763001
+      "path": "images/songkou_characters/张导演_three_view.png",
+      "name": "张导演_three_view.png",
+      "size": 1868068
     },
     {
-      "path": "images/characters/02_神秘使者.png",
-      "name": "02_神秘使者.png",
-      "size": 1729277
+      "path": "images/嵩口真实场景图/嵩口全景.png",
+      "name": "嵩口全景.png",
+      "size": 3039202
+    },
+    {
+      "path": "images/嵩口真实场景图/宁远庄.png",
+      "name": "宁远庄.png",
+      "size": 2794855
+    },
+    {
+      "path": "images/嵩口真实场景图/夯土墙.jpeg",
+      "name": "夯土墙.jpeg",
+      "size": 1222586
+    },
+    {
+      "path": "images/character-sheet/图书馆看书.png",
+      "name": "图书馆看书.png",
+      "size": 1809792
+    },
+    {
+      "path": "images/嵩口真实场景图/古码头.png",
+      "name": "古码头.png",
+      "size": 2462106
+    },
+    {
+      "path": "images/嵩口真实场景图/古城墙.webp",
+      "name": "古城墙.webp",
+      "size": 981196
+    },
+    {
+      "path": "images/出租车.png",
+      "name": "出租车.png",
+      "size": 5220776
+    },
+    {
+      "path": "images/全局ai主角.jpg",
+      "name": "全局ai主角.jpg",
+      "size": 100229
     },
     {
       "path": "images/character-sheet/三视图_现代女生.png",
@@ -171,171 +96,106 @@
       "size": 1484763
     },
     {
-      "path": "images/character-sheet/图书馆看书.png",
-      "name": "图书馆看书.png",
-      "size": 1809792
+      "path": "images/嵩口真实场景图/万安堡.png",
+      "name": "万安堡.png",
+      "size": 2885510
+    },
+    {
+      "path": "images/songkou_characters/zhang_director_three_view.png",
+      "name": "zhang_director_three_view.png",
+      "size": 1706936
+    },
+    {
+      "path": "images/songkou_characters/xiao_nuomi_three_view.png",
+      "name": "xiao_nuomi_three_view.png",
+      "size": 1643225
+    },
+    {
+      "path": "images/sunset_beach.png",
+      "name": "sunset_beach.png",
+      "size": 2220487
+    },
+    {
+      "path": "images/songkou_characters/songkou_panorama_firstframe.png",
+      "name": "songkou_panorama_firstframe.png",
+      "size": 2769427
+    },
+    {
+      "path": "images/night_bonfire.png",
+      "name": "night_bonfire.png",
+      "size": 2069683
+    },
+    {
+      "path": "images/songkou_characters/mysterious_traveler_three_view.png",
+      "name": "mysterious_traveler_three_view.png",
+      "size": 1733346
+    },
+    {
+      "path": "images/modern_city_night.png",
+      "name": "modern_city_night.png",
+      "size": 2534260
+    },
+    {
+      "path": "images/songkou_characters/lin_xiaoxi_three_view.png",
+      "name": "lin_xiaoxi_three_view.png",
+      "size": 2017495
+    },
+    {
+      "path": "images/crystal_palace.png",
+      "name": "crystal_palace.png",
+      "size": 2104225
+    },
+    {
+      "path": "images/songkou_characters/chen_agong_three_view.png",
+      "name": "chen_agong_three_view.png",
+      "size": 1326847
+    },
+    {
+      "path": "images/beach_vacation.png",
+      "name": "beach_vacation.png",
+      "size": 2806780
+    },
+    {
+      "path": "images/ancient_woman.png",
+      "name": "ancient_woman.png",
+      "size": 1527476
+    },
+    {
+      "path": "images/songkou_ep5/EP5_seg1_导演进村_首帧.png",
+      "name": "EP5_seg1_导演进村_首帧.png",
+      "size": 1823612
+    },
+    {
+      "path": "images/04_zimage_新标题.png",
+      "name": "04_zimage_新标题.png",
+      "size": 1840061
+    },
+    {
+      "path": "images/characters/02_神秘使者.png",
+      "name": "02_神秘使者.png",
+      "size": 1729277
+    },
+    {
+      "path": "images/02_krea_edit_紫裙.png",
+      "name": "02_krea_edit_紫裙.png",
+      "size": 1989085
+    },
+    {
+      "path": "images/characters/01_东方少女.png",
+      "name": "01_东方少女.png",
+      "size": 1763001
+    },
+    {
+      "path": "images/01_zimage_马年新宠.png",
+      "name": "01_zimage_马年新宠.png",
+      "size": 496
     }
   ],
   "videos": [
     {
-      "path": "videos/01_海边黄昏的秘密.mp4",
-      "name": "01_海边黄昏的秘密.mp4",
-      "size": 4786626
-    },
-    {
-      "path": "videos/02_篝火旁的星空约定.mp4",
-      "name": "02_篝火旁的星空约定.mp4",
-      "size": 4628588
-    },
-    {
-      "path": "videos/03_海边的清晨告别.mp4",
-      "name": "03_海边的清晨告别.mp4",
-      "size": 4369003
-    },
-    {
-      "path": "videos/04_归途庭院忆海.mp4",
-      "name": "04_归途庭院忆海.mp4",
-      "size": 4522815
-    },
-    {
-      "path": "videos/17_现代女生口播_AnimateDiff.mp4",
-      "name": "17_现代女生口播_AnimateDiff.mp4",
-      "size": 2387653
-    },
-    {
-      "path": "videos/18_海边度假-现代女生.mp4",
-      "name": "18_海边度假-现代女生.mp4",
-      "size": 4143638
-    },
-    {
-      "path": "videos/19_海边度假-日落时分.mp4",
-      "name": "19_海边度假-日落时分.mp4",
-      "size": 3011456
-    },
-    {
-      "path": "videos/20_海边度假-星空篝火.mp4",
-      "name": "20_海边度假-星空篝火.mp4",
-      "size": 4260720
-    },
-    {
-      "path": "videos/21_时空相遇-水晶宫殿苏醒.mp4",
-      "name": "21_时空相遇-水晶宫殿苏醒.mp4",
-      "size": 3414424
-    },
-    {
-      "path": "videos/22_时空相遇-现代都市落地.mp4",
-      "name": "22_时空相遇-现代都市落地.mp4",
-      "size": 5813011
-    },
-    {
-      "path": "videos/23_时空相遇-时空交汇.mp4",
-      "name": "23_时空相遇-时空交汇.mp4",
-      "size": 2305050
-    },
-    {
-      "path": "videos/24_时空相遇-时空穿越.mp4",
-      "name": "24_时空相遇-时空穿越.mp4",
-      "size": 7606337
-    },
-    {
-      "path": "videos/25_时空相遇-触摸倒影.mp4",
-      "name": "25_时空相遇-触摸倒影.mp4",
-      "size": 2625824
-    },
-    {
-      "path": "videos/26_时空相遇-咖啡厅相遇.mp4",
-      "name": "26_时空相遇-咖啡厅相遇.mp4",
-      "size": 2814887
-    },
-    {
-      "path": "videos/songkou_drama/EP1段1_清晨嵩口.mp4",
-      "name": "EP1段1_清晨嵩口.mp4",
-      "size": 7977783
-    },
-    {
-      "path": "videos/songkou_drama/EP1段2_古码头重逢.mp4",
-      "name": "EP1段2_古码头重逢.mp4",
-      "size": 7220112
-    },
-    {
-      "path": "videos/songkou_drama/EP1段3_鹤形路对话.mp4",
-      "name": "EP1段3_鹤形路对话.mp4",
-      "size": 7972103
-    },
-    {
-      "path": "videos/songkou_drama/EP1段3_鹤形路忆旧.mp4",
-      "name": "EP1段3_鹤形路忆旧.mp4",
-      "size": 7697248
-    },
-    {
-      "path": "videos/songkou_drama/EP1段4_古榕树感悟.mp4",
-      "name": "EP1段4_古榕树感悟.mp4",
-      "size": 6733523
-    },
-    {
-      "path": "videos/songkou_drama/EP2段1_阿公的故事.mp4",
-      "name": "EP2段1_阿公的故事.mp4",
-      "size": 4979756
-    },
-    {
-      "path": "videos/songkou_drama/EP4段1_用坦厝天井.mp4",
-      "name": "EP4段1_用坦厝天井.mp4",
-      "size": 10514086
-    },
-    {
-      "path": "videos/songkou_drama/EP4段2_陈阿公点破.mp4",
-      "name": "EP4段2_陈阿公点破.mp4",
-      "size": 4359326
-    },
-    {
-      "path": "videos/songkou_drama/EP4段3_天然空调.mp4",
-      "name": "EP4段3_天然空调.mp4",
-      "size": 5927846
-    },
-    {
-      "path": "videos/songkou_drama/EP4段4_敬意拍摄.mp4",
-      "name": "EP4段4_敬意拍摄.mp4",
-      "size": 4986901
-    },
-    {
-      "path": "videos/songkou-vlog/万安堡.mp4",
-      "name": "万安堡.mp4",
-      "size": 5401645
-    },
-    {
-      "path": "videos/songkou-vlog/全景.mp4",
-      "name": "全景.mp4",
-      "size": 5095422
-    },
-    {
-      "path": "videos/songkou-vlog/古民居.mp4",
-      "name": "古民居.mp4",
-      "size": 6340061
-    },
-    {
-      "path": "videos/songkou-vlog/古民居2.mp4",
-      "name": "古民居2.mp4",
-      "size": 6311248
-    },
-    {
-      "path": "videos/songkou-vlog/古街.mp4",
-      "name": "古街.mp4",
-      "size": 5806571
-    },
-    {
-      "path": "videos/songkou-vlog/古街2.mp4",
-      "name": "古街2.mp4",
-      "size": 10116583
-    },
-    {
-      "path": "videos/songkou-vlog/宁远庄vlog.mp4",
-      "name": "宁远庄vlog.mp4",
-      "size": 5996473
-    },
-    {
-      "path": "videos/songkou-vlog/用坦厝.mp4",
-      "name": "用坦厝.mp4",
-      "size": 4636604
+      "path": "videos/songkou-vlog/鹤形路.mp4",
+      "name": "鹤形路.mp4",
+      "size": 7217392
     },
     {
       "path": "videos/songkou-vlog/用坦厝2.mp4",
@@ -343,41 +203,181 @@
       "size": 5394528
     },
     {
-      "path": "videos/songkou-vlog/鹤形路.mp4",
-      "name": "鹤形路.mp4",
-      "size": 7217392
+      "path": "videos/songkou-vlog/用坦厝.mp4",
+      "name": "用坦厝.mp4",
+      "size": 4636604
+    },
+    {
+      "path": "videos/songkou-vlog/宁远庄vlog.mp4",
+      "name": "宁远庄vlog.mp4",
+      "size": 5996473
+    },
+    {
+      "path": "videos/songkou-vlog/古街2.mp4",
+      "name": "古街2.mp4",
+      "size": 10116583
+    },
+    {
+      "path": "videos/songkou-vlog/古街.mp4",
+      "name": "古街.mp4",
+      "size": 5806571
+    },
+    {
+      "path": "videos/songkou-vlog/古民居2.mp4",
+      "name": "古民居2.mp4",
+      "size": 6311248
+    },
+    {
+      "path": "videos/songkou-vlog/古民居.mp4",
+      "name": "古民居.mp4",
+      "size": 6340061
+    },
+    {
+      "path": "videos/songkou-vlog/全景.mp4",
+      "name": "全景.mp4",
+      "size": 5095422
+    },
+    {
+      "path": "videos/songkou-vlog/万安堡.mp4",
+      "name": "万安堡.mp4",
+      "size": 5401645
+    },
+    {
+      "path": "videos/songkou_drama/EP4段4_敬意拍摄.mp4",
+      "name": "EP4段4_敬意拍摄.mp4",
+      "size": 4986901
+    },
+    {
+      "path": "videos/songkou_drama/EP4段3_天然空调.mp4",
+      "name": "EP4段3_天然空调.mp4",
+      "size": 5927846
+    },
+    {
+      "path": "videos/songkou_drama/EP4段2_陈阿公点破.mp4",
+      "name": "EP4段2_陈阿公点破.mp4",
+      "size": 4359326
+    },
+    {
+      "path": "videos/songkou_drama/EP4段1_用坦厝天井.mp4",
+      "name": "EP4段1_用坦厝天井.mp4",
+      "size": 10514086
+    },
+    {
+      "path": "videos/songkou_drama/EP2段1_阿公的故事.mp4",
+      "name": "EP2段1_阿公的故事.mp4",
+      "size": 4979756
+    },
+    {
+      "path": "videos/songkou_drama/EP1段4_古榕树感悟.mp4",
+      "name": "EP1段4_古榕树感悟.mp4",
+      "size": 6733523
+    },
+    {
+      "path": "videos/songkou_drama/EP1段3_鹤形路忆旧.mp4",
+      "name": "EP1段3_鹤形路忆旧.mp4",
+      "size": 7697248
+    },
+    {
+      "path": "videos/songkou_drama/EP1段3_鹤形路对话.mp4",
+      "name": "EP1段3_鹤形路对话.mp4",
+      "size": 7972103
+    },
+    {
+      "path": "videos/songkou_drama/EP1段2_古码头重逢.mp4",
+      "name": "EP1段2_古码头重逢.mp4",
+      "size": 7220112
+    },
+    {
+      "path": "videos/songkou_drama/EP1段1_清晨嵩口.mp4",
+      "name": "EP1段1_清晨嵩口.mp4",
+      "size": 7977783
+    },
+    {
+      "path": "videos/26_时空相遇-咖啡厅相遇.mp4",
+      "name": "26_时空相遇-咖啡厅相遇.mp4",
+      "size": 2814887
+    },
+    {
+      "path": "videos/25_时空相遇-触摸倒影.mp4",
+      "name": "25_时空相遇-触摸倒影.mp4",
+      "size": 2625824
+    },
+    {
+      "path": "videos/24_时空相遇-时空穿越.mp4",
+      "name": "24_时空相遇-时空穿越.mp4",
+      "size": 7606337
+    },
+    {
+      "path": "videos/23_时空相遇-时空交汇.mp4",
+      "name": "23_时空相遇-时空交汇.mp4",
+      "size": 2305050
+    },
+    {
+      "path": "videos/22_时空相遇-现代都市落地.mp4",
+      "name": "22_时空相遇-现代都市落地.mp4",
+      "size": 5813011
+    },
+    {
+      "path": "videos/21_时空相遇-水晶宫殿苏醒.mp4",
+      "name": "21_时空相遇-水晶宫殿苏醒.mp4",
+      "size": 3414424
+    },
+    {
+      "path": "videos/20_海边度假-星空篝火.mp4",
+      "name": "20_海边度假-星空篝火.mp4",
+      "size": 4260720
+    },
+    {
+      "path": "videos/19_海边度假-日落时分.mp4",
+      "name": "19_海边度假-日落时分.mp4",
+      "size": 3011456
+    },
+    {
+      "path": "videos/18_海边度假-现代女生.mp4",
+      "name": "18_海边度假-现代女生.mp4",
+      "size": 4143638
+    },
+    {
+      "path": "videos/17_现代女生口播_AnimateDiff.mp4",
+      "name": "17_现代女生口播_AnimateDiff.mp4",
+      "size": 2387653
+    },
+    {
+      "path": "videos/04_归途庭院忆海.mp4",
+      "name": "04_归途庭院忆海.mp4",
+      "size": 4522815
+    },
+    {
+      "path": "videos/03_海边的清晨告别.mp4",
+      "name": "03_海边的清晨告别.mp4",
+      "size": 4369003
+    },
+    {
+      "path": "videos/02_篝火旁的星空约定.mp4",
+      "name": "02_篝火旁的星空约定.mp4",
+      "size": 4628588
+    },
+    {
+      "path": "videos/01_海边黄昏的秘密.mp4",
+      "name": "01_海边黄昏的秘密.mp4",
+      "size": 4786626
     }
   ],
   "audio": [
     {
-      "path": "audio/01_温暖治愈男生.flac",
-      "name": "01_温暖治愈男生.flac",
-      "size": 358980
+      "path": "audio/voices/王婶_voice.flac",
+      "name": "王婶_voice.flac",
+      "size": 359671
     },
     {
-      "path": "audio/02_温暖治愈男生_v2.flac",
-      "name": "02_温暖治愈男生_v2.flac",
-      "size": 280982
+      "path": "audio/voices/张导演_voice.flac",
+      "name": "张导演_voice.flac",
+      "size": 456299
     },
     {
-      "path": "audio/03_活泼女生.flac",
-      "name": "03_活泼女生.flac",
-      "size": 302424
-    },
-    {
-      "path": "audio/20岁女生.flac",
-      "name": "20岁女生.flac",
-      "size": 447231
-    },
-    {
-      "path": "audio/20岁女生_清冷.flac",
-      "name": "20岁女生_清冷.flac",
-      "size": 114537
-    },
-    {
-      "path": "audio/voices/songkou_elder.flac",
-      "name": "songkou_elder.flac",
-      "size": 236543
+      "path": "audio/voices/songkou_traveler.flac",
+      "name": "songkou_traveler.flac",
+      "size": 142361
     },
     {
       "path": "audio/voices/songkou_girl_main.flac",
@@ -385,11 +385,36 @@
       "size": 178955
     },
     {
-      "path": "audio/voices/songkou_traveler.flac",
-      "name": "songkou_traveler.flac",
-      "size": 142361
+      "path": "audio/voices/songkou_elder.flac",
+      "name": "songkou_elder.flac",
+      "size": 236543
+    },
+    {
+      "path": "audio/20岁女生_清冷.flac",
+      "name": "20岁女生_清冷.flac",
+      "size": 114537
+    },
+    {
+      "path": "audio/20岁女生.flac",
+      "name": "20岁女生.flac",
+      "size": 447231
+    },
+    {
+      "path": "audio/03_活泼女生.flac",
+      "name": "03_活泼女生.flac",
+      "size": 302424
+    },
+    {
+      "path": "audio/02_温暖治愈男生_v2.flac",
+      "name": "02_温暖治愈男生_v2.flac",
+      "size": 280982
+    },
+    {
+      "path": "audio/01_温暖治愈男生.flac",
+      "name": "01_温暖治愈男生.flac",
+      "size": 358980
     }
   ],
-  "updated": "2026-08-30 06:34:02",
-  "total": 77
+  "updated": "2026-08-30 15:06:33",
+  "total": 82
 }
