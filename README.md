@@ -100,6 +100,63 @@
    - 动态看板 `songkou-dashboard-dynamic.html` 从 CDN 读取 `manifest.json` 自动渲染素材
    - 不更新 manifest.json = 看板看不到新素材
 
+## 动态看板使用流程
+
+动态看板 [`songkou-dashboard-dynamic.html`](./songkou-dashboard-dynamic.html) 用于实时浏览仓库内最新素材（图片/视频/音频），无需启动服务器，浏览器双击打开即可。
+
+### 1. 访问方式
+
+- **本地**：直接双击 `songkou-dashboard-dynamic.html` 用浏览器打开
+- **在线**：可通过 GitHub Pages 或 jsdelivr CDN 直接访问该 HTML
+- 打开后自动加载最新素材，右上角「刷新」按钮可手动重载
+
+### 2. 数据源机制（双保险）
+
+看板按以下顺序尝试读取素材清单，任一成功即渲染：
+
+| 顺序 | 数据源 | URL | 说明 |
+|---|---|---|---|
+| 主 | CDN manifest.json | `https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/manifest.json` | 最可靠，由 `generate_manifest.py` 生成 |
+| 备 | GitHub Trees API | `https://api.github.com/repos/easyeye163/h3-video-coding/git/trees/main?recursive=1` | 当 CDN 失败时回退，但有时不可访问 |
+
+> CDN 不可访问时自动回退到 GitHub API；两者皆失败则提示「加载失败」。
+
+### 3. 素材访问
+
+所有素材（图片/视频/音频）均通过 jsdelivr CDN 加载，URL 格式：
+
+```
+https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/{相对路径}
+```
+
+例如：`https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_characters/lin_xiaoxi_three_view.png`
+
+看板中每张卡片的链接即为该 CDN 地址，可点击直接打开原始文件。
+
+### 4. 新增素材后如何让看板看到
+
+```
+[1] 把素材文件放入 audio/ images/ videos/ 对应目录
+        ↓
+[2] 运行：python3 scripts/generate_manifest.py   # 重新扫描生成 manifest.json
+        ↓
+[3] git add manifest.json && git commit -m "Update manifest" && git push
+        ↓
+[4] 等待 jsdelivr CDN 缓存刷新（约 10 分钟 ~ 12 小时）
+        ↓
+[5] 打开/刷新看板，自动读取最新 manifest.json 渲染
+```
+
+> ⚠️ 不更新 `manifest.json` = 看板只能依赖 GitHub API 回退，且新素材不会出现在主数据源中。
+
+### 5. CDN 缓存刷新说明
+
+- jsdelivr 对 GitHub 仓库有缓存延迟（通常 10 分钟 ~ 12 小时）
+- 急需立即刷新可访问：`https://purge.jsdelivr.net/gh/easyeye163/h3-video-coding@main/manifest.json`
+- GitHub API 路径无缓存，但受 API 速率限制且有时不可访问
+
+---
+
 ## 标准制作链路（单集 4 步）
 
 ```
