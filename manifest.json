@@ -243,6 +243,11 @@
       "size": 5401645
     },
     {
+      "path": "videos/songkou_drama/EP7段1_龙口祖厝传说.mp4",
+      "name": "EP7段1_龙口祖厝传说.mp4",
+      "size": 4809804
+    },
+    {
       "path": "videos/songkou_drama/EP4段4_敬意拍摄.mp4",
       "name": "EP4段4_敬意拍摄.mp4",
       "size": 4986901
@@ -415,6 +420,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 15:06:33",
-  "total": 82
+  "updated": "2026-08-30 18:30:41",
+  "total": 83
 }
