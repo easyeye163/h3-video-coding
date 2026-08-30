@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>用编程和 AI 智能体共建仓库，做出一个短剧可视化看板</title>
+<title>AI 智能体共建仓库：从短剧生产到可视化看板的完整开源实践</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -23,7 +23,7 @@
   }
   .cover {
     width: 100%;
-    height: 280px;
+    height: 300px;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     border-radius: 8px;
     display: flex;
@@ -52,7 +52,7 @@
   }
   .cover h1 {
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
     line-height: 1.5;
     padding: 0 40px;
@@ -168,6 +168,36 @@
     font-size: 14px;
     color: #666;
     margin-bottom: 0;
+  }
+  .pipeline-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 20px 0;
+    justify-content: center;
+  }
+  .pipeline-step {
+    background: #f8f9fb;
+    border: 1px solid #e8eaee;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #444;
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+  }
+  .pipeline-step .step-num {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 2px;
+  }
+  .pipeline-arrow {
+    color: #ccc;
+    font-size: 18px;
+    flex: none;
   }
   .dashboard-preview {
     background: #f8f9fb;
@@ -297,27 +327,185 @@
 
   <!-- 封面 -->
   <div class="cover">
-    <h1>用编程和 AI 智能体共建仓库<br>做出一个短剧可视化看板</h1>
-    <div class="subtitle">从嵩口古镇 20 集文化短剧说起，聊聊"人 + AI"协作的新范式</div>
+    <h1>AI 智能体共建仓库<br>从短剧生产到可视化看板的完整开源实践</h1>
+    <div class="subtitle">嵩口古镇 20 集文化短剧 · 人 + AI 协作的新范式</div>
   </div>
 
   <!-- 元信息 -->
   <div class="meta">
     <span class="tag">AI 协作</span>
-    <span class="tag">开源实践</span>
+    <span class="tag">短剧生产</span>
     <span class="tag">可视化看板</span>
+    <span class="tag">开源实践</span>
   </div>
 
   <!-- 正文 -->
-  <p>永泰嵩口古镇，一座有千年历史的闽中水乡。2026 年夏天，一个 20 集的 AI 文化宣传短剧在这里诞生——剧本由 AI 撰写，画面由 AI 生成，配音由 AI 合成。但真正让这个项目跑起来的，不是某个单一模型的能力，而是一套"人写规则、AI 干活、Git 管版本"的协作机制。</p>
+  <p>永泰嵩口古镇，一座有千年历史的闽中水乡。2026 年夏天，一个 20 集的 AI 文化宣传短剧在这里诞生——剧本由 AI 撰写，画面由 AI 生成，配音由 AI 合成，进度由脚本自动汇总，看板由 GitHub Pages 免费托管。整个项目没有一个全职团队，而是<span class="highlight">一个人加多个 AI 智能体，围绕一个 Git 仓库协作完成</span>。</p>
 
-  <p>这篇文章记录了这个项目中一个具体的工程实践：<span class="highlight">用一段 Python 脚本自动扫描素材目录，生成可视化看板，再通过 GitHub Pages 免费托管上线</span>。以及这套方法如何迁移到其他行业。</p>
+  <p>这篇文章完整记录了这套实践——从短剧素材的生产流水线，到可视化看板的自动生成，再到"人 + AI"协作维护仓库的方法论，最后延伸到其他行业的迁移可能。</p>
+
+  <!-- ════════════════ 第一部分：短剧生产 ════════════════ -->
+
+  <h2>项目全貌</h2>
+
+  <p>嵩口短剧项目的规模不算大，但环节齐全。整体规格如下：</p>
+
+  <table>
+    <tr>
+      <th>维度</th>
+      <th>规格</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>集数</td>
+      <td>20 集</td>
+      <td>每集一个嵩口文化主题（初见嵩口 / 鹤形之谜 / 万安堡探秘...）</td>
+    </tr>
+    <tr>
+      <td>分镜</td>
+      <td>每集 4 段 × 15 秒</td>
+      <td>全剧 80 个镜头段，每段一段独立视频</td>
+    </tr>
+    <tr>
+      <td>角色</td>
+      <td>5 人</td>
+      <td>林小溪 / 陈阿公 / 张导演 / 神秘旅人 / 小糯米</td>
+    </tr>
+    <tr>
+      <td>场景</td>
+      <td>10 处</td>
+      <td>德星楼 / 古码头 / 龙口祖厝 / 鹤形路 / 宁远庄 / 万安堡等</td>
+    </tr>
+    <tr>
+      <td>音色</td>
+      <td>5 个</td>
+      <td>3 个专属定制 + 2 个复用现有</td>
+    </tr>
+    <tr>
+      <td>技术栈</td>
+      <td>H3 + RunningHub + Git</td>
+      <td>MiniMax H3 六段式提示词驱动 RunningHub 工作流 API</td>
+    </tr>
+  </table>
+
+  <h2>生产流水线</h2>
+
+  <p>短剧的生产不是一步到位的，而是分五步流水线，每一步产出独立文件存入仓库：</p>
+
+  <div class="pipeline-flow">
+    <div class="pipeline-step"><span class="step-num">Step 1</span>剧本规划</div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-step"><span class="step-num">Step 2</span>角色定妆</div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-step"><span class="step-num">Step 3</span>提示词撰写</div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-step"><span class="step-num">Step 4</span>API 生成视频</div>
+    <div class="pipeline-arrow">→</div>
+    <div class="pipeline-step"><span class="step-num">Step 5</span>看板汇总</div>
+  </div>
+
+  <h3>第一步：剧本与分镜规划</h3>
+
+  <p>20 集剧本全部由 AI 撰写，每集围绕一个嵩口文化地标展开叙事。剧本不是自由发挥，而是遵循一套结构化模板——每集拆成 4 个镜头段，每段指定场景、角色、机位、情绪弧线和声音设计。剧本层完成后，整个项目的"骨架"就定了，后续所有素材都围绕这个骨架生产。</p>
+
+  <p>20 集 × 4 段 = 80 个镜头段的提示词，目前全部就绪，存放在项目主文档中。</p>
+
+  <h3>第二步：角色定妆图与场景参考图</h3>
+
+  <p>AI 短剧的一个核心难题是角色一致性——同一个角色在 80 段视频里的脸、发型、服装必须稳定。解决方案是<span class="highlight">先生成每个角色的三视图定妆照</span>（正面 / 侧面 / 全身），后续每段视频生成都把定妆图作为输入参考，锁定角色外观。</p>
+
+  <p>5 个角色的三视图已经全部生成完毕，加上嵩口全景首帧共 6 张，存放在 <code>images/songkou_characters/</code> 目录。场景方面，嵩口实地拍摄了 10 处文化地标的参考照片，存放在 <code>images/嵩口真实场景图/</code>，作为画面生成的空间参照。</p>
+
+  <div class="callout">
+    <p>定妆图和场景图都存在 Git 仓库里，通过 jsDelivr CDN 可以直接用 URL 引用。这意味着 AI 智能体生成视频时不需要先上传文件，直接把 GitHub 链接填进 API 参数就行——省掉了一个完整的上传步骤。</p>
+  </div>
+
+  <h3>第三步：六段式 Full-Reference 提示词</h3>
+
+  <p>这是整个项目最核心的技术环节。每段 15 秒视频的提示词不是简单一句话，而是一套结构化的六段式文档，包含：</p>
+
+  <table>
+    <tr>
+      <th>段落</th>
+      <th>内容</th>
+      <th>作用</th>
+    </tr>
+    <tr>
+      <td>subject_definitions</td>
+      <td>角色与场景的锁定描述</td>
+      <td>规定哪些图片负责什么，全片不得漂移</td>
+    </tr>
+    <tr>
+      <td>summary</td>
+      <td>整段剧情概述</td>
+      <td>一句话定调：什么人在什么地方发生了什么</td>
+    </tr>
+    <tr>
+      <td>retention_analysis</td>
+      <td>不变量约束</td>
+      <td>人物不变量 / 场景不变量 / 风格不变量 / 绝对禁止项</td>
+    </tr>
+    <tr>
+      <td>detailed_description</td>
+      <td>逐镜头详细描述</td>
+      <td>机位、运镜、表演、对白、情绪节奏</td>
+    </tr>
+    <tr>
+      <td>overall_soundscape</td>
+      <td>环境声设计</td>
+      <td>雨声/脚步/环境底噪/对白/呼吸等声音层</td>
+    </tr>
+    <tr>
+      <td>non_diegetic_music</td>
+      <td>配乐设计</td>
+      <td>BGM 进出点、情绪匹配、乐器选择</td>
+    </tr>
+  </table>
+
+  <p>这套六段式结构确保 AI 生成的视频在角色一致性、场景连贯性、情绪节奏和声音设计上都可控。不是"输入一句话等结果"，而是<span class="highlight">用工程文档的方式给 AI 下达精确指令</span>。</p>
+
+  <h3>第四步：curl 命令即制作单</h3>
+
+  <p>提示词写好后，要提交给 RunningHub 的视频生成工作流。传统的做法是手动在工作流页面上填参数、上传文件、点提交。但这个项目做了不一样的事——<span class="highlight">把每一段的完整 API 调用写成了可直接执行的 curl 命令</span>，存在项目主文档里。</p>
+
+  <p>每段 curl 的核心结构长这样：</p>
+
+  <div class="code-block">curl --location --request POST <span class="string">'https://www.runninghub.cn/openapi/v2/run/ai-app/2090774740146413570'</span> \
+--header <span class="string">"Authorization: Bearer ${RUNNINGHUB_API_KEY}"</span> \
+--data-raw <span class="string">'{
+  "nodeInfoList": [
+    {"nodeId":"132", "fieldName":"value", "fieldValue":"15"},
+    {"nodeId":"115", "fieldName":"aspect_ratio", "fieldValue":"16:9 (Widescreen)"},
+    {"nodeId":"137", "fieldName":"image",
+     "fieldValue":"https://cdn.jsdelivr.net/gh/.../lin_xiaoxi_three_view.png"},
+    {"nodeId":"166", "fieldName":"image",
+     "fieldValue":"https://cdn.jsdelivr.net/gh/.../%E5%8F%A4%E7%A0%81%E5%A4%B4.png"},
+    {"nodeId":"138", "fieldName":"value", "fieldValue":"<六段式提示词全文>"},
+    {"nodeId":"165", "fieldName":"audio",
+     "fieldValue":"https://cdn.jsdelivr.net/gh/.../songkou_girl_main.flac"}
+  ],
+  "instanceType":"default", "usePersonalQueue":"false"
+}'</span></div>
+
+  <p>这里有几个关键设计：</p>
+
+  <p><strong>素材直接用 GitHub raw 链接</strong>。图片和音频不需要先上传到 RunningHub，直接把 jsDelivr CDN 的完整 URL 填入 fieldValue 字段。中文路径自动做 URL 编码。这一步是通过实测验证的——EP2 段2 一次成功，75 币，372 秒生成。</p>
+
+  <p><strong>未使用的节点保留占位值</strong>。工作流有 4 个图片输入和 2 个音频输入，但不是每段都需要全部填满。对于不需要的图片节点填 <code>example.png</code>，不需要的音频节点复用 audio1 的链接——不能留空，否则工作流会报 errorCode 805。</p>
+
+  <p><strong>API Key 从环境变量获取</strong>。curl 模板里写的是 <code>${RUNNINGHUB_API_KEY}</code>，实际执行时替换为真实 key。这样提示词文档可以公开分享，不泄露密钥。</p>
+
+  <div class="callout">
+    <p>这个设计的妙处在于：任何 AI 智能体拿到这份 curl，替换 API Key 后直接执行就行——不需要理解工作流的结构、不需要手动填参数、不需要上传文件。提示词文档本身就是可执行的制作单。</p>
+  </div>
+
+  <p>目前 EP1 的四段 curl 已经全部写好并验证通过，成片存放在 <code>videos/songkou_drama/</code> 目录。EP2-EP20 的提示词也已就绪，等逐段执行即可。</p>
+
+  <!-- ════════════════ 第二部分：可视化看板 ════════════════ -->
 
   <h2>问题：素材一多，全乱了</h2>
 
-  <p>嵩口短剧项目的素材规模不算大，但也足够让人头疼：5 个角色定妆图、10 张场景参考图、5 段成片视频、14 条备选音色，散落在 <code>images/</code>、<code>videos/</code>、<code>audio/</code> 三个目录下，子目录还分了好几层。</p>
-
-  <p>每次有新素材进来，项目主文档里的进度数字要手动改，看板 HTML 里的链接要手动贴，分集状态要手动标。这些活不难，但烦——而且容易漏。更关键的是，<strong>多个 AI 智能体在不同时段各自生成素材、各自更新文档</strong>，没有一个统一的"素材账本"，谁也说不清当前到底有多少资产。</p>
+  <p>短剧生产的每一步都在往仓库里塞文件——定妆图、场景图、提示词、成片视频、音色文件——很快 <code>images/</code>、<code>videos/</code>、<code>audio/</code> 三个目录下堆了几十个文件。多个 AI 智能体在不同时段各自产出素材，没有一个统一的"素材账本"，谁也说不清当前到底有多少资产。</p>
 
   <p>于是问题变成：<span class="highlight">能不能写一段代码，自动扫描目录、统计进度、生成看板？</span></p>
 
@@ -383,9 +571,9 @@ ASSET_CATEGORIES = {
     <div class="mock-caption">看板效果示意 · 实际看板包含全部 43 个素材链接</div>
   </div>
 
-  <div class="callout">
-    <p>整个脚本不到 300 行 Python，零第三方依赖，标准库跑通。这大概是"够用就好"的工程哲学——不引入框架、不搭服务、不写 CI，一个文件解决一个真实问题。</p>
-  </div>
+  <p>脚本还支持 <code>--watch</code> 监控模式，每 3 秒检测一次文件变化，有新素材进来就自动刷新看板。整个脚本不到 300 行 Python，零第三方依赖，标准库跑通。</p>
+
+  <!-- ════════════════ 第三部分：上线 ════════════════ -->
 
   <h2>上线：GitHub Pages 免费托管</h2>
 
@@ -404,9 +592,11 @@ ASSET_CATEGORIES = {
     <div class="link-url">https://easyeye163.github.io/h3-video-coding/songkou-dashboard.html</div>
   </div>
 
-  <h2>关键：AI 智能体如何协作维护仓库</h2>
+  <!-- ════════════════ 第四部分：协作机制 ════════════════ -->
 
-  <p>这个项目最有趣的地方不在于某个脚本本身，而在于整个仓库是<span class="highlight">人和多个 AI 智能体共同维护</span>的。整个协作流程是这样的：</p>
+  <h2>核心：AI 智能体如何协作维护仓库</h2>
+
+  <p>这个项目最有趣的地方不在于某个脚本或某段提示词，而在于<span class="highlight">整个仓库是人和多个 AI 智能体共同维护</span>的。整个协作流程是这样的：</p>
 
   <table>
     <tr>
@@ -416,7 +606,7 @@ ASSET_CATEGORIES = {
     </tr>
     <tr>
       <td>人</td>
-      <td>定需求、审质量、拍板决策、提供 API Key 和素材</td>
+      <td>定需求、审质量、拍板决策、提供 API Key</td>
       <td>项目主文档、创意方向</td>
     </tr>
     <tr>
@@ -426,7 +616,7 @@ ASSET_CATEGORIES = {
     </tr>
     <tr>
       <td>AI 智能体 B</td>
-      <td>撰写六段式提示词、调用 RunningHub API 生成视频</td>
+      <td>撰写六段式提示词、执行 curl 调 RunningHub API 生成视频</td>
       <td>视频文件 → videos/ 目录</td>
     </tr>
     <tr>
@@ -448,35 +638,39 @@ ASSET_CATEGORIES = {
 
   <p>每个智能体只做一件事：把自己产出的文件放到约定的目录里，遵守命名规则。看板脚本自动扫描目录就能反映最新状态。不需要任何智能体之间直接通信，也不需要中心调度器——<strong>文件系统就是接口，命名约定就是协议</strong>。</p>
 
+  <p>更关键的是，提示词被写成了可直接执行的 curl 命令，存放在 Markdown 文档里。任何 AI 智能体打开文档，替换 API Key，直接执行就能生成视频。<span class="highlight">文档即程序，提示词即制作单</span>——不需要额外的任务编排系统。</p>
+
   <blockquote>这种模式的好处是显而易见的：每个智能体完全解耦，增加或替换任何一个都不影响其他环节。人只需要在关键节点做决策（审图、审片、选音色），其余交给 AI 和脚本自动流转。</blockquote>
+
+  <!-- ════════════════ 第五部分：行业延伸 ════════════════ -->
 
   <h2>延伸：这套方法能用在哪</h2>
 
-  <p>嵩口项目是一个文化宣传短剧，但"AI 智能体产素材 + 脚本自动汇总 + Git 仓库管理 + 免费静态托管"这套组合拳，本质是一种<span class="highlight">低成本数字资产管理范式</span>，可以平移到很多行业。</p>
+  <p>嵩口项目是一个文化宣传短剧，但"AI 智能体产素材 + curl 命令即制作单 + 脚本自动汇总 + Git 仓库管理 + 免费静态托管"这套组合拳，本质是一种<span class="highlight">低成本数字资产管理范式</span>，可以平移到很多行业。</p>
 
   <div class="case-card">
     <div class="case-title">电商产品上新</div>
-    <div class="case-desc">AI 生成产品图 → 批量写详情页文案 → 自动生成商品上新进度看板（图片/文案/价格/库存状态一栏全览）。仓库即商品库，看板即上架进度表。</div>
+    <div class="case-desc">AI 生成产品图 → 批量写详情页文案 → curl 调用生成产品展示视频 → 自动生成商品上新进度看板（图片/文案/价格/视频状态一栏全览）。仓库即商品库，看板即上架进度表。</div>
   </div>
 
   <div class="case-card">
     <div class="case-title">教育培训课程制作</div>
-    <div class="case-desc">AI 生成课件配图 → 语音合成课程旁白 → 自动生成课程开发看板（章/节/素材状态/试听播放器）。一个仓库对应一门课，每个智能体负责一个章节。</div>
+    <div class="case-desc">AI 生成课件配图 → 语音合成课程旁白 → curl 生成教学动画视频 → 自动生成课程开发看板（章/节/素材状态/试听播放器）。一个仓库对应一门课，每个智能体负责一个章节。</div>
   </div>
 
   <div class="case-card">
     <div class="case-title">房产楼盘展示</div>
-    <div class="case-desc">AI 生成效果图/户型图 → 合成配音讲解 → 自动生成楼盘素材看板（效果图/视频/户型/周边配套一页全展示）。销售直接发链接给客户，手机打开即看。</div>
+    <div class="case-desc">AI 生成效果图/户型图 → 合成配音讲解 → curl 生成楼盘漫游视频 → 自动生成楼盘素材看板（效果图/视频/户型/周边配套一页全展示）。销售直接发链接给客户，手机打开即看。</div>
   </div>
 
   <div class="case-card">
     <div class="case-title">文博数字化</div>
-    <div class="case-desc">AI 生成文物复原图 → 合成讲解音频 → 自动生成数字展厅看板（文物图/讲解音频/复原视频/年代时间线）。一个仓库对应一个展览主题。</div>
+    <div class="case-desc">AI 生成文物复原图 → 合成讲解音频 → curl 生成复原过程视频 → 自动生成数字展厅看板（文物图/讲解音频/复原视频/年代时间线）。一个仓库对应一个展览主题。</div>
   </div>
 
   <div class="case-card">
     <div class="case-title">自媒体内容矩阵</div>
-    <div class="case-desc">AI 生成短视频/封面图/文案 → 自动生成内容排期看板（发布日期/平台/素材状态/数据回填）。多个智能体并行产出，看板实时反映排期完成度。</div>
+    <div class="case-desc">AI 生成短视频/封面图/文案 → curl 批量生成 → 自动生成内容排期看板（发布日期/平台/素材状态/数据回填）。多个智能体并行产出，看板实时反映排期完成度。</div>
   </div>
 
   <p>这些场景的共同特征是：<strong>素材多、更新频繁、需要可视化呈现、预算有限</strong>。用传统的 CMS 或项目管理软件太重，用 Excel 手动维护太累，而"一个脚本 + 一个 Git 仓库 + GitHub Pages"刚好卡在中间——够用、免费、可追踪、可协作。</p>
@@ -488,7 +682,9 @@ ASSET_CATEGORIES = {
     <div class="link-url">https://github.com/easyeye163/h3-video-coding</div>
   </div>
 
-  <p>仓库里包含：20 集短剧的完整提示词（可执行的 curl 命令）、角色定妆图、场景参考图、角色音色、已生成的成片视频、看板自动更新脚本，以及一份不断更新的项目主文档。看板脚本在 <code>scripts/update_dashboard.py</code>，单文件零依赖，拿来即用。</p>
+  <p>仓库里包含完整的生产链条：20 集 80 段短剧的六段式提示词（每段都写成可直接执行的 curl 命令）、5 个角色三视图定妆照、10 张嵩口实景参考图、5 个角色音色文件、已生成的 EP1 成片视频、看板自动更新脚本，以及一份持续更新的项目主文档。</p>
+
+  <p>看板脚本在 <code>scripts/update_dashboard.py</code>，单文件零依赖，拿来即用。curl 模板文档在项目主文档的 EP1 部分，替换 API Key 就能跑。</p>
 
   <p>如果你也在做类似的项目——不管是短视频、课程制作还是数字展厅——欢迎参考或 fork。这套方法不挑行业，只要你的素材能按文件组织、按命名规则归类，就能用同样的方式自动生成可视化看板。</p>
 
