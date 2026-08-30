@@ -1,31 +1,28 @@
 #!/bin/bash
 # ============================================================
-# 视频生成 curl 模板（MiniMax H3 · 15秒 · 6段式 Full-Reference）
+# 视频生成脚本（GitHub直链版 · 15秒 · 6段式 Full-Reference）
 # ============================================================
 # 使用方法：
-#   1. 先设置环境变量：export RUNNINGHUB_API_KEY="你的api_key"
-#   2. 修改下方的 FILE_PATHS 区域，指定本地图片/音频路径
-#   3. 修改 PROMPT 区域，填入6段式提示词
-#   4. 执行：bash video_generation_curl_template.sh
+#   1. 设置环境变量：export RUNNINGHUB_API_KEY="你的api_key"
+#   2. 修改下方素材链接和提示词
+#   3. 执行：bash video_generation_curl_template.sh
 # ============================================================
 
 set -e
 
-# ==================== 【必填】文件路径配置 ====================
-# 参考图1（角色/主图，对应 nodeId 137）
-PICTURE1_PATH="./images/songkou_characters/lin_xiaoxi_three_view.png"
-# 参考图2（场景/副图，对应 nodeId 166）
-PICTURE2_PATH="./images/嵩口真实场景图/嵩口全景.png"
-# 参考音频1（音色参考，对应 nodeId 165）
-AUDIO1_PATH="./audio/voices/songkou_girl_main.flac"
+# ==================== 【必填】素材链接（GitHub raw 完整URL） ====================
+PICTURE1_URL="https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_characters/lin_xiaoxi_three_view.png"
+PICTURE2_URL="https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/%E5%B5%A9%E5%8F%A3%E7%9C%9F%E5%AE%9E%E5%9C%BA%E6%99%AF%E5%9B%BE/%E5%B5%A9%E5%8F%A3%E5%85%A8%E6%99%AF.png"
+PICTURE3_URL="example.png"   # 未使用填 example.png
+AUDIO1_URL="https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_girl_main.flac"
+AUDIO2_URL="$AUDIO1_URL"     # 未使用则复用 audio1
 
 # ==================== 【必填】视频参数 ====================
-VIDEO_DURATION="15"          # 时长（秒）：10 或 15
-ASPECT_RATIO="16:9 (Widescreen)"  # 画面比例
-MEGAPIXELS="0.7000000000000001"   # 分辨率（保持默认即可）
+VIDEO_DURATION="15"
+ASPECT_RATIO="16:9 (Widescreen)"
+MEGAPIXELS="0.7000000000000001"
 
 # ==================== 【必填】6段式提示词 ====================
-# 注意：所有换行符会自动转义为 \n，直接写多行即可
 PROMPT=$(cat <<'PROMPT_EOF'
 subject_definitions:
 <Picture 1> 严格负责女性角色的身份与造型：林小溪，24岁返乡青年，黑长低马尾，空气刘海，浅蓝交领汉服上衣配白边，蓝色牛仔阔腿裤，白色帆布鞋，温柔微笑。全片不得漂移。
@@ -55,14 +52,8 @@ PROMPT_EOF
 # ==================== 【工作流配置】（一般不需要改） ====================
 APP_ID="2090774740146413570"
 API_BASE="https://www.runninghub.cn/openapi/v2"
-UPLOAD_URL="${API_BASE}/media/upload/binary"
 RUN_URL="${API_BASE}/run/ai-app/${APP_ID}"
-
-# 未使用节点的占位值（必须保留节点不能删）
-# 图片用 example.png，音频复用 audio1 避免占位文件报错
-PICTURE3_PLACEHOLDER="example.png"
-PICTURE4_PLACEHOLDER="example.png"
-# AUDIO2_PLACEHOLDER 直接用上传后的 AUDIO1_FILE 变量（见下方构建请求体处）
+QUERY_URL="${API_BASE}/query"
 
 # ==================== 检查 API Key ====================
 if [ -z "$RUNNINGHUB_API_KEY" ]; then
@@ -71,75 +62,25 @@ if [ -z "$RUNNINGHUB_API_KEY" ]; then
     exit 1
 fi
 
-# ==================== 函数：上传文件 ====================
-upload_file() {
-    local file_path="$1"
-    local file_type="$2"  # image 或 audio
-
-    echo "📤 正在上传：$file_path"
-
-    local response
-    response=$(curl -s -X POST "$UPLOAD_URL" \
-        -H "Authorization: Bearer ${RUNNINGHUB_API_KEY}" \
-        -F "file=@${file_path}")
-
-    # 提取文件名（data.download_url 中的文件名部分）
-    local filename
-    filename=$(echo "$response" | python3 -c "
-import sys, json
-data = json.load(sys.stdin)
-url = data.get('data', {}).get('download_url', '')
-# download_url 格式可能是完整URL或只是文件名
-if '/' in url:
-    filename = url.split('/')[-1]
-else:
-    filename = url
-print(filename)
-")
-
-    if [ -z "$filename" ] || [ "$filename" = "None" ]; then
-        echo "❌ 上传失败：$response"
-        exit 1
-    fi
-
-    echo "   ✅ 上传成功：$filename"
-    echo "$filename"
-}
-
-# ==================== 步骤1：上传图片和音频 ====================
-echo "========================================"
-echo " 步骤 1/2：上传参考素材"
-echo "========================================"
-
-PICTURE1_FILE=$(upload_file "$PICTURE1_PATH" "image")
-sleep 2
-
-PICTURE2_FILE=$(upload_file "$PICTURE2_PATH" "image")
-sleep 2
-
-AUDIO1_FILE=$(upload_file "$AUDIO1_PATH" "audio")
-sleep 2
-
-echo ""
-echo "📁 上传结果："
-echo "   Picture1: $PICTURE1_FILE"
-echo "   Picture2: $PICTURE2_FILE"
-echo "   Audio1:   $AUDIO1_FILE"
-echo ""
-
-# ==================== 步骤2：提交视频生成任务 ====================
-echo "========================================"
-echo " 步骤 2/2：提交视频生成任务"
-echo "========================================"
-
-# 转义提示词中的双引号和换行符
+# ==================== 转义提示词为 JSON 字符串 ====================
 ESCAPED_PROMPT=$(echo "$PROMPT" | python3 -c "
 import sys, json
 prompt = sys.stdin.read()
-print(json.dumps(prompt))
+print(json.dumps(prompt, ensure_ascii=False), end='')
 ")
 
-# 构建请求体
+# ==================== 构建并提交 ====================
+echo "========================================"
+echo " 提交视频生成任务（GitHub直链版）"
+echo "========================================"
+echo " Picture 1: $PICTURE1_URL"
+echo " Picture 2: $PICTURE2_URL"
+echo " Picture 3: $PICTURE3_URL"
+echo " Audio 1:   $AUDIO1_URL"
+echo " Audio 2:   $AUDIO2_URL"
+echo " 时长:      ${VIDEO_DURATION}秒 / ${ASPECT_RATIO}"
+echo ""
+
 REQUEST_BODY=$(cat <<EOF
 {
   "nodeInfoList": [
@@ -165,43 +106,43 @@ REQUEST_BODY=$(cat <<EOF
     {
       "nodeId": "137",
       "fieldName": "image",
-      "fieldValue": "${PICTURE1_FILE}",
+      "fieldValue": "${PICTURE1_URL}",
       "description": "picture1"
     },
     {
       "nodeId": "138",
       "fieldName": "value",
       "fieldValue": ${ESCAPED_PROMPT},
-      "description": "提示词"
+      "description": "提示词（6段式 Full-Reference）"
     },
     {
       "nodeId": "166",
       "fieldName": "image",
-      "fieldValue": "${PICTURE2_FILE}",
+      "fieldValue": "${PICTURE2_URL}",
       "description": "picture2"
     },
     {
       "nodeId": "165",
       "fieldName": "audio",
-      "fieldValue": "${AUDIO1_FILE}",
+      "fieldValue": "${AUDIO1_URL}",
       "description": "audio1"
     },
     {
       "nodeId": "167",
       "fieldName": "image",
-      "fieldValue": "${PICTURE3_PLACEHOLDER}",
+      "fieldValue": "${PICTURE3_URL}",
       "description": "picture3"
     },
     {
       "nodeId": "168",
       "fieldName": "image",
-      "fieldValue": "${PICTURE4_PLACEHOLDER}",
-      "description": "picture4"
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
     },
     {
       "nodeId": "169",
       "fieldName": "audio",
-      "fieldValue": "${AUDIO1_FILE}",
+      "fieldValue": "${AUDIO2_URL}",
       "description": "audio2（未使用则复用audio1）"
     }
   ],
@@ -222,7 +163,6 @@ RESPONSE=$(curl -s -X POST "$RUN_URL" \
 echo "📋 响应："
 echo "$RESPONSE" | python3 -m json.tool 2>/dev/null || echo "$RESPONSE"
 
-# 提取 taskId
 TASK_ID=$(echo "$RESPONSE" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
@@ -233,9 +173,11 @@ if [ -n "$TASK_ID" ]; then
     echo ""
     echo "✅ 任务提交成功！"
     echo "   Task ID: $TASK_ID"
-    echo "   查询状态: curl -s -X POST '${API_BASE}/query' -H 'Content-Type: application/json' -d '{\"taskId\": \"${TASK_ID}\"}'"
     echo ""
-    echo "⚠️  注意：COS 链接 24 小时失效，生成成功后请及时下载到本地。"
+    echo "🔍 查询结果："
+    echo "   curl -s -X POST '${QUERY_URL}' -H 'Content-Type: application/json' -H \"Authorization: Bearer \$RUNNINGHUB_API_KEY\" -d '{\"taskId\": \"${TASK_ID}\"}'"
+    echo ""
+    echo "⚠️  COS 链接 24 小时失效，生成成功后请及时下载到本地。"
 else
     echo ""
     echo "❌ 任务提交失败，请检查错误信息。"
