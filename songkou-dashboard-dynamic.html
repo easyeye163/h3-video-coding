@@ -49,7 +49,7 @@ h1{font-size:1.5em;margin-bottom:10px;color:#58a6ff}
 const REPO='easyeye163/h3-video-coding';
 const BRANCH='main';
 const CDN_BASE='https://cdn.jsdelivr.net/gh/'+REPO+'@'+BRANCH;
-const API_URL='https://data.jsdelivr.com/v1/packages/gh/'+REPO+'@'+BRANCH;
+const API_URL='https://api.github.com/repos/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
 
 let allFiles=[];
 let currentTab='all';
@@ -61,7 +61,7 @@ async function loadData(){
     const resp=await fetch(API_URL);
     if(!resp.ok)throw new Error('API返回 '+resp.status);
     const data=await resp.json();
-    allFiles=flattenFiles(data);
+    allFiles=(data.tree||[]).filter(f=>f.type==='blob').map(f=>({path:f.path,name:f.path.split('/').pop(),size:f.size}));
     render();
   }catch(e){
     grid.innerHTML='<div class="error">加载失败：'+e.message+'<br>可能需要科学上网或稍后重试</div>';
