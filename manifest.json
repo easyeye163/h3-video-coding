@@ -76,6 +76,16 @@
       "size": 2885510
     },
     {
+      "path": "images/嵩口真实场景图/用坦厝.jpeg",
+      "name": "用坦厝.jpeg",
+      "size": 37867
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
+      "name": "用坦厝_zimage.png",
+      "size": 2376052
+    },
+    {
       "path": "images/songkou_characters/zhang_director_three_view.png",
       "name": "zhang_director_three_view.png",
       "size": 1706936
@@ -350,6 +360,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 10:30:36",
-  "total": 69
+  "updated": "2026-08-30 12:33:00",
+  "total": 71
 }
