@@ -92,6 +92,13 @@
    - 成片：`嵩口短剧_第N集_标题_vX.mp4`
    - 三视图：`xxx_three_view.png`（如 `lin_xiaoxi_three_view.png`）
    - 音色：`songkou_xxx.flac`
+7. **素材清单更新（重要）**：每次新增/删除 audio/images/videos 文件后，必须运行以下命令更新 `manifest.json`，否则动态看板无法显示最新素材：
+   ```bash
+   python3 scripts/generate_manifest.py
+   git add manifest.json && git commit -m "Update manifest"
+   ```
+   - 动态看板 `songkou-dashboard-dynamic.html` 从 CDN 读取 `manifest.json` 自动渲染素材
+   - 不更新 manifest.json = 看板看不到新素材
 
 ## 标准制作链路（单集 4 步）
 
