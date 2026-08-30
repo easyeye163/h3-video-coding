@@ -26,7 +26,7 @@ from datetime import datetime
 # ─── 配置 ───────────────────────────────────────────────────────────
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_FILE = REPO_ROOT / "嵩口项目可视化看板.html"
+OUTPUT_FILE = REPO_ROOT / "songkou-dashboard.html"
 
 # GitHub 信息（用于生成 jsDelivr CDN 链接）
 GITHUB_USER = "easyeye163"
