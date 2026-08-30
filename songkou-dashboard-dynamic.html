@@ -136,7 +136,7 @@ function render(){
       mediaHtml+
       '<div class="card-body">'+
         '<div class="card-title"><span class="badge '+badgeClass+'">'+badgeText+'</span>'+f.name+'</div>'+
-        '<div class="card-meta">'+sizeText+' · '+f.path+'</div>'+
+        '<div class="card-meta">'+sizeText+' · <a href="'+url+'" target="_blank" style="color:#58a6ff;text-decoration:none;word-break:break-all">'+url+'</a></div>'+
       '</div>';
     grid.appendChild(card);
   });
