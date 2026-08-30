@@ -16,6 +16,21 @@
       "size": 2540805
     },
     {
+      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
+      "name": "用坦厝_zimage.png",
+      "size": 2376052
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝_krea.png",
+      "name": "用坦厝_krea.png",
+      "size": 2438856
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝.jpeg",
+      "name": "用坦厝.jpeg",
+      "size": 37867
+    },
+    {
       "path": "images/嵩口真实场景图/现代改造新建筑.png",
       "name": "现代改造新建筑.png",
       "size": 3099981
@@ -74,16 +89,6 @@
       "path": "images/嵩口真实场景图/万安堡.png",
       "name": "万安堡.png",
       "size": 2885510
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝.jpeg",
-      "name": "用坦厝.jpeg",
-      "size": 37867
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
-      "name": "用坦厝_zimage.png",
-      "size": 2376052
     },
     {
       "path": "images/songkou_characters/zhang_director_three_view.png",
@@ -223,6 +228,16 @@
       "size": 5401645
     },
     {
+      "path": "videos/songkou_drama/EP4段1_用坦厝天井.mp4",
+      "name": "EP4段1_用坦厝天井.mp4",
+      "size": 10514086
+    },
+    {
+      "path": "videos/songkou_drama/EP2段1_阿公的故事.mp4",
+      "name": "EP2段1_阿公的故事.mp4",
+      "size": 4979756
+    },
+    {
       "path": "videos/songkou_drama/EP1段4_古榕树感悟.mp4",
       "name": "EP1段4_古榕树感悟.mp4",
       "size": 6733523
@@ -360,6 +375,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 12:33:00",
-  "total": 71
+  "updated": "2026-08-30 14:09:54",
+  "total": 74
 }
