@@ -243,6 +243,21 @@
       "size": 5401645
     },
     {
+      "path": "videos/songkou_drama/EP7段4_夕阳镀金门扉.mp4",
+      "name": "EP7段4_夕阳镀金门扉.mp4",
+      "size": 8011052
+    },
+    {
+      "path": "videos/songkou_drama/EP7段3_十七秀才三举人.mp4",
+      "name": "EP7段3_十七秀才三举人.mp4",
+      "size": 6469884
+    },
+    {
+      "path": "videos/songkou_drama/EP7段2_曾祖父办学堂抉择.mp4",
+      "name": "EP7段2_曾祖父办学堂抉择.mp4",
+      "size": 8508301
+    },
+    {
       "path": "videos/songkou_drama/EP7段1_龙口祖厝传说.mp4",
       "name": "EP7段1_龙口祖厝传说.mp4",
       "size": 4809804
@@ -420,6 +435,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 18:37:59",
-  "total": 83
+  "updated": "2026-08-30 19:16:03",
+  "total": 86
 }
