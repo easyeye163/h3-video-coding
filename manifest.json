@@ -1,179 +1,19 @@
 {
+  "generated_at": "2026-08-31",
+  "total_files": 203,
+  "summary": {
+    "images": 72,
+    "videos": 55,
+    "audio": 10,
+    "documents": 27,
+    "scripts": 37,
+    "others": 2
+  },
   "images": [
     {
-      "path": "images/嵩口真实场景图/龙口祖厝.png",
-      "name": "龙口祖厝.png",
-      "size": 2852379
-    },
-    {
-      "path": "images/嵩口真实场景图/鹤形路.png",
-      "name": "鹤形路.png",
-      "size": 2958360
-    },
-    {
-      "path": "images/针织女孩三视图.png",
-      "name": "针织女孩三视图.png",
-      "size": 2540805
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
-      "name": "用坦厝_zimage.png",
-      "size": 2376052
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝_krea.png",
-      "name": "用坦厝_krea.png",
-      "size": 2438856
-    },
-    {
-      "path": "images/嵩口真实场景图/用坦厝.jpeg",
-      "name": "用坦厝.jpeg",
-      "size": 37867
-    },
-    {
-      "path": "images/嵩口真实场景图/现代改造新建筑.png",
-      "name": "现代改造新建筑.png",
-      "size": 3099981
-    },
-    {
-      "path": "images/songkou_characters/王婶_three_view.png",
-      "name": "王婶_three_view.png",
-      "size": 2238726
-    },
-    {
-      "path": "images/嵩口真实场景图/德星楼.jpeg",
-      "name": "德星楼.jpeg",
-      "size": 1620689
-    },
-    {
-      "path": "images/songkou_characters/张导演_three_view.png",
-      "name": "张导演_three_view.png",
-      "size": 1868068
-    },
-    {
-      "path": "images/嵩口真实场景图/嵩口全景.png",
-      "name": "嵩口全景.png",
-      "size": 3039202
-    },
-    {
-      "path": "images/嵩口真实场景图/宁远庄.png",
-      "name": "宁远庄.png",
-      "size": 2794855
-    },
-    {
-      "path": "images/嵩口真实场景图/夯土墙.jpeg",
-      "name": "夯土墙.jpeg",
-      "size": 1222586
-    },
-    {
-      "path": "images/character-sheet/图书馆看书.png",
-      "name": "图书馆看书.png",
-      "size": 1809792
-    },
-    {
-      "path": "images/嵩口真实场景图/古码头.png",
-      "name": "古码头.png",
-      "size": 2462106
-    },
-    {
-      "path": "images/嵩口真实场景图/古城墙.webp",
-      "name": "古城墙.webp",
-      "size": 981196
-    },
-    {
-      "path": "images/出租车.png",
-      "name": "出租车.png",
-      "size": 5220776
-    },
-    {
-      "path": "images/全局ai主角.jpg",
-      "name": "全局ai主角.jpg",
-      "size": 100229
-    },
-    {
-      "path": "images/character-sheet/三视图_现代女生.png",
-      "name": "三视图_现代女生.png",
-      "size": 1484763
-    },
-    {
-      "path": "images/嵩口真实场景图/万安堡.png",
-      "name": "万安堡.png",
-      "size": 2885510
-    },
-    {
-      "path": "images/songkou_characters/zhang_director_three_view.png",
-      "name": "zhang_director_three_view.png",
-      "size": 1706936
-    },
-    {
-      "path": "images/songkou_characters/xiao_nuomi_three_view.png",
-      "name": "xiao_nuomi_three_view.png",
-      "size": 1643225
-    },
-    {
-      "path": "images/sunset_beach.png",
-      "name": "sunset_beach.png",
-      "size": 2220487
-    },
-    {
-      "path": "images/songkou_characters/songkou_panorama_firstframe.png",
-      "name": "songkou_panorama_firstframe.png",
-      "size": 2769427
-    },
-    {
-      "path": "images/night_bonfire.png",
-      "name": "night_bonfire.png",
-      "size": 2069683
-    },
-    {
-      "path": "images/songkou_characters/mysterious_traveler_three_view.png",
-      "name": "mysterious_traveler_three_view.png",
-      "size": 1733346
-    },
-    {
-      "path": "images/modern_city_night.png",
-      "name": "modern_city_night.png",
-      "size": 2534260
-    },
-    {
-      "path": "images/songkou_characters/lin_xiaoxi_three_view.png",
-      "name": "lin_xiaoxi_three_view.png",
-      "size": 2017495
-    },
-    {
-      "path": "images/crystal_palace.png",
-      "name": "crystal_palace.png",
-      "size": 2104225
-    },
-    {
-      "path": "images/songkou_characters/chen_agong_three_view.png",
-      "name": "chen_agong_three_view.png",
-      "size": 1326847
-    },
-    {
-      "path": "images/beach_vacation.png",
-      "name": "beach_vacation.png",
-      "size": 2806780
-    },
-    {
-      "path": "images/ancient_woman.png",
-      "name": "ancient_woman.png",
-      "size": 1527476
-    },
-    {
-      "path": "images/songkou_ep5/EP5_seg1_导演进村_首帧.png",
-      "name": "EP5_seg1_导演进村_首帧.png",
-      "size": 1823612
-    },
-    {
-      "path": "images/04_zimage_新标题.png",
-      "name": "04_zimage_新标题.png",
-      "size": 1840061
-    },
-    {
-      "path": "images/characters/02_神秘使者.png",
-      "name": "02_神秘使者.png",
-      "size": 1729277
+      "path": "images/01_zimage_马年新宠.png",
+      "name": "01_zimage_马年新宠.png",
+      "size": 496
     },
     {
       "path": "images/02_krea_edit_紫裙.png",
@@ -181,256 +21,361 @@
       "size": 1989085
     },
     {
+      "path": "images/04_zimage_新标题.png",
+      "name": "04_zimage_新标题.png",
+      "size": 1840061
+    },
+    {
+      "path": "images/ancient_woman.png",
+      "name": "ancient_woman.png",
+      "size": 1527476
+    },
+    {
+      "path": "images/beach_vacation.png",
+      "name": "beach_vacation.png",
+      "size": 2806780
+    },
+    {
+      "path": "images/character-sheet/三视图_现代女生.png",
+      "name": "三视图_现代女生.png",
+      "size": 1484763
+    },
+    {
+      "path": "images/character-sheet/图书馆看书.png",
+      "name": "图书馆看书.png",
+      "size": 1809792
+    },
+    {
       "path": "images/characters/01_东方少女.png",
       "name": "01_东方少女.png",
       "size": 1763001
     },
     {
-      "path": "images/01_zimage_马年新宠.png",
-      "name": "01_zimage_马年新宠.png",
-      "size": 496
+      "path": "images/characters/02_神秘使者.png",
+      "name": "02_神秘使者.png",
+      "size": 1729277
+    },
+    {
+      "path": "images/crystal_palace.png",
+      "name": "crystal_palace.png",
+      "size": 2104225
+    },
+    {
+      "path": "images/modern_city_night.png",
+      "name": "modern_city_night.png",
+      "size": 2534260
+    },
+    {
+      "path": "images/night_bonfire.png",
+      "name": "night_bonfire.png",
+      "size": 2069683
+    },
+    {
+      "path": "images/songkou_3d_characters/chen_agong_3d_turnaround.png",
+      "name": "chen_agong_3d_turnaround.png",
+      "size": 904320
+    },
+    {
+      "path": "images/songkou_3d_characters/global_ai_protagonist_3d_turnaround.png",
+      "name": "global_ai_protagonist_3d_turnaround.png",
+      "size": 845855
+    },
+    {
+      "path": "images/songkou_3d_characters/global_ai_protagonist_xianxia_3d_turnaround.png",
+      "name": "global_ai_protagonist_xianxia_3d_turnaround.png",
+      "size": 835113
+    },
+    {
+      "path": "images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png",
+      "name": "global_ai_protagonist_xianxia_ig2img.png",
+      "size": 1014919
+    },
+    {
+      "path": "images/songkou_3d_characters/lin_xiaoxi_3d_turnaround.png",
+      "name": "lin_xiaoxi_3d_turnaround.png",
+      "size": 1009652
+    },
+    {
+      "path": "images/songkou_3d_characters/qiongqi_four_legs_3d_turnaround.png",
+      "name": "qiongqi_four_legs_3d_turnaround.png",
+      "size": 1634602
+    },
+    {
+      "path": "images/songkou_3d_characters/xiao_nuomi_3d_turnaround.png",
+      "name": "xiao_nuomi_3d_turnaround.png",
+      "size": 887919
+    },
+    {
+      "path": "images/songkou_3d_characters/zhang_director_3d_turnaround.png",
+      "name": "zhang_director_3d_turnaround.png",
+      "size": 832453
+    },
+    {
+      "path": "images/songkou_3d_scenes/ancient_banyan_xianxia.png",
+      "name": "ancient_banyan_xianxia.png",
+      "size": 1277911
+    },
+    {
+      "path": "images/songkou_3d_scenes/ancient_city_wall_xianxia.png",
+      "name": "ancient_city_wall_xianxia.png",
+      "size": 1179485
+    },
+    {
+      "path": "images/songkou_3d_scenes/ancient_pier_xianxia.png",
+      "name": "ancient_pier_xianxia.png",
+      "size": 1110145
+    },
+    {
+      "path": "images/songkou_3d_scenes/dexing_tower_xianxia.png",
+      "name": "dexing_tower_xianxia.png",
+      "size": 1164116
+    },
+    {
+      "path": "images/songkou_3d_scenes/he_xing_road_xianxia.png",
+      "name": "he_xing_road_xianxia.png",
+      "size": 1067347
+    },
+    {
+      "path": "images/songkou_3d_scenes/longkou_ancestral_xianxia.png",
+      "name": "longkou_ancestral_xianxia.png",
+      "size": 1143001
+    },
+    {
+      "path": "images/songkou_3d_scenes/ningyuan_manor_xianxia.png",
+      "name": "ningyuan_manor_xianxia.png",
+      "size": 1315508
+    },
+    {
+      "path": "images/songkou_3d_scenes/rammed_earth_wall_xianxia.png",
+      "name": "rammed_earth_wall_xianxia.png",
+      "size": 1297425
+    },
+    {
+      "path": "images/songkou_3d_scenes/songkou_panorama_xianxia.png",
+      "name": "songkou_panorama_xianxia.png",
+      "size": 1089567
+    },
+    {
+      "path": "images/songkou_3d_scenes/wan_an_castle_xianxia.png",
+      "name": "wan_an_castle_xianxia.png",
+      "size": 1032819
+    },
+    {
+      "path": "images/songkou_3d_scenes/wasteland_battle_xianxia.png",
+      "name": "wasteland_battle_xianxia.png",
+      "size": 812023
+    },
+    {
+      "path": "images/songkou_3d_scenes/yong_tan_courtyard_xianxia.png",
+      "name": "yong_tan_courtyard_xianxia.png",
+      "size": 887778
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/万安堡_ig2img.png",
+      "name": "万安堡_ig2img.png",
+      "size": 779999
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/古城墙_ig2img.png",
+      "name": "古城墙_ig2img.png",
+      "size": 4027622
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/古码头_ig2img.png",
+      "name": "古码头_ig2img.png",
+      "size": 764570
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/夯土墙_ig2img.png",
+      "name": "夯土墙_ig2img.png",
+      "size": 1575462
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/宁远庄_ig2img.png",
+      "name": "宁远庄_ig2img.png",
+      "size": 875002
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/嵩口全景_ig2img.png",
+      "name": "嵩口全景_ig2img.png",
+      "size": 905300
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/德星楼_ig2img.png",
+      "name": "德星楼_ig2img.png",
+      "size": 1984850
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/用坦厝_ig2img.png",
+      "name": "用坦厝_ig2img.png",
+      "size": 742265
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/鹤形路_ig2img.png",
+      "name": "鹤形路_ig2img.png",
+      "size": 863250
+    },
+    {
+      "path": "images/songkou_3d_scenes_ig2img/龙口祖厝_ig2img.png",
+      "name": "龙口祖厝_ig2img.png",
+      "size": 738145
+    },
+    {
+      "path": "images/songkou_characters/chen_agong_three_view.png",
+      "name": "chen_agong_three_view.png",
+      "size": 1326847
+    },
+    {
+      "path": "images/songkou_characters/lin_xiaoxi_three_view.png",
+      "name": "lin_xiaoxi_three_view.png",
+      "size": 2017495
+    },
+    {
+      "path": "images/songkou_characters/mysterious_traveler_three_view.png",
+      "name": "mysterious_traveler_three_view.png",
+      "size": 1733346
+    },
+    {
+      "path": "images/songkou_characters/songkou_panorama_firstframe.png",
+      "name": "songkou_panorama_firstframe.png",
+      "size": 2769427
+    },
+    {
+      "path": "images/songkou_characters/xiao_nuomi_three_view.png",
+      "name": "xiao_nuomi_three_view.png",
+      "size": 1643225
+    },
+    {
+      "path": "images/songkou_characters/zhang_director_three_view.png",
+      "name": "zhang_director_three_view.png",
+      "size": 1706936
+    },
+    {
+      "path": "images/songkou_characters/张导演_three_view.png",
+      "name": "张导演_three_view.png",
+      "size": 1868068
+    },
+    {
+      "path": "images/songkou_characters/王婶_three_view.png",
+      "name": "王婶_three_view.png",
+      "size": 2238726
+    },
+    {
+      "path": "images/songkou_ep5/EP5_seg1_导演进村_首帧.png",
+      "name": "EP5_seg1_导演进村_首帧.png",
+      "size": 1823612
+    },
+    {
+      "path": "images/songkou_food/九重粿滑肉汤_仙侠化.png",
+      "name": "九重粿滑肉汤_仙侠化.png",
+      "size": 708209
+    },
+    {
+      "path": "images/songkou_food/喜记礼饼_仙侠化.png",
+      "name": "喜记礼饼_仙侠化.png",
+      "size": 842874
+    },
+    {
+      "path": "images/songkou_food/葱饼_仙侠化.png",
+      "name": "葱饼_仙侠化.png",
+      "size": 737744
+    },
+    {
+      "path": "images/songkou_food/蛋燕_仙侠化.png",
+      "name": "蛋燕_仙侠化.png",
+      "size": 718428
+    },
+    {
+      "path": "images/sunset_beach.png",
+      "name": "sunset_beach.png",
+      "size": 2220487
+    },
+    {
+      "path": "images/全局ai主角.jpg",
+      "name": "全局ai主角.jpg",
+      "size": 100229
+    },
+    {
+      "path": "images/出租车.png",
+      "name": "出租车.png",
+      "size": 5220776
+    },
+    {
+      "path": "images/嵩口真实场景图/万安堡.png",
+      "name": "万安堡.png",
+      "size": 2885510
+    },
+    {
+      "path": "images/嵩口真实场景图/古城墙.webp",
+      "name": "古城墙.webp",
+      "size": 981196
+    },
+    {
+      "path": "images/嵩口真实场景图/古码头.png",
+      "name": "古码头.png",
+      "size": 2462106
+    },
+    {
+      "path": "images/嵩口真实场景图/夯土墙.jpeg",
+      "name": "夯土墙.jpeg",
+      "size": 1222586
+    },
+    {
+      "path": "images/嵩口真实场景图/宁远庄.png",
+      "name": "宁远庄.png",
+      "size": 2794855
+    },
+    {
+      "path": "images/嵩口真实场景图/嵩口全景.png",
+      "name": "嵩口全景.png",
+      "size": 3039202
+    },
+    {
+      "path": "images/嵩口真实场景图/德星楼.jpeg",
+      "name": "德星楼.jpeg",
+      "size": 1620689
+    },
+    {
+      "path": "images/嵩口真实场景图/现代改造新建筑.png",
+      "name": "现代改造新建筑.png",
+      "size": 3099981
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝.jpeg",
+      "name": "用坦厝.jpeg",
+      "size": 37867
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝_krea.png",
+      "name": "用坦厝_krea.png",
+      "size": 2438856
+    },
+    {
+      "path": "images/嵩口真实场景图/用坦厝_zimage.png",
+      "name": "用坦厝_zimage.png",
+      "size": 2376052
+    },
+    {
+      "path": "images/嵩口真实场景图/鹤形路.png",
+      "name": "鹤形路.png",
+      "size": 2958360
+    },
+    {
+      "path": "images/嵩口真实场景图/龙口祖厝.png",
+      "name": "龙口祖厝.png",
+      "size": 2852379
+    },
+    {
+      "path": "images/针织女孩三视图.png",
+      "name": "针织女孩三视图.png",
+      "size": 2540805
     }
   ],
   "videos": [
     {
-      "path": "videos/songkou-vlog/鹤形路.mp4",
-      "name": "鹤形路.mp4",
-      "size": 7217392
-    },
-    {
-      "path": "videos/songkou-vlog/用坦厝2.mp4",
-      "name": "用坦厝2.mp4",
-      "size": 5394528
-    },
-    {
-      "path": "videos/songkou-vlog/用坦厝.mp4",
-      "name": "用坦厝.mp4",
-      "size": 4636604
-    },
-    {
-      "path": "videos/songkou-vlog/宁远庄vlog.mp4",
-      "name": "宁远庄vlog.mp4",
-      "size": 5996473
-    },
-    {
-      "path": "videos/songkou-vlog/古街2.mp4",
-      "name": "古街2.mp4",
-      "size": 10116583
-    },
-    {
-      "path": "videos/songkou-vlog/古街.mp4",
-      "name": "古街.mp4",
-      "size": 5806571
-    },
-    {
-      "path": "videos/songkou-vlog/古民居2.mp4",
-      "name": "古民居2.mp4",
-      "size": 6311248
-    },
-    {
-      "path": "videos/songkou-vlog/古民居.mp4",
-      "name": "古民居.mp4",
-      "size": 6340061
-    },
-    {
-      "path": "videos/songkou-vlog/全景.mp4",
-      "name": "全景.mp4",
-      "size": 5095422
-    },
-    {
-      "path": "videos/songkou-vlog/万安堡.mp4",
-      "name": "万安堡.mp4",
-      "size": 5401645
-    },
-    {
-      "path": "videos/songkou_drama/EP9段4_阳光镀金城砖收束.mp4",
-      "name": "EP9段4_阳光镀金城砖收束.mp4",
-      "size": 5971874
-    },
-    {
-      "path": "videos/songkou_drama/EP9段3_小糯米比游乐场还大.mp4",
-      "name": "EP9段3_小糯米比游乐场还大.mp4",
-      "size": 6928220
-    },
-    {
-      "path": "videos/songkou_drama/EP9段2_林小溪文化自信觉醒.mp4",
-      "name": "EP9段2_林小溪文化自信觉醒.mp4",
-      "size": 5774172
-    },
-    {
-      "path": "videos/songkou_drama/EP9段1_万安堡城墙众人仰望.mp4",
-      "name": "EP9段1_万安堡城墙众人仰望.mp4",
-      "size": 4946457
-    },
-    {
-      "path": "videos/songkou_drama/EP8段4_山风野草儿童嬉笑.mp4",
-      "name": "EP8段4_山风野草儿童嬉笑.mp4",
-      "size": 5346837
-    },
-    {
-      "path": "videos/songkou_drama/EP8段3_触碰弹孔许诺传讲.mp4",
-      "name": "EP8段3_触碰弹孔许诺传讲.mp4",
-      "size": 6030917
-    },
-    {
-      "path": "videos/songkou_drama/EP8段2_幸存者右腿致瘸.mp4",
-      "name": "EP8段2_幸存者右腿致瘸.mp4",
-      "size": 4563779
-    },
-    {
-      "path": "videos/songkou_drama/EP8段1_高墙弹孔御敌往事.mp4",
-      "name": "EP8段1_高墙弹孔御敌往事.mp4",
-      "size": 7699508
-    },
-    {
-      "path": "videos/songkou_drama/EP7段4_夕阳镀金门扉.mp4",
-      "name": "EP7段4_夕阳镀金门扉.mp4",
-      "size": 8011052
-    },
-    {
-      "path": "videos/songkou_drama/EP7段3_十七秀才三举人.mp4",
-      "name": "EP7段3_十七秀才三举人.mp4",
-      "size": 6469884
-    },
-    {
-      "path": "videos/songkou_drama/EP7段2_曾祖父办学堂抉择.mp4",
-      "name": "EP7段2_曾祖父办学堂抉择.mp4",
-      "size": 8508301
-    },
-    {
-      "path": "videos/songkou_drama/EP7段1_龙口祖厝传说.mp4",
-      "name": "EP7段1_龙口祖厝传说.mp4",
-      "size": 4809804
-    },
-    {
-      "path": "videos/songkou_drama/EP4段4_敬意拍摄.mp4",
-      "name": "EP4段4_敬意拍摄.mp4",
-      "size": 4986901
-    },
-    {
-      "path": "videos/songkou_drama/EP4段3_天然空调.mp4",
-      "name": "EP4段3_天然空调.mp4",
-      "size": 5927846
-    },
-    {
-      "path": "videos/songkou_drama/EP4段2_陈阿公点破.mp4",
-      "name": "EP4段2_陈阿公点破.mp4",
-      "size": 4359326
-    },
-    {
-      "path": "videos/songkou_drama/EP4段1_用坦厝天井.mp4",
-      "name": "EP4段1_用坦厝天井.mp4",
-      "size": 10514086
-    },
-    {
-      "path": "videos/songkou_drama/EP2段1_阿公的故事.mp4",
-      "name": "EP2段1_阿公的故事.mp4",
-      "size": 4979756
-    },
-    {
-      "path": "videos/songkou_drama/EP1段4_古榕树感悟.mp4",
-      "name": "EP1段4_古榕树感悟.mp4",
-      "size": 6733523
-    },
-    {
-      "path": "videos/songkou_drama/EP1段3_鹤形路忆旧.mp4",
-      "name": "EP1段3_鹤形路忆旧.mp4",
-      "size": 7697248
-    },
-    {
-      "path": "videos/songkou_drama/EP1段3_鹤形路对话.mp4",
-      "name": "EP1段3_鹤形路对话.mp4",
-      "size": 7972103
-    },
-    {
-      "path": "videos/songkou_drama/EP1段2_古码头重逢.mp4",
-      "name": "EP1段2_古码头重逢.mp4",
-      "size": 7220112
-    },
-    {
-      "path": "videos/songkou_drama/EP1段1_清晨嵩口.mp4",
-      "name": "EP1段1_清晨嵩口.mp4",
-      "size": 7977783
-    },
-    {
-      "path": "videos/songkou_drama/EP10段4_月光身影树影融合收束.mp4",
-      "name": "EP10段4_月光身影树影融合收束.mp4",
-      "size": 4834786
-    },
-    {
-      "path": "videos/songkou_drama/EP10段3_站定深呼吸时间观.mp4",
-      "name": "EP10段3_站定深呼吸时间观.mp4",
-      "size": 8750546
-    },
-    {
-      "path": "videos/songkou_drama/EP10段2_蹲下抚摸青石板追问.mp4",
-      "name": "EP10段2_蹲下抚摸青石板追问.mp4",
-      "size": 6044619
-    },
-    {
-      "path": "videos/songkou_drama/EP10段1_深夜青石巷月光独步.mp4",
-      "name": "EP10段1_深夜青石巷月光独步.mp4",
-      "size": 6476325
-    },
-    {
-      "path": "videos/26_时空相遇-咖啡厅相遇.mp4",
-      "name": "26_时空相遇-咖啡厅相遇.mp4",
-      "size": 2814887
-    },
-    {
-      "path": "videos/25_时空相遇-触摸倒影.mp4",
-      "name": "25_时空相遇-触摸倒影.mp4",
-      "size": 2625824
-    },
-    {
-      "path": "videos/24_时空相遇-时空穿越.mp4",
-      "name": "24_时空相遇-时空穿越.mp4",
-      "size": 7606337
-    },
-    {
-      "path": "videos/23_时空相遇-时空交汇.mp4",
-      "name": "23_时空相遇-时空交汇.mp4",
-      "size": 2305050
-    },
-    {
-      "path": "videos/22_时空相遇-现代都市落地.mp4",
-      "name": "22_时空相遇-现代都市落地.mp4",
-      "size": 5813011
-    },
-    {
-      "path": "videos/21_时空相遇-水晶宫殿苏醒.mp4",
-      "name": "21_时空相遇-水晶宫殿苏醒.mp4",
-      "size": 3414424
-    },
-    {
-      "path": "videos/20_海边度假-星空篝火.mp4",
-      "name": "20_海边度假-星空篝火.mp4",
-      "size": 4260720
-    },
-    {
-      "path": "videos/19_海边度假-日落时分.mp4",
-      "name": "19_海边度假-日落时分.mp4",
-      "size": 3011456
-    },
-    {
-      "path": "videos/18_海边度假-现代女生.mp4",
-      "name": "18_海边度假-现代女生.mp4",
-      "size": 4143638
-    },
-    {
-      "path": "videos/17_现代女生口播_AnimateDiff.mp4",
-      "name": "17_现代女生口播_AnimateDiff.mp4",
-      "size": 2387653
-    },
-    {
-      "path": "videos/04_归途庭院忆海.mp4",
-      "name": "04_归途庭院忆海.mp4",
-      "size": 4522815
-    },
-    {
-      "path": "videos/03_海边的清晨告别.mp4",
-      "name": "03_海边的清晨告别.mp4",
-      "size": 4369003
+      "path": "videos/01_海边黄昏的秘密.mp4",
+      "name": "01_海边黄昏的秘密.mp4",
+      "size": 4786626
     },
     {
       "path": "videos/02_篝火旁的星空约定.mp4",
@@ -438,51 +383,276 @@
       "size": 4628588
     },
     {
-      "path": "videos/01_海边黄昏的秘密.mp4",
-      "name": "01_海边黄昏的秘密.mp4",
-      "size": 4786626
+      "path": "videos/03_海边的清晨告别.mp4",
+      "name": "03_海边的清晨告别.mp4",
+      "size": 4369003
+    },
+    {
+      "path": "videos/04_归途庭院忆海.mp4",
+      "name": "04_归途庭院忆海.mp4",
+      "size": 4522815
+    },
+    {
+      "path": "videos/17_现代女生口播_AnimateDiff.mp4",
+      "name": "17_现代女生口播_AnimateDiff.mp4",
+      "size": 2387653
+    },
+    {
+      "path": "videos/18_海边度假-现代女生.mp4",
+      "name": "18_海边度假-现代女生.mp4",
+      "size": 4143638
+    },
+    {
+      "path": "videos/19_海边度假-日落时分.mp4",
+      "name": "19_海边度假-日落时分.mp4",
+      "size": 3011456
+    },
+    {
+      "path": "videos/20_海边度假-星空篝火.mp4",
+      "name": "20_海边度假-星空篝火.mp4",
+      "size": 4260720
+    },
+    {
+      "path": "videos/21_时空相遇-水晶宫殿苏醒.mp4",
+      "name": "21_时空相遇-水晶宫殿苏醒.mp4",
+      "size": 3414424
+    },
+    {
+      "path": "videos/22_时空相遇-现代都市落地.mp4",
+      "name": "22_时空相遇-现代都市落地.mp4",
+      "size": 5813011
+    },
+    {
+      "path": "videos/23_时空相遇-时空交汇.mp4",
+      "name": "23_时空相遇-时空交汇.mp4",
+      "size": 2305050
+    },
+    {
+      "path": "videos/24_时空相遇-时空穿越.mp4",
+      "name": "24_时空相遇-时空穿越.mp4",
+      "size": 7606337
+    },
+    {
+      "path": "videos/25_时空相遇-触摸倒影.mp4",
+      "name": "25_时空相遇-触摸倒影.mp4",
+      "size": 2625824
+    },
+    {
+      "path": "videos/26_时空相遇-咖啡厅相遇.mp4",
+      "name": "26_时空相遇-咖啡厅相遇.mp4",
+      "size": 2814887
+    },
+    {
+      "path": "videos/demo_10s_xianxia_hexingroad.mp4",
+      "name": "demo_10s_xianxia_hexingroad.mp4",
+      "size": 4884983
+    },
+    {
+      "path": "videos/songkou-vlog/万安堡.mp4",
+      "name": "万安堡.mp4",
+      "size": 5401645
+    },
+    {
+      "path": "videos/songkou-vlog/全景.mp4",
+      "name": "全景.mp4",
+      "size": 5095422
+    },
+    {
+      "path": "videos/songkou-vlog/古民居.mp4",
+      "name": "古民居.mp4",
+      "size": 6340061
+    },
+    {
+      "path": "videos/songkou-vlog/古民居2.mp4",
+      "name": "古民居2.mp4",
+      "size": 6311248
+    },
+    {
+      "path": "videos/songkou-vlog/古街.mp4",
+      "name": "古街.mp4",
+      "size": 5806571
+    },
+    {
+      "path": "videos/songkou-vlog/古街2.mp4",
+      "name": "古街2.mp4",
+      "size": 10116583
+    },
+    {
+      "path": "videos/songkou-vlog/宁远庄vlog.mp4",
+      "name": "宁远庄vlog.mp4",
+      "size": 5996473
+    },
+    {
+      "path": "videos/songkou-vlog/用坦厝.mp4",
+      "name": "用坦厝.mp4",
+      "size": 4636604
+    },
+    {
+      "path": "videos/songkou-vlog/用坦厝2.mp4",
+      "name": "用坦厝2.mp4",
+      "size": 5394528
+    },
+    {
+      "path": "videos/songkou-vlog/鹤形路.mp4",
+      "name": "鹤形路.mp4",
+      "size": 7217392
+    },
+    {
+      "path": "videos/songkou_drama/EP10段1_深夜青石巷月光独步.mp4",
+      "name": "EP10段1_深夜青石巷月光独步.mp4",
+      "size": 6476325
+    },
+    {
+      "path": "videos/songkou_drama/EP10段2_蹲下抚摸青石板追问.mp4",
+      "name": "EP10段2_蹲下抚摸青石板追问.mp4",
+      "size": 6044619
+    },
+    {
+      "path": "videos/songkou_drama/EP10段3_站定深呼吸时间观.mp4",
+      "name": "EP10段3_站定深呼吸时间观.mp4",
+      "size": 8750546
+    },
+    {
+      "path": "videos/songkou_drama/EP10段4_月光身影树影融合收束.mp4",
+      "name": "EP10段4_月光身影树影融合收束.mp4",
+      "size": 4834786
+    },
+    {
+      "path": "videos/songkou_drama/EP1段1_清晨嵩口.mp4",
+      "name": "EP1段1_清晨嵩口.mp4",
+      "size": 7977783
+    },
+    {
+      "path": "videos/songkou_drama/EP1段2_古码头重逢.mp4",
+      "name": "EP1段2_古码头重逢.mp4",
+      "size": 7220112
+    },
+    {
+      "path": "videos/songkou_drama/EP1段3_鹤形路对话.mp4",
+      "name": "EP1段3_鹤形路对话.mp4",
+      "size": 7972103
+    },
+    {
+      "path": "videos/songkou_drama/EP1段3_鹤形路忆旧.mp4",
+      "name": "EP1段3_鹤形路忆旧.mp4",
+      "size": 7697248
+    },
+    {
+      "path": "videos/songkou_drama/EP1段4_古榕树感悟.mp4",
+      "name": "EP1段4_古榕树感悟.mp4",
+      "size": 6733523
+    },
+    {
+      "path": "videos/songkou_drama/EP2段1_阿公的故事.mp4",
+      "name": "EP2段1_阿公的故事.mp4",
+      "size": 4979756
+    },
+    {
+      "path": "videos/songkou_drama/EP4段1_用坦厝天井.mp4",
+      "name": "EP4段1_用坦厝天井.mp4",
+      "size": 10514086
+    },
+    {
+      "path": "videos/songkou_drama/EP4段2_陈阿公点破.mp4",
+      "name": "EP4段2_陈阿公点破.mp4",
+      "size": 4359326
+    },
+    {
+      "path": "videos/songkou_drama/EP4段3_天然空调.mp4",
+      "name": "EP4段3_天然空调.mp4",
+      "size": 5927846
+    },
+    {
+      "path": "videos/songkou_drama/EP4段4_敬意拍摄.mp4",
+      "name": "EP4段4_敬意拍摄.mp4",
+      "size": 4986901
+    },
+    {
+      "path": "videos/songkou_drama/EP7段1_龙口祖厝传说.mp4",
+      "name": "EP7段1_龙口祖厝传说.mp4",
+      "size": 4809804
+    },
+    {
+      "path": "videos/songkou_drama/EP7段2_曾祖父办学堂抉择.mp4",
+      "name": "EP7段2_曾祖父办学堂抉择.mp4",
+      "size": 8508301
+    },
+    {
+      "path": "videos/songkou_drama/EP7段3_十七秀才三举人.mp4",
+      "name": "EP7段3_十七秀才三举人.mp4",
+      "size": 6469884
+    },
+    {
+      "path": "videos/songkou_drama/EP7段4_夕阳镀金门扉.mp4",
+      "name": "EP7段4_夕阳镀金门扉.mp4",
+      "size": 8011052
+    },
+    {
+      "path": "videos/songkou_drama/EP8段1_高墙弹孔御敌往事.mp4",
+      "name": "EP8段1_高墙弹孔御敌往事.mp4",
+      "size": 7699508
+    },
+    {
+      "path": "videos/songkou_drama/EP8段2_幸存者右腿致瘸.mp4",
+      "name": "EP8段2_幸存者右腿致瘸.mp4",
+      "size": 4563779
+    },
+    {
+      "path": "videos/songkou_drama/EP8段3_触碰弹孔许诺传讲.mp4",
+      "name": "EP8段3_触碰弹孔许诺传讲.mp4",
+      "size": 6030917
+    },
+    {
+      "path": "videos/songkou_drama/EP8段4_山风野草儿童嬉笑.mp4",
+      "name": "EP8段4_山风野草儿童嬉笑.mp4",
+      "size": 5346837
+    },
+    {
+      "path": "videos/songkou_drama/EP9段1_万安堡城墙众人仰望.mp4",
+      "name": "EP9段1_万安堡城墙众人仰望.mp4",
+      "size": 4946457
+    },
+    {
+      "path": "videos/songkou_drama/EP9段2_林小溪文化自信觉醒.mp4",
+      "name": "EP9段2_林小溪文化自信觉醒.mp4",
+      "size": 5774172
+    },
+    {
+      "path": "videos/songkou_drama/EP9段3_小糯米比游乐场还大.mp4",
+      "name": "EP9段3_小糯米比游乐场还大.mp4",
+      "size": 6928220
+    },
+    {
+      "path": "videos/songkou_drama/EP9段4_阳光镀金城砖收束.mp4",
+      "name": "EP9段4_阳光镀金城砖收束.mp4",
+      "size": 5971874
+    },
+    {
+      "path": "videos/songkou_xianxia/demo_10s_chen_agong.mp4",
+      "name": "demo_10s_chen_agong.mp4",
+      "size": 3898777
+    },
+    {
+      "path": "videos/songkou_xianxia/demo_10s_qiongqi.mp4",
+      "name": "demo_10s_qiongqi.mp4",
+      "size": 5311689
+    },
+    {
+      "path": "videos/songkou_xianxia/demo_10s_xiao_nuomi.mp4",
+      "name": "demo_10s_xiao_nuomi.mp4",
+      "size": 3926029
+    },
+    {
+      "path": "videos/songkou_xianxia/demo_10s_zhang_director.mp4",
+      "name": "demo_10s_zhang_director.mp4",
+      "size": 2749895
     }
   ],
   "audio": [
     {
-      "path": "audio/voices/王婶_voice.flac",
-      "name": "王婶_voice.flac",
-      "size": 359671
-    },
-    {
-      "path": "audio/voices/张导演_voice.flac",
-      "name": "张导演_voice.flac",
-      "size": 456299
-    },
-    {
-      "path": "audio/voices/songkou_traveler.flac",
-      "name": "songkou_traveler.flac",
-      "size": 142361
-    },
-    {
-      "path": "audio/voices/songkou_girl_main.flac",
-      "name": "songkou_girl_main.flac",
-      "size": 178955
-    },
-    {
-      "path": "audio/voices/songkou_elder.flac",
-      "name": "songkou_elder.flac",
-      "size": 236543
-    },
-    {
-      "path": "audio/20岁女生_清冷.flac",
-      "name": "20岁女生_清冷.flac",
-      "size": 114537
-    },
-    {
-      "path": "audio/20岁女生.flac",
-      "name": "20岁女生.flac",
-      "size": 447231
-    },
-    {
-      "path": "audio/03_活泼女生.flac",
-      "name": "03_活泼女生.flac",
-      "size": 302424
+      "path": "audio/01_温暖治愈男生.flac",
+      "name": "01_温暖治愈男生.flac",
+      "size": 358980
     },
     {
       "path": "audio/02_温暖治愈男生_v2.flac",
@@ -490,11 +660,380 @@
       "size": 280982
     },
     {
-      "path": "audio/01_温暖治愈男生.flac",
-      "name": "01_温暖治愈男生.flac",
-      "size": 358980
+      "path": "audio/03_活泼女生.flac",
+      "name": "03_活泼女生.flac",
+      "size": 302424
+    },
+    {
+      "path": "audio/20岁女生.flac",
+      "name": "20岁女生.flac",
+      "size": 447231
+    },
+    {
+      "path": "audio/20岁女生_清冷.flac",
+      "name": "20岁女生_清冷.flac",
+      "size": 114537
+    },
+    {
+      "path": "audio/voices/songkou_elder.flac",
+      "name": "songkou_elder.flac",
+      "size": 236543
+    },
+    {
+      "path": "audio/voices/songkou_girl_main.flac",
+      "name": "songkou_girl_main.flac",
+      "size": 178955
+    },
+    {
+      "path": "audio/voices/songkou_traveler.flac",
+      "name": "songkou_traveler.flac",
+      "size": 142361
+    },
+    {
+      "path": "audio/voices/张导演_voice.flac",
+      "name": "张导演_voice.flac",
+      "size": 456299
+    },
+    {
+      "path": "audio/voices/王婶_voice.flac",
+      "name": "王婶_voice.flac",
+      "size": 359671
     }
   ],
-  "updated": "2026-08-31 09:13:56",
-  "total": 98
+  "documents": [
+    {
+      "path": "1、【实施中】嵩口宣传项目.md",
+      "name": "1、【实施中】嵩口宣传项目.md",
+      "size": 480974
+    },
+    {
+      "path": "2、【规划中】嵩口镇妖录.md",
+      "name": "2、【规划中】嵩口镇妖录.md",
+      "size": 32658
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "size": 9770
+    },
+    {
+      "path": "blog/songkou-wechat-article.md",
+      "name": "songkou-wechat-article.md",
+      "size": 14709
+    },
+    {
+      "path": "blog/songkou-yaolu-wechat.md",
+      "name": "songkou-yaolu-wechat.md",
+      "size": 8843
+    },
+    {
+      "path": "docs/dialogue_audio_mapping.md",
+      "name": "dialogue_audio_mapping.md",
+      "size": 2060
+    },
+    {
+      "path": "docs/dialogue_script.md",
+      "name": "dialogue_script.md",
+      "size": 1572
+    },
+    {
+      "path": "docs/new_scene_dialogue.md",
+      "name": "new_scene_dialogue.md",
+      "size": 5612
+    },
+    {
+      "path": "docs/prompt_with_dialogue.md",
+      "name": "prompt_with_dialogue.md",
+      "size": 3757
+    },
+    {
+      "path": "docs/runninghub_video_curl模板.md",
+      "name": "runninghub_video_curl模板.md",
+      "size": 6018
+    },
+    {
+      "path": "docs/runnninghub技能.md",
+      "name": "runnninghub技能.md",
+      "size": 8897
+    },
+    {
+      "path": "docs/s7_dialogue_summary.md",
+      "name": "s7_dialogue_summary.md",
+      "size": 1279
+    },
+    {
+      "path": "docs/songkou_character_reference_tasks.md",
+      "name": "songkou_character_reference_tasks.md",
+      "size": 4335
+    },
+    {
+      "path": "docs/人物定妆照同步操作指南.md",
+      "name": "人物定妆照同步操作指南.md",
+      "size": 10457
+    },
+    {
+      "path": "docs/嵩口EP3_鹤形之谜_极简制作单.md",
+      "name": "嵩口EP3_鹤形之谜_极简制作单.md",
+      "size": 2131
+    },
+    {
+      "path": "docs/嵩口提示词优化_v2.md",
+      "name": "嵩口提示词优化_v2.md",
+      "size": 14575
+    },
+    {
+      "path": "docs/工作流分析_高级视频生成.md",
+      "name": "工作流分析_高级视频生成.md",
+      "size": 2844
+    },
+    {
+      "path": "docs/长期记忆_分镜提示词模板.md",
+      "name": "长期记忆_分镜提示词模板.md",
+      "size": 2365
+    },
+    {
+      "path": "docs/长期记忆_对话提示词模板.md",
+      "name": "长期记忆_对话提示词模板.md",
+      "size": 1447
+    },
+    {
+      "path": "docs/长期记忆_工作流节点配置.md",
+      "name": "长期记忆_工作流节点配置.md",
+      "size": 1435
+    },
+    {
+      "path": "docs/长期记忆_节点配置总结.md",
+      "name": "长期记忆_节点配置总结.md",
+      "size": 11782
+    },
+    {
+      "path": "微信公众号文章/AI视频生成实战心得(1).md",
+      "name": "AI视频生成实战心得(1).md",
+      "size": 29822
+    },
+    {
+      "path": "微信公众号文章/wechat-article-v2.md",
+      "name": "wechat-article-v2.md",
+      "size": 23684
+    },
+    {
+      "path": "微信公众号文章/wechat-article-v3.md",
+      "name": "wechat-article-v3.md",
+      "size": 9878
+    },
+    {
+      "path": "微信公众号文章/wechat-article.md",
+      "name": "wechat-article.md",
+      "size": 10269
+    },
+    {
+      "path": "微信公众号文章/永泰嵩口古镇短剧制作全流程_AI助手实战.md",
+      "name": "永泰嵩口古镇短剧制作全流程_AI助手实战.md",
+      "size": 20408
+    },
+    {
+      "path": "知识库素材/提示词模板.md",
+      "name": "提示词模板.md",
+      "size": 31447
+    }
+  ],
+  "scripts": [
+    {
+      "path": "blog/songkou-wechat-article.html",
+      "name": "songkou-wechat-article.html",
+      "size": 28663
+    },
+    {
+      "path": "data/batch_create_final.json",
+      "name": "batch_create_final.json",
+      "size": 7745
+    },
+    {
+      "path": "data/episodes_batch.json",
+      "name": "episodes_batch.json",
+      "size": 21943
+    },
+    {
+      "path": "data/new_dialogue_prompts.json",
+      "name": "new_dialogue_prompts.json",
+      "size": 2875
+    },
+    {
+      "path": "data/planning_data.json",
+      "name": "planning_data.json",
+      "size": 2902
+    },
+    {
+      "path": "data/shangkou_batch_create.json",
+      "name": "shangkou_batch_create.json",
+      "size": 83326
+    },
+    {
+      "path": "data/storyboard_data.json",
+      "name": "storyboard_data.json",
+      "size": 4255
+    },
+    {
+      "path": "manifest.json",
+      "name": "manifest.json",
+      "size": 13563
+    },
+    {
+      "path": "scripts/create_dialogue.py",
+      "name": "create_dialogue.py",
+      "size": 2982
+    },
+    {
+      "path": "scripts/demo_10s_payload.json",
+      "name": "demo_10s_payload.json",
+      "size": 4244
+    },
+    {
+      "path": "scripts/ep10_seg1_payload.json",
+      "name": "ep10_seg1_payload.json",
+      "size": 3989
+    },
+    {
+      "path": "scripts/ep10_seg2_payload.json",
+      "name": "ep10_seg2_payload.json",
+      "size": 3935
+    },
+    {
+      "path": "scripts/ep10_seg3_payload.json",
+      "name": "ep10_seg3_payload.json",
+      "size": 3914
+    },
+    {
+      "path": "scripts/ep10_seg4_payload.json",
+      "name": "ep10_seg4_payload.json",
+      "size": 3809
+    },
+    {
+      "path": "scripts/ep7_seg1_payload.json",
+      "name": "ep7_seg1_payload.json",
+      "size": 4156
+    },
+    {
+      "path": "scripts/ep7_seg2_payload.json",
+      "name": "ep7_seg2_payload.json",
+      "size": 4362
+    },
+    {
+      "path": "scripts/ep7_seg3_payload.json",
+      "name": "ep7_seg3_payload.json",
+      "size": 4412
+    },
+    {
+      "path": "scripts/ep7_seg4_payload.json",
+      "name": "ep7_seg4_payload.json",
+      "size": 4362
+    },
+    {
+      "path": "scripts/ep8_seg1_payload.json",
+      "name": "ep8_seg1_payload.json",
+      "size": 4468
+    },
+    {
+      "path": "scripts/ep8_seg2_payload.json",
+      "name": "ep8_seg2_payload.json",
+      "size": 4402
+    },
+    {
+      "path": "scripts/ep8_seg3_payload.json",
+      "name": "ep8_seg3_payload.json",
+      "size": 3947
+    },
+    {
+      "path": "scripts/ep8_seg4_payload.json",
+      "name": "ep8_seg4_payload.json",
+      "size": 4456
+    },
+    {
+      "path": "scripts/ep9_seg1_payload.json",
+      "name": "ep9_seg1_payload.json",
+      "size": 4806
+    },
+    {
+      "path": "scripts/ep9_seg2_payload.json",
+      "name": "ep9_seg2_payload.json",
+      "size": 3889
+    },
+    {
+      "path": "scripts/ep9_seg3_payload.json",
+      "name": "ep9_seg3_payload.json",
+      "size": 4333
+    },
+    {
+      "path": "scripts/ep9_seg4_payload.json",
+      "name": "ep9_seg4_payload.json",
+      "size": 4359
+    },
+    {
+      "path": "scripts/extract_dialogue.sh",
+      "name": "extract_dialogue.sh",
+      "size": 1118
+    },
+    {
+      "path": "scripts/generate_dialogue_videos.py",
+      "name": "generate_dialogue_videos.py",
+      "size": 8933
+    },
+    {
+      "path": "scripts/generate_manifest.py",
+      "name": "generate_manifest.py",
+      "size": 1891
+    },
+    {
+      "path": "scripts/generate_new_scene.sh",
+      "name": "generate_new_scene.sh",
+      "size": 8268
+    },
+    {
+      "path": "scripts/merge_dialogue.sh",
+      "name": "merge_dialogue.sh",
+      "size": 716
+    },
+    {
+      "path": "scripts/s1_dialogue_audio.py",
+      "name": "s1_dialogue_audio.py",
+      "size": 2234
+    },
+    {
+      "path": "scripts/sync_characters_to_feishu.sh",
+      "name": "sync_characters_to_feishu.sh",
+      "size": 5578
+    },
+    {
+      "path": "scripts/update_dashboard.py",
+      "name": "update_dashboard.py",
+      "size": 26988
+    },
+    {
+      "path": "scripts/video_generation_curl_template.sh",
+      "name": "video_generation_curl_template.sh",
+      "size": 7142
+    },
+    {
+      "path": "songkou-dashboard-dynamic.html",
+      "name": "songkou-dashboard-dynamic.html",
+      "size": 7512
+    },
+    {
+      "path": "songkou-dashboard.html",
+      "name": "songkou-dashboard.html",
+      "size": 36048
+    }
+  ],
+  "others": [
+    {
+      "path": "知识库素材/永泰嵩口赶集文化信息.txt",
+      "name": "永泰嵩口赶集文化信息.txt",
+      "size": 3667
+    },
+    {
+      "path": "知识库素材/福建省永泰县嵩口镇古建筑历史信息整理（已修复图片）.txt",
+      "name": "福建省永泰县嵩口镇古建筑历史信息整理（已修复图片）.txt",
+      "size": 23569
+    }
+  ]
 }
