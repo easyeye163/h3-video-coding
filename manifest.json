@@ -353,6 +353,26 @@
       "size": 7977783
     },
     {
+      "path": "videos/songkou_drama/EP10段4_月光身影树影融合收束.mp4",
+      "name": "EP10段4_月光身影树影融合收束.mp4",
+      "size": 4834786
+    },
+    {
+      "path": "videos/songkou_drama/EP10段3_站定深呼吸时间观.mp4",
+      "name": "EP10段3_站定深呼吸时间观.mp4",
+      "size": 8750546
+    },
+    {
+      "path": "videos/songkou_drama/EP10段2_蹲下抚摸青石板追问.mp4",
+      "name": "EP10段2_蹲下抚摸青石板追问.mp4",
+      "size": 6044619
+    },
+    {
+      "path": "videos/songkou_drama/EP10段1_深夜青石巷月光独步.mp4",
+      "name": "EP10段1_深夜青石巷月光独步.mp4",
+      "size": 6476325
+    },
+    {
       "path": "videos/26_时空相遇-咖啡厅相遇.mp4",
       "name": "26_时空相遇-咖啡厅相遇.mp4",
       "size": 2814887
@@ -475,6 +495,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-30 23:11:38",
-  "total": 94
+  "updated": "2026-08-31 09:13:56",
+  "total": 98
 }
