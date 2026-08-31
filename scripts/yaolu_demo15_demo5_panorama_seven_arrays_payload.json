@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png",
+      "description": "picture1（男主图生图版）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责修仙武者的身份与造型：年轻男性，25岁，黑色短发蓬松偏分，浓眉棕色大眼，五官端正清秀皮肤白皙，气质清冷出尘仙风道骨。穿深色交领汉服宽袖长袍，腰束白玉腰带，佩古朴长剑。全片不得漂移。\n<Picture 3> 严格负责女性角色的身份与造型：林小溪，24岁，黑长低马尾，空气刘海，浅蓝交领汉服上衣配白边，觉醒后衣袂泛微光，双眼金光闪烁，周身环绕金色灵气。全片不得漂移。\n<Picture 2> 仅负责场景空间环境与机位参照：嵩口古镇全景，大樟溪穿镇而过，白墙黑瓦明清古民居群依山傍水，航拍俯瞰全貌。以图2为准确定建筑群纵深、溪流走向与古镇全貌，不参与人物造型。\n\nsummary:\n15秒3D CG高精度建模动画，玄幻仙侠题材。修仙武者与林小溪立于嵩口古镇中央同时结印激活七处阵眼，七道金色光柱从各处地标冲天而起，汇聚为巨大金色仙鹤虚影笼罩全镇，爆裂酷炫的七阵齐鸣觉醒场面。\n\nretention_analysis:\n人物不变量：图1修仙者面部、短发、汉服全程一致；图3林小溪面部、低马尾、汉服全程一致。\n场景不变量：嵩口全景建筑群、大樟溪、古民居保持稳定；七道光柱逐步亮起。\n风格不变量：3D CG高精度建模动画，国漫精品剧集质感，玄幻仙侠题材，写实CG建模与毛发皮肤细节，七阵齐鸣与仙鹤灵脉特效能量感爆裂强烈，宏大场面调度。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-3s）大远景，航拍俯瞰。嵩口古镇全景，大樟溪穿镇而过，白墙黑瓦古民居群，修仙武者（图1）与林小溪（图3）立于镇中央广场，背靠背同时闭目结印，衣袂微微飘动。\n[Shot 2]（3s-7s）大远景，快速环拍。七处阵眼依次爆裂亮起——万安堡、鹤形路、用坦厝天井、古榕树、古码头、德星楼、龙口祖厝——每处地标泛起金色光芒冲天，光柱从各处建筑爆裂射向天空，地面金色符文如蛛网般连接七处节点。\n[Shot 3]（7s-11s）中景切大远景。男女主同时睁眼暴喝，双手结印前推，七道金色光柱在天空汇聚交汇，爆裂出巨大金色能量旋涡，符文光芒覆盖整个古镇天空，男女主周身金色灵气爆发至极致，衣袂与发丝剧烈飘飞。\n[Shot 4]（11s-15s）大远景，航拍后拉至最大。汇聚的金色能量爆裂化为一只巨大金色仙鹤虚影，展翅笼罩整个嵩口古镇，金色羽毛光芒散落如流星雨覆盖全镇，男女主立于仙鹤虚影正下方，画面爆裂金光吞没整个屏幕至白色。\n\noverall_soundscape:\n七处阵法依次爆裂嗡鸣、光柱冲天轰鸣、仙鹤清唳长鸣、灵气冲击波、古镇回响。\n\nnon_diegetic_music:\n宏大仙侠交响乐，七声部依次叠加渐强，铜管与弦乐齐鸣至终爆，仙鹤主题旋律收尾。",
+      "description": "提示词（6段式 Full-Reference）"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_scenes_ig2img/%E5%B5%A9%E5%8F%A3%E5%85%A8%E6%99%AF_ig2img.png",
+      "description": "picture2（嵩口全景图生图版）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio1"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/lin_xiaoxi_3d_turnaround.png",
+      "description": "picture3（女主林小溪三视图）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_girl_main.flac",
+      "description": "audio2"
+    }
+  ],
+  "instanceType": "default",
+  "usePersonalQueue": "false"
+}

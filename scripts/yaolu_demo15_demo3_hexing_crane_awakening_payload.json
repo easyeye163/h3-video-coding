@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/lin_xiaoxi_3d_turnaround.png",
+      "description": "picture1（女主林小溪三视图）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责女性角色的身份与造型：林小溪，24岁，黑长低马尾，空气刘海，浅蓝交领汉服上衣配白边，蓝色牛仔阔腿裤，白色帆布鞋。觉醒状态：衣袂泛微光，双眼金光闪烁，周身环绕淡金色灵气。面部、发型、服装颜色与版型、体态比例均以图1为准，全片不得漂移。\n<Picture 2> 仅负责场景空间环境与机位参照：鹤形路，150米鹅卵石巷道，两侧夯土围墙白墙黛瓦，薄雾萦绕。仙侠化元素：路面金色光纹形成仙鹤展翅形状，墙壁浮现符文。以图2为准确定巷道纵深、鹅卵石路面与建筑形态，不参与人物造型。\n\nsummary:\n15秒3D CG高精度建模动画，玄幻仙侠题材。林小溪在鹤形路掌心贴地激活仙鹤灵脉，金色灵气从鹅卵石爆裂涌出，整条巷道金色光纹形成仙鹤展翅，巨大金色仙鹤虚影从巷道腾空而起，爆裂酷炫的血脉觉醒场面。\n\nretention_analysis:\n人物不变量：图1林小溪的面部、低马尾、汉服全程一致，觉醒后金光与衣袂微光保持稳定。\n场景不变量：鹤形路巷道、鹅卵石、白墙黛瓦保持稳定；金色光纹与仙鹤虚影逐步展开。\n风格不变量：3D CG高精度建模动画，国漫精品剧集质感，玄幻仙侠题材，写实CG建模与毛发皮肤细节，仙鹤灵脉与法阵特效能量感爆裂强烈。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-3s）中景，鹤形路鹅卵石巷道中央，林小溪闭目凝神单膝跪地，掌心贴在鹅卵石上，衣袂微微飘动，薄雾在巷道中流动。\n[Shot 2]（3s-6s）特写切中景，掌心接触点骤然爆裂出金色灵气，金色光纹从掌下如裂纹般沿鹅卵石路面急速蔓延向巷道两端延伸，林小溪猛然睁眼，双眼金光爆发。\n[Shot 3]（6s-10s）大远景，低角度仰拍。整条鹤形路巷道地面金色光纹全部亮起，形成巨大的仙鹤展翅形状，两侧墙壁浮现金色符文流转，林小溪站起身周身金色灵气爆发，衣袂与长发在灵气旋风中剧烈飘飞。\n[Shot 4]（10s-15s）大远景，航拍后拉。一只巨大的金色仙鹤虚影从巷道地面腾空而起，展翅盘旋升天，金色羽毛光芒爆裂散落如流星雨，林小溪站在仙鹤虚影正下方双手张开接纳灵力，整个巷道被金光吞没，画面爆裂至白色。\n\noverall_soundscape:\n灵气嗡鸣爆裂、鹅卵石震动、仙鹤清唳长鸣、灵气旋风。\n\nnon_diegetic_music:\n空灵仙鹤主题旋律渐起，转入爆裂仙侠交响乐，女声吟唱配合铜管至爆点。",
+      "description": "提示词（6段式 Full-Reference）"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_scenes_ig2img/%E9%B9%A4%E5%BD%A2%E8%B7%AF_ig2img.png",
+      "description": "picture2（鹤形路图生图版）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_girl_main.flac",
+      "description": "audio1"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture3（未使用）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_girl_main.flac",
+      "description": "audio2"
+    }
+  ],
+  "instanceType": "default",
+  "usePersonalQueue": "false"
+}

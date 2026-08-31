@@ -1,13 +1,13 @@
 {
   "generated_at": "2026-08-31",
-  "total_files": 203,
+  "total_files": 212,
   "summary": {
     "images": 72,
     "videos": 55,
     "audio": 10,
     "documents": 27,
-    "scripts": 37,
-    "others": 2
+    "scripts": 45,
+    "others": 3
   },
   "images": [
     {
@@ -709,7 +709,7 @@
     {
       "path": "2、【规划中】嵩口镇妖录.md",
       "name": "2、【规划中】嵩口镇妖录.md",
-      "size": 32658
+      "size": 32856
     },
     {
       "path": "README.md",
@@ -874,9 +874,14 @@
       "size": 4255
     },
     {
+      "path": "index.html",
+      "name": "index.html",
+      "size": 3205
+    },
+    {
       "path": "manifest.json",
       "name": "manifest.json",
-      "size": 13563
+      "size": 27990
     },
     {
       "path": "scripts/create_dialogue.py",
@@ -1014,6 +1019,36 @@
       "size": 7142
     },
     {
+      "path": "scripts/yaolu_demo15_curl.sh",
+      "name": "yaolu_demo15_curl.sh",
+      "size": 3514
+    },
+    {
+      "path": "scripts/yaolu_demo15_demo1_wanan_sword_split_payload.json",
+      "name": "yaolu_demo15_demo1_wanan_sword_split_payload.json",
+      "size": 5097
+    },
+    {
+      "path": "scripts/yaolu_demo15_demo2_wasteland_duo_thunder_payload.json",
+      "name": "yaolu_demo15_demo2_wasteland_duo_thunder_payload.json",
+      "size": 5516
+    },
+    {
+      "path": "scripts/yaolu_demo15_demo3_hexing_crane_awakening_payload.json",
+      "name": "yaolu_demo15_demo3_hexing_crane_awakening_payload.json",
+      "size": 5014
+    },
+    {
+      "path": "scripts/yaolu_demo15_demo4_pier_water_thunder_payload.json",
+      "name": "yaolu_demo15_demo4_pier_water_thunder_payload.json",
+      "size": 4996
+    },
+    {
+      "path": "scripts/yaolu_demo15_demo5_panorama_seven_arrays_payload.json",
+      "name": "yaolu_demo15_demo5_panorama_seven_arrays_payload.json",
+      "size": 5506
+    },
+    {
       "path": "songkou-dashboard-dynamic.html",
       "name": "songkou-dashboard-dynamic.html",
       "size": 7512
@@ -1022,9 +1057,19 @@
       "path": "songkou-dashboard.html",
       "name": "songkou-dashboard.html",
       "size": 36048
+    },
+    {
+      "path": "yaolu-dashboard.html",
+      "name": "yaolu-dashboard.html",
+      "size": 21760
     }
   ],
   "others": [
+    {
+      "path": ".nojekyll",
+      "name": ".nojekyll",
+      "size": 0
+    },
     {
       "path": "知识库素材/永泰嵩口赶集文化信息.txt",
       "name": "永泰嵩口赶集文化信息.txt",

@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png",
+      "description": "picture1（男主图生图版）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责修仙武者的身份与造型：年轻男性，25岁，黑色短发蓬松偏分，浓眉棕色大眼，五官端正清秀皮肤白皙，气质清冷出尘仙风道骨。穿深色交领汉服宽袖长袍，腰束白玉腰带，腰间佩古朴长剑，白色内搭，黑色布靴。面部、发型、服装颜色与版型、体态比例均以图1为准，全片不得漂移。\n<Picture 2> 仅负责场景空间环境与机位参照：万安堡，三层防御寨堡，厚重的夯土石墙，碉楼角楼，古旧斑驳。仙侠化元素：堡顶三重封印结界泛金光，墙体符文流转。以图2为准确定寨堡纵深、墙体形态与建筑结构，不参与人物造型。\n\nsummary:\n15秒3D CG高精度建模动画，玄幻仙侠题材。修仙武者御剑悬停万安堡上空，巨剑一分为五化作五道金光射入三重封印结界，金色法阵从堡顶爆发冲天，符文旋转覆盖整个天空，爆裂酷炫的封印激活场面。\n\nretention_analysis:\n人物不变量：图1修仙者的面部、短发、汉服、长剑全程一致，不出现换装、变形、多余手指或五官扭曲。\n场景不变量：万安堡三层寨堡结构、夯土石墙、碉楼保持稳定，封印结界金光位置稳定。\n风格不变量：3D CG高精度建模动画，国漫精品剧集质感，玄幻仙侠题材，写实CG建模与毛发皮肤细节，仙术法阵与御剑特效能量感强烈，宏大爆裂场面调度。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-3s）大远景，低角度仰拍，万安堡三层寨堡全貌，修仙武者脚踏巨剑凌空悬停于堡顶上方，衣袂猎猎飘动，周身环绕淡金色灵气，巨剑宽大厚重泛寒光。\n[Shot 2]（3s-5s）中近景，武者目光一凝，双手结印暴喝，脚下巨剑剑身震颤嗡鸣，骤然一分为五，五把分身巨剑呈扇形展开，各自泛起不同色泽的金色剑光。\n[Shot 3]（5s-9s）大远景，快速跟拍。五把分身巨剑如流星般疾射而下，分别轰入万安堡三个碉楼与两段城墙，击中瞬间爆裂出五朵金色能量冲击波，堡顶三重封印结界骤然全部亮起，金色符文如漩涡般急速旋转。\n[Shot 4]（9s-15s）大远景，航拍后拉。万安堡整座寨堡被金色法阵笼罩，符文光柱冲天而起直达云霄，天空被金色阵纹覆盖，武者悬停于法阵正中央，衣袂与发丝在灵气冲击波中剧烈飘飞，画面爆裂金光吞没整个屏幕。\n\noverall_soundscape:\n巨剑嗡鸣、金光爆裂轰鸣、封印阵法低沉震动、灵气冲击波。\n\nnon_diegetic_music:\n爆裂仙侠交响乐，鼓点密集，铜管与弦乐齐鸣，气势磅礴渐强至爆点。",
+      "description": "提示词（6段式 Full-Reference）"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_scenes_ig2img/%E4%B8%87%E5%AE%89%E5%A0%A1_ig2img.png",
+      "description": "picture2（万安堡图生图版）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio1"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture3（未使用）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio2"
+    }
+  ],
+  "instanceType": "default",
+  "usePersonalQueue": "false"
+}

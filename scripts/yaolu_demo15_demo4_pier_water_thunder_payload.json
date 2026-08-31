@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png",
+      "description": "picture1（男主图生图版）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责修仙武者的身份与造型：年轻男性，25岁，黑色短发蓬松偏分，浓眉棕色大眼，五官端正清秀皮肤白皙，气质清冷出尘仙风道骨。穿深色交领汉服宽袖长袍，腰束白玉腰带，佩古朴长剑。面部、发型、服装颜色与版型、体态比例均以图1为准，全片不得漂移。\n<Picture 2> 仅负责场景空间环境与机位参照：古码头，石阶台阶延伸至水面，大樟溪宽阔水面，远处古榕树，千年渡口氛围。仙侠化元素：水面泛金色涟漪，水下隐约金色符文。以图2为准确定码头纵深、石阶与水面空间关系，不参与人物造型。\n\nsummary:\n15秒3D CG高精度建模动画，玄幻仙侠题材。修仙武者立于古码头石阶之上，双手结印激活水脉封印，大樟溪水面爆裂冲天化为千万水刃，金色雷霆交织水刃形成雷水法阵笼罩水妖，爆裂酷炫的水雷双系镇妖场面。\n\nretention_analysis:\n人物不变量：图1修仙者的面部、短发、汉服、长剑全程一致，不出现换装、变形。\n场景不变量：古码头石阶、大樟溪水面、远处古榕保持稳定；水面特效逐步展开。\n风格不变量：3D CG高精度建模动画，国漫精品剧集质感，玄幻仙侠题材，写实CG建模与毛发皮肤细节，水脉与雷霆特效能量感爆裂强烈。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-3s）中景，古码头石阶之上，修仙武者背对镜头面朝大樟溪水面，双手缓缓结印，衣袂飘动，水面平静泛微光。\n[Shot 2]（3s-6s）中近景，武者双手结印完成猛然前推暴喝「水眼·封！」，大樟溪水面骤然爆裂，数十道水柱冲天而起，在空中碎裂为千万水刃碎片，阳光穿透水刃折射出虹彩。\n[Shot 3]（6s-10s）大远景，仰拍。水刃碎片在空中被金色雷光串联，形成巨大的雷水法阵笼罩水面上方，水刃如刀刃般旋转飞舞，金色雷霆在水刃间窜动交织，武者立于法阵正下方双手维持结印。\n[Shot 4]（10s-15s）大远景，航拍后拉。雷水法阵骤然收缩爆发，水刃与雷霆同时向中心聚拢轰击水面，爆裂出巨大水花与金色光柱冲天，武者衣袂与发丝在灵气冲击波中剧烈飘飞，水雾弥漫金色光芒吞没整个码头，画面爆裂至白光。\n\noverall_soundscape:\n水流爆裂轰鸣、水刃切割风声、金色雷鸣、灵气冲击波、水花飞溅。\n\nnon_diegetic_music:\n水系仙侠主题渐起，密集鼓点配合水流与雷鸣音效，铜管渐强至爆点。",
+      "description": "提示词（6段式 Full-Reference）"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_scenes_ig2img/%E5%8F%A4%E7%A0%81%E5%A4%B4_ig2img.png",
+      "description": "picture2（古码头图生图版）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio1"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture3（未使用）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio2"
+    }
+  ],
+  "instanceType": "default",
+  "usePersonalQueue": "false"
+}

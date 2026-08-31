@@ -1,0 +1,67 @@
+{
+  "nodeInfoList": [
+    {
+      "nodeId": "132",
+      "fieldName": "value",
+      "fieldValue": "15",
+      "description": "时长（秒）"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "aspect_ratio",
+      "fieldData": "[\"COMBO\", {\"default\": \"1:1 (Square)\", \"options\": [\"1:1 (Square)\", \"2:3 (Portrait Photo)\", \"3:2 (Photo)\", \"3:4 (Portrait Standard)\", \"4:3 (Standard)\", \"9:16 (Portrait Widescreen)\", \"16:9 (Widescreen)\", \"21:9 (Ultrawide)\"], \"tooltip\": \"The aspect ratio for the output dimensions.\", \"multiselect\": false}]",
+      "fieldValue": "16:9 (Widescreen)",
+      "description": "方向"
+    },
+    {
+      "nodeId": "115",
+      "fieldName": "megapixels",
+      "fieldValue": "0.7000000000000001",
+      "description": "分辨率"
+    },
+    {
+      "nodeId": "137",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png",
+      "description": "picture1（男主图生图版）"
+    },
+    {
+      "nodeId": "138",
+      "fieldName": "value",
+      "fieldValue": "subject_definitions:\n<Picture 1> 严格负责修仙武者的身份与造型：年轻男性，25岁，黑色短发蓬松偏分，浓眉棕色大眼，五官端正清秀皮肤白皙，气质清冷出尘仙风道骨。穿深色交领汉服宽袖长袍，腰束白玉腰带，佩古朴长剑。全片不得漂移。\n<Picture 3> 严格负责女性角色的身份与造型：林小溪，24岁，黑长低马尾，空气刘海，浅蓝交领汉服上衣配白边，觉醒后衣袂泛微光，双眼偶闪金光。全片不得漂移。\n<Picture 2> 仅负责场景空间环境与机位参照：开阔荒原，远处连绵荒山轮廓，碎石与低矮枯木，天空压暗有雷云翻滚。以图2为准确定荒原纵深与远景轮廓，不参与人物造型。\n\nsummary:\n15秒3D CG高精度建模动画，玄幻仙侠题材。修仙武者与林小溪背靠背悬空于荒原上空，男主巨剑一分为五锁住妖兽穷奇四爪，女主结印降下白紫色雷霆，双剑合璧雷光交织爆发，爆裂酷炫的双人合技斩妖场面。\n\nretention_analysis:\n人物不变量：图1修仙者面部、短发、汉服全程一致；图3林小溪面部、低马尾、汉服全程一致。两人不出现换装、变形。\n场景不变量：荒原、荒山轮廓、碎石枯木保持稳定；后期雷云翻涌。\n风格不变量：3D CG高精度建模动画，国漫精品剧集质感，玄幻仙侠题材，写实CG建模与毛发皮肤细节，御剑锁链与雷霆特效能量感爆裂强烈。\n绝对禁止：字幕、画面文字、LOGO、水印。\n\ndetailed_description:\n[Shot 1]（0s-3s）大远景，低角度仰拍。荒原上空，修仙武者（图1）与林小溪（图3）背靠背脚踏巨剑凌空悬停，衣袂猎飞，下方荒原地面一头穷奇外形的巨型妖兽咆哮肆虐，巨爪拍碎地面扬起碎石尘暴。\n[Shot 2]（3s-5s）中近景，武者目光一凝单手前推暴喝「分则能成！」，脚下巨剑一分为五化作五道金光流射而下，分别命中妖兽四只巨爪与尾部，击中瞬间化为灵光锁链缠绕锁紧，妖兽挣扎怒吼。\n[Shot 3]（5s-8s）中近景切女主，林小溪双手结印十指交叠，法力凝聚的微光在掌间爆发亮起，双眼金光一闪，放声暴喝「雷光咒！」\n[Shot 4]（8s-12s）大远景，仰拍。妖兽脚下地面骤然亮起巨大金色法阵符文旋转，头顶乌云翻涌电光窜动，一道巨大白紫色雷霆自天而降击中巨兽身体，同时男主五道金光锁链与女主白紫雷霆在妖兽身上交织碰撞，双色雷光爆发耀眼光芒。\n[Shot 5]（12s-15s）大远景，航拍后拉。法阵金光与雷光同时爆发至最亮，妖兽身形被耀眼光芒吞没剧烈震颤，男女主悬停于光芒正上方，衣袂与发丝在灵气冲击波中剧烈飘飞，画面爆裂双色光芒吞没屏幕。\n\noverall_soundscape:\n巨剑嗡鸣、锁链碰撞、雷云翻涌、雷霆轰击爆裂、妖兽怒吼、灵气冲击波。\n\nnon_diegetic_music:\n爆裂仙侠交响乐，密集鼓点配合雷霆音效，铜管齐鸣至爆点。",
+      "description": "提示词（6段式 Full-Reference）"
+    },
+    {
+      "nodeId": "166",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_scenes/wasteland_battle_xianxia.png",
+      "description": "picture2（荒原战场文生图版）"
+    },
+    {
+      "nodeId": "165",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_traveler.flac",
+      "description": "audio1"
+    },
+    {
+      "nodeId": "167",
+      "fieldName": "image",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/images/songkou_3d_characters/lin_xiaoxi_3d_turnaround.png",
+      "description": "picture3（女主林小溪三视图）"
+    },
+    {
+      "nodeId": "168",
+      "fieldName": "image",
+      "fieldValue": "example.png",
+      "description": "picture4（占位，不要改）"
+    },
+    {
+      "nodeId": "169",
+      "fieldName": "audio",
+      "fieldValue": "https://raw.githubusercontent.com/easyeye163/h3-video-coding/main/audio/voices/songkou_girl_main.flac",
+      "description": "audio2"
+    }
+  ],
+  "instanceType": "default",
+  "usePersonalQueue": "false"
+}
