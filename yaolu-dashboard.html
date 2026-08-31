@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>嵩口镇妖录 · 素材与进度看板</title>
+<style>
+  :root{
+    --bg:#0f0a1e;--card:#1a1230;--ink:#e8e0f5;--sub:#9b8ab8;--line:#2a2040;
+    --accent:#7c3aed;--green:#10b981;--gold:#f59e0b;--blue:#3b82f6;--red:#ef4444;
+    --purple:#a855f7;--cyan:#06b6d4;
+    --radius:14px;--shadow:0 4px 20px rgba(124,58,237,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;line-height:1.6}
+  body{padding:18px 14px 40px;background:radial-gradient(ellipse at top,#1a0f2e 0%,#0f0a1e 60%)}
+  .wrap{max-width:760px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 2px 14px}
+  header h1{font-size:20px;font-weight:800;background:linear-gradient(135deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  header h1 small{display:block;font-size:12px;font-weight:500;color:var(--sub);margin-top:2px;-webkit-text-fill-color:var(--sub)}
+  .badge{background:linear-gradient(135deg,var(--accent),#5b21b6);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 0 12px rgba(124,58,237,.4)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 14px;margin-bottom:16px}
+  .s-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:12px}
+  .s-title .dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 8px currentColor}
+  .d-purple{background:var(--purple);color:var(--purple)}.d-green{background:var(--green);color:var(--green)}.d-gold{background:var(--gold);color:var(--gold)}.d-cyan{background:var(--cyan);color:var(--cyan)}.d-red{background:var(--red);color:var(--red)}
+  .hint{font-size:12px;color:var(--sub);margin-top:8px}
+
+  /* 进度总览 */
+  .overview{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .ov{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:10px;padding:12px}
+  .ov .k{font-size:12px;color:var(--sub)}
+  .ov .v{font-size:20px;font-weight:800;margin:2px 0 6px}
+  .bar{height:6px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),#c084fc)}
+  .bar.green i{background:linear-gradient(90deg,var(--green),#34d399)}
+  .bar.cyan i{background:linear-gradient(90deg,var(--cyan),#22d3ee)}
+  .bar.gold i{background:linear-gradient(90deg,var(--gold),#fbbf24)}
+  .bar.red i{background:linear-gradient(90deg,var(--red),#f87171)}
+
+  /* 分集矩阵 */
+  .eps{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .ep{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12.5px}
+  .ep .no{font-weight:800;color:var(--purple);flex:none}
+  .ep .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+  .ep .st{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;flex:none}
+  .st.done{background:rgba(16,185,129,.15);color:var(--green)}
+  .st.ready{background:rgba(245,158,11,.15);color:var(--gold)}
+  .st.wait{background:rgba(255,255,255,.06);color:#6b7280}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--sub)}
+
+  /* 图片网格 */
+  .imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .img{position:relative;border-radius:10px;overflow:hidden;background:rgba(124,58,237,.06);aspect-ratio:1/1.1;border:1px solid var(--line)}
+  .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .img .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,10,30,.85));color:#fff;font-size:10.5px;padding:14px 6px 5px;line-height:1.3}
+  @media(min-width:560px){.imgs{grid-template-columns:repeat(4,1fr)}}
+
+  /* 视频 */
+  .videos{display:flex;flex-direction:column;gap:10px}
+  .video{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .video .tt{font-size:13px;font-weight:600;padding:8px 10px 0;color:var(--ink)}
+  .video video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+
+  /* 音频 */
+  .audios{display:flex;flex-direction:column;gap:8px}
+  .audio{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .audio .tt{font-size:12.5px;font-weight:600;margin-bottom:4px;color:var(--ink)}
+  .audio audio{width:100%;height:34px}
+
+  /* 里程碑 */
+  .list2{display:flex;flex-direction:column;gap:8px}
+  .mil{display:flex;gap:10px;font-size:13px;background:rgba(255,255,255,.04);border-radius:10px;padding:10px}
+  .mil .tag{flex:none;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;height:fit-content;margin-top:2px}
+  .tag.rec{background:rgba(16,185,129,.15);color:var(--green)}
+  .tag.ing{background:rgba(245,158,11,.15);color:var(--gold)}
+  .tag.warn{background:rgba(239,68,68,.15);color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--sub);font-weight:600;font-size:11.5px;white-space:nowrap}
+  td.pri{font-weight:700;white-space:nowrap;color:var(--purple)}
+  footer{text-align:center;font-size:11px;color:#6b5b8a;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>嵩口镇妖录
+      <small>仙侠衍生IP · 12集AI玄幻短剧 · 素材与进度看板</small>
+    </h1>
+    <div class="badge">数据截至 2026-08-31</div>
+  </header>
+
+  <!-- 进度总览 -->
+  <section>
+    <div class="s-title"><span class="dot d-purple"></span>项目整体完成度</div>
+    <div class="overview">
+      <div class="ov"><div class="k">正片完成</div><div class="v">0 / 12</div><div class="bar"><i style="width:0%"></i></div></div>
+      <div class="ov"><div class="k">正片段数</div><div class="v">0 / 48</div><div class="bar cyan"><i style="width:0%"></i></div></div>
+      <div class="ov"><div class="k">角色3D三视图</div><div class="v">6 / 6</div><div class="bar green"><i style="width:100%"></i></div></div>
+      <div class="ov"><div class="k">场景仙侠化</div><div class="v">22 / 12</div><div class="bar gold"><i style="width:100%"></i></div></div>
+      <div class="ov"><div class="k">角色介绍demo</div><div class="v">6 / 6</div><div class="bar green"><i style="width:100%"></i></div></div>
+      <div class="ov"><div class="k">剧本大纲</div><div class="v">12 / 12</div><div class="bar green"><i style="width:100%"></i></div></div>
+    </div>
+    <div class="hint">素材准备阶段 100% 完成；正片制作待启动（0/48段）。</div>
+  </section>
+
+  <!-- 分集矩阵 -->
+  <section>
+    <div class="s-title"><span class="dot d-cyan"></span>分集实施矩阵（12集）</div>
+    <div class="eps">
+      <div class="ep"><span class="no">EP1</span><span class="nm">觉醒·鹤形路</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP2</span><span class="nm">传人·龙口祖厝</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP3</span><span class="nm">聚灵·用坦厝天井</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP4</span><span class="nm">观星·德星楼</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP5</span><span class="nm">封印·万安堡</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP6</span><span class="nm">古榕·千年树灵</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP7</span><span class="nm">宁远·四井拱梁</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP8</span><span class="nm">夯土·地脉修复</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP9</span><span class="nm">码头·渡灵之人</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP10</span><span class="nm">古城墙·最后防线</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP11</span><span class="nm">决战·穷奇苏醒</span><span class="st wait">未开始</span></div>
+      <div class="ep"><span class="no">EP12</span><span class="nm">镇妖·大阵重封</span><span class="st wait">未开始</span></div>
+    </div>
+    <div class="legend"><span style="color:var(--green)">● 成片完成</span><span style="color:var(--gold)">● 部分完成</span><span style="color:#6b7280">● 未开始</span></div>
+  </section>
+
+  <!-- 角色3D三视图 -->
+  <section>
+    <div class="s-title"><span class="dot d-green"></span>角色3D三视图（仙侠版）</div>
+    <div class="imgs">
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/lin_xiaoxi_3d_turnaround.png" alt="林小溪 · 鹤鸣宗传人" loading="lazy"><div class="cap">林小溪 · 鹤鸣宗传人</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/chen_agong_3d_turnaround.png" alt="陈阿公 · 守护者" loading="lazy"><div class="cap">陈阿公 · 守护者</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/xiao_nuomi_3d_turnaround.png" alt="小糯米 · 灵瞳少女" loading="lazy"><div class="cap">小糯米 · 灵瞳少女</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/zhang_director_3d_turnaround.png" alt="张导演 · 记录者" loading="lazy"><div class="cap">张导演 · 记录者</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/global_ai_protagonist_3d_turnaround.png" alt="AI主角 · 通用版" loading="lazy"><div class="cap">AI主角 · 通用版</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/global_ai_protagonist_xianxia_3d_turnaround.png" alt="AI主角 · 仙侠版" loading="lazy"><div class="cap">AI主角 · 仙侠版</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/global_ai_protagonist_xianxia_ig2img.png" alt="AI主角 · 图生图版" loading="lazy"><div class="cap">AI主角 · 图生图版</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_characters/qiongqi_four_legs_3d_turnaround.png" alt="穷奇 · 上古凶兽" loading="lazy"><div class="cap">穷奇 · 上古凶兽</div></div>
+    </div>
+    <div class="hint">6个角色3D三视图全部完成（文生图+图生图两种方式生成）。</div>
+  </section>
+
+  <!-- 仙侠化场景图 -->
+  <section>
+    <div class="s-title"><span class="dot d-gold"></span>仙侠化场景图（文生图版）</div>
+    <div class="imgs">
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/songkou_panorama_xianxia.png" alt="嵩口全景 · 大阵全貌" loading="lazy"><div class="cap">嵩口全景 · 大阵全貌</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/wan_an_castle_xianxia.png" alt="万安堡 · 大阵核心" loading="lazy"><div class="cap">万安堡 · 大阵核心</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/he_xing_road_xianxia.png" alt="鹤形路 · 灵脉" loading="lazy"><div class="cap">鹤形路 · 灵脉</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/yong_tan_courtyard_xianxia.png" alt="用坦厝 · 聚灵阵" loading="lazy"><div class="cap">用坦厝 · 聚灵阵</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/longkou_ancestral_xianxia.png" alt="龙口祖厝 · 守护者居所" loading="lazy"><div class="cap">龙口祖厝 · 守护者居所</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/dexing_tower_xianxia.png" alt="德星楼 · 观星台" loading="lazy"><div class="cap">德星楼 · 观星台</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/ancient_banyan_xianxia.png" alt="古榕树 · 阵眼之根" loading="lazy"><div class="cap">古榕树 · 阵眼之根</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/ningyuan_manor_xianxia.png" alt="宁远庄 · 灵药园" loading="lazy"><div class="cap">宁远庄 · 灵药园</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/ancient_city_wall_xianxia.png" alt="古城墙 · 最后防线" loading="lazy"><div class="cap">古城墙 · 最后防线</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/ancient_pier_xianxia.png" alt="古码头 · 渡灵渡口" loading="lazy"><div class="cap">古码头 · 渡灵渡口</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/rammed_earth_wall_xianxia.png" alt="夯土墙 · 地脉节点" loading="lazy"><div class="cap">夯土墙 · 地脉节点</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes/wasteland_battle_xianxia.png" alt="荒原战场 · 决战之地" loading="lazy"><div class="cap">荒原战场 · 决战之地</div></div>
+    </div>
+  </section>
+
+  <!-- 仙侠化场景图（图生图版） -->
+  <section>
+    <div class="s-title"><span class="dot d-gold"></span>仙侠化场景图（图生图版）</div>
+    <div class="imgs">
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%B5%A9%E5%8F%A3%E5%85%A8%E6%99%AF_ig2img.png" alt="嵩口全景 · 图生图" loading="lazy"><div class="cap">嵩口全景 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E4%B8%87%E5%AE%89%E5%A0%A1_ig2img.png" alt="万安堡 · 图生图" loading="lazy"><div class="cap">万安堡 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E9%BE%99%E5%8F%A3%E7%A5%96%E5%8E%9D_ig2img.png" alt="龙口祖厝 · 图生图" loading="lazy"><div class="cap">龙口祖厝 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E7%94%A8%E5%9D%A6%E5%8E%9D_ig2img.png" alt="用坦厝 · 图生图" loading="lazy"><div class="cap">用坦厝 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E9%B9%A4%E5%BD%A2%E8%B7%AF_ig2img.png" alt="鹤形路 · 图生图" loading="lazy"><div class="cap">鹤形路 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%BE%B7%E6%98%9F%E6%A5%BC_ig2img.png" alt="德星楼 · 图生图" loading="lazy"><div class="cap">德星楼 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%AE%81%E8%BF%9C%E5%BA%84_ig2img.png" alt="宁远庄 · 图生图" loading="lazy"><div class="cap">宁远庄 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%8F%A4%E5%9F%8E%E5%A2%99_ig2img.png" alt="古城墙 · 图生图" loading="lazy"><div class="cap">古城墙 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%8F%A4%E7%A0%81%E5%A4%B4_ig2img.png" alt="古码头 · 图生图" loading="lazy"><div class="cap">古码头 · 图生图</div></div>
+      <div class="img"><img src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/songkou_3d_scenes_ig2img/%E5%A4%AF%E5%9C%9F%E5%A2%99_ig2img.png" alt="夯土墙 · 图生图" loading="lazy"><div class="cap">夯土墙 · 图生图</div></div>
+    </div>
+    <div class="hint">真实场景照片经 KREA-2-EDIT 图生图风格迁移为仙侠版本。</div>
+  </section>
+
+  <!-- 角色介绍demo -->
+  <section>
+    <div class="s-title"><span class="dot d-red"></span>角色介绍demo（10秒/个）</div>
+    <div class="videos">
+      <div class="video"><div class="tt">陈阿公 · 龙口祖厝 — 木杖激活仙鹤虚影</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/songkou_xianxia/demo_10s_chen_agong.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">小糯米 · 用坦厝天井 — 伸手捕捉灵气光点</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/songkou_xianxia/demo_10s_xiao_nuomi.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">张导演 · 德星楼 — 摄像机意外捕捉灵气星图</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/songkou_xianxia/demo_10s_zhang_director.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+      <div class="video"><div class="tt">穷奇 · 万安堡 — 封印中红色巨眼亮起</div>
+        <video src="https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/videos/songkou_xianxia/demo_10s_qiongqi.mp4" type="video/mp4" controls preload="metadata" playsinline></video></div>
+    </div>
+    <div class="hint">4个角色介绍demo已完成（陈阿公/小糯米/张导演/穷奇），主角和林小溪介绍demo另存。</div>
+  </section>
+
+  <!-- 里程碑 -->
+  <section>
+    <div class="s-title"><span class="dot d-purple"></span>项目里程碑</div>
+    <div class="list2">
+      <div class="mil"><span class="tag rec">已完成</span><span>剧本大纲：12集剧情+前4集详细分镜</span></div>
+      <div class="mil"><span class="tag rec">已完成</span><span>角色3D三视图：6个角色全部完成（文生图+图生图）</span></div>
+      <div class="mil"><span class="tag rec">已完成</span><span>场景仙侠化：12处地标文生图版 + 10处图生图版</span></div>
+      <div class="mil"><span class="tag rec">已完成</span><span>角色介绍demo：陈阿公/小糯米/张导演/穷奇 4个10秒demo</span></div>
+      <div class="mil"><span class="tag rec">已完成</span><span>鹤形路demo：10秒仙侠化场景测试</span></div>
+      <div class="mil"><span class="tag ing">筹备中</span><span>正片制作：12集×4段×15秒，待启动</span></div>
+      <div class="mil"><span class="tag warn">待定</span><span>美食仙侠系列：葱饼/蛋燕/礼饼/九重粿 仙侠化演绎</span></div>
+    </div>
+  </section>
+
+  <!-- 文旅映射表 -->
+  <section>
+    <div class="s-title"><span class="dot d-cyan"></span>真实地标 × 仙侠阵眼映射</div>
+    <table>
+      <thead><tr><th>真实地标</th><th>仙侠阵眼</th><th>集数</th></tr></thead>
+      <tbody>
+        <tr><td class="pri">鹤形路</td><td>灵脉</td><td>EP1</td></tr>
+        <tr><td class="pri">龙口祖厝</td><td>守护者居所</td><td>EP2</td></tr>
+        <tr><td class="pri">用坦厝天井</td><td>聚灵阵</td><td>EP3</td></tr>
+        <tr><td class="pri">德星楼</td><td>观星台</td><td>EP4</td></tr>
+        <tr><td class="pri">万安堡</td><td>大阵核心</td><td>EP5/EP11</td></tr>
+        <tr><td class="pri">古榕树</td><td>阵眼之根</td><td>EP6</td></tr>
+        <tr><td class="pri">宁远庄</td><td>灵药园</td><td>EP7</td></tr>
+        <tr><td class="pri">夯土墙</td><td>地脉节点</td><td>EP8</td></tr>
+        <tr><td class="pri">古码头</td><td>渡灵渡口</td><td>EP9</td></tr>
+        <tr><td class="pri">古城墙</td><td>最后防线</td><td>EP10</td></tr>
+        <tr><td class="pri">荒原</td><td>决战之地</td><td>EP11</td></tr>
+        <tr><td class="pri">嵩口全景</td><td>大阵全貌</td><td>EP12</td></tr>
+      </tbody>
+    </table>
+    <div class="hint">每集激活一个地标阵眼 = 推广一个真实文旅景点。</div>
+  </section>
+
+  <footer>嵩口镇妖录 · AI仙侠短剧 · 开源仓库 github.com/easyeye163/h3-video-coding</footer>
+</div>
+</body>
+</html>
