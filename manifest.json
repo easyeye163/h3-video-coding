@@ -503,6 +503,26 @@
       "size": 3898777
     },
     {
+      "path": "videos/songkou_xianxia/aesthetic_10s_aesthetic_04_yongtan_rain.mp4",
+      "name": "aesthetic_10s_aesthetic_04_yongtan_rain.mp4",
+      "size": 6261673
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_aesthetic_03_moonlit_pier.mp4",
+      "name": "aesthetic_10s_aesthetic_03_moonlit_pier.mp4",
+      "size": 4089701
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_aesthetic_02_ancient_banyan_zen.mp4",
+      "name": "aesthetic_10s_aesthetic_02_ancient_banyan_zen.mp4",
+      "size": 6984831
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_aesthetic_01_misty_rain_hexing.mp4",
+      "name": "aesthetic_10s_aesthetic_01_misty_rain_hexing.mp4",
+      "size": 4958114
+    },
+    {
       "path": "videos/songkou_drama/EP9段4_阳光镀金城砖收束.mp4",
       "name": "EP9段4_阳光镀金城砖收束.mp4",
       "size": 5971874
@@ -755,6 +775,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-09-01 00:19:21",
-  "total": 150
+  "updated": "2026-09-01 00:44:04",
+  "total": 154
 }
