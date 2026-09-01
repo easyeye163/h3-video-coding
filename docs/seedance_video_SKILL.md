@@ -1,16 +1,23 @@
 ---
 name: seedance-video
-description: Text-to-video generation using Volcengine Ark Seedance models
+description: Text-to-video generation using Volcengine Ark Seedance (Doubao/Jimeng) models
 triggers:
-  - pattern: "生成视频|文生视频|视频生成"
+  - pattern: "生成视频|文生视频|视频生成|做个视频|做视频"
     description: "检测视频生成请求"
-  - pattern: "seedance|豆包视频|火山视频"
+  - pattern: "seedance|豆包视频|火山视频|doubao-seedance"
     description: "检测Seedance模型相关请求"
+  - pattern: "用豆包|豆包生成|豆包做"
+    description: "用户指定用豆包生成视频"
+  - pattern: "即梦|jimeng|用即梦|即梦生成"
+    description: "用户指定用即梦生成视频"
 auto_invoke: false
 examples:
   - "生成一个日落海边的视频"
   - "用Seedance生成小猫钓鱼的视频"
   - "文生视频：一只猫在睡觉"
+  - "用豆包生成一个嵩口古镇的视频"
+  - "用即梦做一段御剑飞行的视频"
+  - "豆包图生视频，用这张场景图作为首帧"
 ---
 
 # Volcengine Ark Seedance - Text to Video

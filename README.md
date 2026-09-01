@@ -1,8 +1,9 @@
 # h3-video-coding · AI 短剧制作工作流
 
-> 基于 **MiniMax H3 六段式提示词 + RunningHub API + 飞书多维表格** 的 AI 文化宣传短剧自动化制作体系。
+> 基于 **MiniMax H3 六段式提示词 + RunningHub API + 火山引擎 Seedance + 飞书多维表格** 的 AI 文化宣传短剧自动化制作体系。
 
 📊 **[嵩口项目可视化看板](./songkou-dashboard.html)** — 素材进度、分集状态、角色场景一览
+⚔️ **[镇妖录素材看板](./yaolu-dashboard.html)** — 12集仙侠衍生IP素材与进度
 
 ---
 
@@ -20,21 +21,31 @@
 4、声音设计（用于短剧多角色声音一致性） 
 工作流地址： `https://www.runninghub.cn/post/2090434415913689090/?inviteCode=oga1ahgc`
 
+5、Seedance 视频生成（火山引擎/豆包/即梦）【Agent必备】
+脚本： `scripts/seedance_video.py`
+文档： `docs/seedance_video_README.md` · `docs/seedance_video_SKILL.md`
+
+> **当用户提到"用豆包生成""用即梦做视频""Seedance"时，必须调用 `scripts/seedance_video.py` 技能。**
+> 支持：文生视频、首尾帧图生视频、多图全能参考、参考音频音色克隆、音频同步生成。
+
 ---
 
-## ⚠️ 必读文档
+## 必读文档
 
-**所有项目制作都基于上述 4 个 RunningHub 工作流。开始任何制作前，必须先阅读技能文档：**
+**所有项目制作都基于以下工具链。开始任何制作前，必须先阅读技能文档：**
 
-**[docs/长期记忆_节点配置总结.md](docs/长期记忆_节点配置总结.md)**
+**RunningHub 工作流**：[docs/长期记忆_节点配置总结.md](docs/长期记忆_节点配置总结.md)
+- API 使用说明（提交任务/查询结果/文件上传/并发限制）
+- 4 个工作流的节点配置（appId + nodeId + fieldName，已验证正确）
+- 6 段式提示词标准模板（MiniMax H3 Full-Reference 格式）
+- 场景设计表与分镜提示词模板
 
-该文档包含：
-- **API 使用说明**（提交任务端点、查询结果端点、文件上传端点、并发限制）
-- **4 个工作流的节点配置**（appId + nodeId + fieldName，已验证正确）
-- **6 段式提示词标准模板**（MiniMax H3 Full-Reference 格式）
-- **场景设计表**与分镜提示词模板
+**Seedance 视频生成**：[docs/seedance_video_README.md](docs/seedance_video_README.md) · [docs/seedance_video_SKILL.md](docs/seedance_video_SKILL.md)
+- 文生视频 / 首尾帧图生视频 / 多图全能参考 / 参考音频音色克隆
+- 环境变量 `VOLCENGINE_ARK_API_KEY`
+- 当用户提到"豆包""即梦""Seedance"时调用此工具
 
-> 不会调用这些工作流 = 无法制作任何内容。所有智能体协作前必读。
+> 不会调用这些工具 = 无法制作任何内容。所有智能体协作前必读。
 
 ---
 
@@ -54,6 +65,7 @@
 | 智能体 | GLM 5V-Turbo | 角色/剧情/镜头/数据同步 |
 | 图像 | RunningHub Z-image（文生图）/ KREA-2-EDIT（图生图） | 场景图/角色三视图（人物一致性） |
 | 视频 | RunningHub AnimateDiff / MiniMax H3 | 6 段式提示词成片 |
+| 视频 | 火山引擎 Seedance（豆包/即梦） | 文生视频/图生视频/参考音频，电影级画质 |
 | 音频 | RunningHub 多角色声音一致性 | 角色配音 |
 | 数据 | 飞书多维表格 | 5 张表结构化存储 |
 
@@ -164,9 +176,13 @@ https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/{相对路径}
         ↓
 [2] 图生图（KREA-2-EDIT）        → 角色三视图/定妆图     images/songkou_characters/
         ↓
-[3] 图生视频（MiniMax H3）       → 6段式提示词成片      videos/songkou_drama/
+[3] 图生视频                     → 成片                 videos/songkou_drama/
+        ├─ RunningHub AnimateDiff  （6段式提示词，角色一致性）
+        └─ Seedance 豆包/即梦       （文生/首尾帧/参考音频，电影级画质）
         ↓
-[4] 音频设计（多角色声音一致性） → 对白+旁白+配乐        audio/voices/
+[4] 音频设计                     → 对白+旁白+配乐        audio/voices/
+        ├─ RunningHub 多角色声音一致性
+        └─ Seedance 2.0 参考音频音色克隆
 ```
 
 ## RunningHub 工作流速查
@@ -179,6 +195,64 @@ https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/{相对路径}
 | 多图像视频生成 | `2088878767828717570` | `137`首帧/`157`音频/`156`角色/`138`提示词 |
 | 音频生成 | `2090440149267210242` | `3`声音设计/`5`TTS文本 |
 
+## Seedance 视频生成（豆包/即梦）
+
+> **触发规则**：当用户提到"豆包""即梦""Seedance""火山引擎视频"时，必须使用 `scripts/seedance_video.py`。
+> 该工具是 RunningHub AnimateDiff 的增强替代方案，支持更多生成模式且画质更高。
+
+### 快速使用
+
+```bash
+# 文生视频
+python3 scripts/seedance_video.py generate \
+  --prompt "描述文本" --ratio 16:9 --duration 5
+
+# 图生视频（首帧，使用 jsDelivr CDN 链接）
+python3 scripts/seedance_video.py generate \
+  --first-frame "https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/images/xxx.png" \
+  --prompt "让画面动起来" --ratio adaptive --duration 5
+
+# 首尾帧图生视频
+python3 scripts/seedance_video.py generate \
+  --first-frame "url1" --last-frame "url2" --ratio adaptive
+
+# 多图全能参考（角色+场景）
+python3 scripts/seedance_video.py generate \
+  --reference-image "角色图url" --reference-image "场景图url" \
+  --prompt "参考图1的角色站在参考图2的场景中" --ratio 16:9
+
+# 参考音频（需 2.0 模型，音色克隆）
+python3 scripts/seedance_video.py generate \
+  --model doubao-seedance-2-0-260128 \
+  --first-frame "url" --reference-audio "音色url" \
+  --prompt "角色说：你好" --generate-audio
+
+# 查询任务状态
+python3 scripts/seedance_video.py status --task-id cgt-xxxxx
+```
+
+### 可用模型
+
+| 模型 ID | 说明 | 参考音频 |
+|---------|------|----------|
+| `doubao-seedance-2-0-260128` | 2.0 标准版 | 支持 |
+| `doubao-seedance-2-0-fast-260128` | 2.0 快速版 | 支持 |
+| `doubao-seedance-1-5-pro-251215` | 1.5 专业版（默认推荐） | 不支持 |
+
+### Seedance vs RunningHub 选择指南
+
+| 场景 | 推荐工具 | 原因 |
+|------|----------|------|
+| 纯文生视频（无参考图） | Seedance | RunningHub 不支持文生视频 |
+| 场景图 → 视频（首帧动起来） | Seedance | 画质更高、速度更快 |
+| 角色一致性图生视频 | RunningHub | 节点 `156` 角色参考更精准 |
+| 首尾帧控制过渡 | Seedance | 独有首尾帧功能 |
+| 多角色对话+音色克隆 | Seedance 2.0 | 参考音频原生支持 |
+| 批量分集成片（6段式） | RunningHub | 工作流已调优 |
+| 镇妖录仙侠场景视频 | Seedance | 电影级特效更适合仙侠风格 |
+
+> 详细文档：[docs/seedance_video_README.md](./docs/seedance_video_README.md)
+
 ## 当前进度（2026-08-29）
 
 - **剧本+提示词**：100%（20 集 × 4 段 6 段式提示词）
@@ -189,7 +263,11 @@ https://cdn.jsdelivr.net/gh/easyeye163/h3-video-coding@main/{相对路径}
 ## 关联文档
 
 - [1、【实施中】嵩口宣传项目.md](./1、【实施中】嵩口宣传项目.md) — 项目主文档（进度/资产/瑕疵/版本）
+- [2、【规划中】嵩口镇妖录.md](./2、【规划中】嵩口镇妖录.md) — 镇妖录项目规划文档
+- [嵩口镇妖录_剧本.md](./嵩口镇妖录_剧本.md) — 12集完整对话剧本
+- [docs/seedance_video_README.md](./docs/seedance_video_README.md) — Seedance视频生成使用说明
+- [docs/seedance_video_SKILL.md](./docs/seedance_video_SKILL.md) — Seedance Skill定义（触发词）
 - [docs/嵩口EP3_鹤形之谜_极简制作单.md](./docs/嵩口EP3_鹤形之谜_极简制作单.md) — EP3 试制链路
 - [docs/嵩口提示词优化_v2.md](./docs/嵩口提示词优化_v2.md) — v2 提示词规范
-- [docs/长期记忆_工作流节点配置.md](./docs/长期记忆_工作流节点配置.md) — RunningHub 节点配置（已验证）
+- [docs/长期记忆_工作流节点配置.md](./docs/长期记忆_工作流节点配置.md) — RunningHub + Seedance 节点配置（已验证）
 - [docs/runninghub-skill.md](./docs/runninghub-skill.md) — RunningHub API 技能指南
