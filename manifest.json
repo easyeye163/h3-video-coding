@@ -751,6 +751,11 @@
       "path": "videos/01_海边黄昏的秘密.mp4",
       "name": "01_海边黄昏的秘密.mp4",
       "size": 4786626
+    },
+    {
+      "path": "videos/songkou_xianxia/seedance_test_duo_fight_wananbao.mp4",
+      "name": "seedance_test_duo_fight_wananbao.mp4",
+      "size": 8375067
     }
   ],
   "audio": [
@@ -810,8 +815,8 @@
       "size": 358980
     }
   ],
-  "updated": "2026-09-01 04:33:30",
-  "total": 164,
+  "updated": "2026-09-01 04:51:23",
+  "total": 165,
   "scripts": [
     {
       "path": "scripts/seedance_video.py",
