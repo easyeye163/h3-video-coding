@@ -503,6 +503,36 @@
       "size": 3898777
     },
     {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_06_pier_water_breeze.mp4",
+      "name": "aesthetic_10s_ig2_06_pier_water_breeze.mp4",
+      "size": 3610186
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_05_panorama_wind_sweep.mp4",
+      "name": "aesthetic_10s_ig2_05_panorama_wind_sweep.mp4",
+      "size": 5090250
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_04_longkou_ancestral_morning.mp4",
+      "name": "aesthetic_10s_ig2_04_longkou_ancestral_morning.mp4",
+      "size": 4722325
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_03_dexing_tower_starlight.mp4",
+      "name": "aesthetic_10s_ig2_03_dexing_tower_starlight.mp4",
+      "size": 6106587
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_02_hexing_alley_mist.mp4",
+      "name": "aesthetic_10s_ig2_02_hexing_alley_mist.mp4",
+      "size": 5700844
+    },
+    {
+      "path": "videos/songkou_xianxia/aesthetic_10s_ig2_01_wanan_castle_wind.mp4",
+      "name": "aesthetic_10s_ig2_01_wanan_castle_wind.mp4",
+      "size": 3480702
+    },
+    {
       "path": "videos/songkou_xianxia/aesthetic_10s_aesthetic_04_yongtan_rain.mp4",
       "name": "aesthetic_10s_aesthetic_04_yongtan_rain.mp4",
       "size": 6261673
@@ -750,6 +780,11 @@
       "size": 236543
     },
     {
+      "path": "audio/voices/silent_placeholder.mp3",
+      "name": "silent_placeholder.mp3",
+      "size": 12317
+    },
+    {
       "path": "audio/20岁女生_清冷.flac",
       "name": "20岁女生_清冷.flac",
       "size": 114537
@@ -775,6 +810,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-09-01 00:44:04",
-  "total": 154
+  "updated": "2026-09-01 02:15:32",
+  "total": 161
 }
