@@ -75,7 +75,9 @@ def generate_video(
     last_frame: str = "",
     reference_images: Optional[List[str]] = None,
     reference_audios: Optional[List[str]] = None,
-    generate_audio: Optional[bool] = None
+    generate_audio: Optional[bool] = None,
+    return_last_frame: bool = False,
+    download_dir: str = ""
 ) -> str:
     """Create a video generation task.
 
@@ -126,6 +128,8 @@ def generate_video(
     }
     if generate_audio is not None:
         body["generate_audio"] = generate_audio
+    if return_last_frame:
+        body["return_last_frame"] = True
 
     response = requests.post(
         f"{BASE_URL}/contents/generations/tasks",
@@ -150,15 +154,48 @@ def generate_video(
 
     if poll:
         print("\nPolling for results...")
-        task = query_task(api_key, task_id, max_attempts=60, interval=2)
+        task = query_task(api_key, task_id, max_attempts=120, interval=3, output=True)
         if task and task.get("status") == "succeeded":
             print("\n✅ Video generated successfully!")
             video_url = task.get("content", {}).get("video_url", "")
             if video_url:
                 print(f"\nVideo URL: {video_url}")
+            # Download video if download_dir specified
+            if download_dir:
+                os.makedirs(download_dir, exist_ok=True)
+                video_path = os.path.join(download_dir, f"{task_id}.mp4")
+                print(f"\n💾 Downloading video to {video_path}...")
+                download_file(video_url, video_path)
+                print(f"✅ Video saved: {video_path}")
+            # Download last frame if available
+            last_frame_url = task.get("content", {}).get("last_frame_url", "")
+            if last_frame_url and download_dir:
+                last_frame_path = os.path.join(download_dir, f"{task_id}_last_frame.png")
+                print(f"💾 Downloading last frame to {last_frame_path}...")
+                download_file(last_frame_url, last_frame_path)
+                print(f"✅ Last frame saved: {last_frame_path}")
+            elif last_frame_url:
+                print(f"\nLast frame URL: {last_frame_url}")
         return task_id
 
     return task_id
+
+
+def download_file(url: str, save_path: str) -> None:
+    """Download a file from URL to local path."""
+    response = requests.get(url, stream=True, timeout=300, verify=False)
+    response.raise_for_status()
+    total = int(response.headers.get("content-length", 0))
+    downloaded = 0
+    with open(save_path, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
+                downloaded += len(chunk)
+                if total and total > 0:
+                    pct = downloaded / total * 100
+                    print(f"\r  {downloaded/1024/1024:.1f}MB / {total/1024/1024:.1f}MB ({pct:.0f}%)", end="", flush=True)
+    print()
 
 
 def query_task(
@@ -188,11 +225,10 @@ def query_task(
         if status == "succeeded":
             if output:
                 print("\nTask succeeded!")
-                print(json.dumps(task, indent=2, ensure_ascii=False))
             return task
-        elif status in ["pending", "processing"]:
+        elif status in ["pending", "processing", "running", "queued"]:
             if output and (attempt + 1) % 10 == 0:
-                print(f"Status: {status} (still processing...)")
+                print(f"Status: {status} (still processing... attempt {attempt+1}/{max_attempts})")
             time.sleep(interval)
         else:
             if output:
@@ -212,6 +248,8 @@ def main():
         epilog="""
 Examples:
   %(prog)s generate --prompt "A beautiful sunset" --ratio 16:9 --duration 5
+  %(prog)s generate --prompt "Fight scene" --first-frame https://.../start.png --last-frame https://.../end.png --poll
+  %(prog)s generate --prompt "Epic battle" --first-frame https://.../start.png --return-last-frame --poll --download-dir ./output
   %(prog)s status --task-id cgt-20260330200405-29g92
   %(prog)s list
         """
@@ -230,16 +268,24 @@ Examples:
     gen_parser.add_argument("--poll", action="store_true", help="Poll for results automatically")
     gen_parser.add_argument("--first-frame", default="", help="URL of the first frame image (image-to-video)")
     gen_parser.add_argument("--last-frame", default="", help="URL of the last frame image (requires --first-frame)")
-    gen_parser.add_argument("--reference-image", action="append", default=None, help="URL of a reference image (repeatable)")
+    gen_parser.add_argument("--reference-image", action="append", default=None, help="URL of a reference image (repeatable, Seedance 2.0+)")
     gen_parser.add_argument("--reference-audio", action="append", default=None, help="URL of a reference audio, wav/mp3 (repeatable, Seedance 2.0+)")
     gen_parser.add_argument("--generate-audio", dest="generate_audio", action="store_true", default=None, help="Generate synchronized audio")
     gen_parser.add_argument("--no-audio", dest="generate_audio", action="store_false", help="Generate silent video")
+    gen_parser.add_argument("--return-last-frame", action="store_true", help="Return the last frame of the generated video (PNG)")
+    gen_parser.add_argument("--download-dir", default="", help="Directory to save downloaded video and last frame")
 
     # Status command
     status_parser = subparsers.add_parser("status", help="Query task status")
     status_parser.add_argument("--task-id", required=True, help="Task ID to query")
     status_parser.add_argument("--max-attempts", type=int, default=30, help="Max polling attempts")
     status_parser.add_argument("--interval", type=int, default=2, help="Polling interval (seconds)")
+
+    # Download command
+    dl_parser = subparsers.add_parser("download", help="Download video and last frame from a completed task")
+    dl_parser.add_argument("--task-id", required=True, help="Task ID to download")
+    dl_parser.add_argument("--output-dir", required=True, help="Directory to save files")
+    dl_parser.add_argument("--filename", default="", help="Custom filename (without extension)")
 
     # List command
     list_parser = subparsers.add_parser("list", help="List available models")
@@ -266,7 +312,9 @@ Examples:
                 last_frame=args.last_frame,
                 reference_images=args.reference_image,
                 reference_audios=args.reference_audio,
-                generate_audio=args.generate_audio
+                generate_audio=args.generate_audio,
+                return_last_frame=args.return_last_frame,
+                download_dir=args.download_dir
             )
         elif args.command == "status":
             query_task(
@@ -275,6 +323,25 @@ Examples:
                 max_attempts=args.max_attempts,
                 interval=args.interval
             )
+        elif args.command == "download":
+            task = query_task(api_key, args.task_id, max_attempts=1, interval=0, output=False)
+            if task.get("status") != "succeeded":
+                print(f"Error: task not succeeded (status: {task.get('status')})", file=sys.stderr)
+                sys.exit(1)
+            os.makedirs(args.output_dir, exist_ok=True)
+            base_name = args.filename or args.task_id
+            video_url = task.get("content", {}).get("video_url", "")
+            if video_url:
+                video_path = os.path.join(args.output_dir, f"{base_name}.mp4")
+                print(f"Downloading video to {video_path}...")
+                download_file(video_url, video_path)
+                print(f"✅ Video saved: {video_path}")
+            last_frame_url = task.get("content", {}).get("last_frame_url", "")
+            if last_frame_url:
+                lf_path = os.path.join(args.output_dir, f"{base_name}_last_frame.png")
+                print(f"Downloading last frame to {lf_path}...")
+                download_file(last_frame_url, lf_path)
+                print(f"✅ Last frame saved: {lf_path}")
         elif args.command == "list":
             list_models(api_key, seedance_only=not args.all)
 
