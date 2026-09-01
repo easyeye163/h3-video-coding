@@ -336,9 +336,39 @@
       "size": 1823612
     },
     {
+      "path": "images/songkou_xianxia_aesthetic/08_用坦厝听雨.png",
+      "name": "08_用坦厝听雨.png",
+      "size": 2632276
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/07_大樟溪渔舟.png",
+      "name": "07_大樟溪渔舟.png",
+      "size": 2121557
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/06_龙口祖厝晨光.png",
+      "name": "06_龙口祖厝晨光.png",
+      "size": 2151336
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/05_德星楼星夜.png",
+      "name": "05_德星楼星夜.png",
+      "size": 2591991
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/04_万安夕照.png",
+      "name": "04_万安夕照.png",
+      "size": 2025918
+    },
+    {
       "path": "images/04_zimage_新标题.png",
       "name": "04_zimage_新标题.png",
       "size": 1840061
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/03_古榕听禅.png",
+      "name": "03_古榕听禅.png",
+      "size": 2853421
     },
     {
       "path": "images/characters/02_神秘使者.png",
@@ -346,9 +376,19 @@
       "size": 1729277
     },
     {
+      "path": "images/songkou_xianxia_aesthetic/02_烟雨鹤形路.png",
+      "name": "02_烟雨鹤形路.png",
+      "size": 2348974
+    },
+    {
       "path": "images/02_krea_edit_紫裙.png",
       "name": "02_krea_edit_紫裙.png",
       "size": 1989085
+    },
+    {
+      "path": "images/songkou_xianxia_aesthetic/01_月夜古码头.png",
+      "name": "01_月夜古码头.png",
+      "size": 2471909
     },
     {
       "path": "images/characters/01_东方少女.png",
@@ -715,6 +755,6 @@
       "size": 358980
     }
   ],
-  "updated": "2026-08-31 23:51:54",
-  "total": 142
+  "updated": "2026-09-01 00:19:21",
+  "total": 150
 }
