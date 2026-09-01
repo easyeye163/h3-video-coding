@@ -810,6 +810,28 @@
       "size": 358980
     }
   ],
-  "updated": "2026-09-01 02:15:32",
-  "total": 161
+  "updated": "2026-09-01 04:33:30",
+  "total": 164,
+  "scripts": [
+    {
+      "path": "scripts/seedance_video.py",
+      "name": "seedance_video.py",
+      "size": 10403,
+      "description": "火山引擎Seedance视频生成工具（文生视频/图生视频/参考音频）"
+    }
+  ],
+  "docs": [
+    {
+      "path": "docs/seedance_video_README.md",
+      "name": "seedance_video_README.md",
+      "size": 3368,
+      "description": "Seedance视频生成工具使用说明"
+    },
+    {
+      "path": "docs/seedance_video_SKILL.md",
+      "name": "seedance_video_SKILL.md",
+      "size": 4967,
+      "description": "Seedance视频生成Skill定义文件"
+    }
+  ]
 }
